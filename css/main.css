@@ -1,0 +1,73 @@
+section p {
+  text-align: left;
+}
+section blockquote {
+  text-align: left;
+  font-family: Georgia, serif;
+  font-style: italic;
+  line-height: 1.45;
+  border-left: 0;
+  font-size: 16px;
+}
+
+section blockquote cite {
+  display: block;
+  font-size: 0.8em;
+  margin-top: 0.5em;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-style: normal;
+  color: #fefefe;
+  color: rgba(255,255,255, 0.70);
+}
+
+.navbar-default {
+  background-color: #434d5b;
+  border-color: #5E6B80;
+}
+
+#modernAgileWheel {
+  width: 100%;
+}
+
+.intro-section {
+  padding-top: 100px;
+  background: #4b5666;
+  color: #fefefe;
+  color: rgba(255,255,255, 0.90);
+}
+.intro-section,
+.join-section {
+  background: #4b5666;
+  color: #fefefe;
+  color: rgba(255,255,255, 0.90);
+}
+
+.sectionTitle {
+  opacity: 0.5;
+  color: #000;
+}
+.sectionTitle .principle-icon {
+  display:block;
+  height: 2em;
+  margin: 0 auto;
+  margin-bottom: 0.5em;
+}
+.makePeopleAwesome-section,
+.deliverValueContinuously-section,
+.makeSafetyAPrerequisite-section,
+.experimentAndLearnRapidly-section  {
+  color: #333;
+  color: rgba(0,0,0, 0.70);
+}
+.makePeopleAwesome-section {
+  background: #fbd35c;
+}
+.deliverValueContinuously-section {
+  background: #a4d970;
+}
+.makeSafetyAPrerequisite-section {
+  background: #9ebeed;
+}
+.experimentAndLearnRapidly-section {
+  background: #fa7977;
+}
