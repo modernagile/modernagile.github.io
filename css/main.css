@@ -1,4 +1,5 @@
 section p {
+  padding: 0 20px;
   text-align: left;
 }
 section blockquote {
@@ -43,8 +44,10 @@ section blockquote cite {
 }
 
 .sectionTitle {
-  opacity: 0.5;
+  opacity: 0.75;
   color: #000;
+  font-weight: 200;
+  margin-bottom: 20px;
 }
 .sectionTitle .principle-icon {
   display:block;
@@ -55,9 +58,13 @@ section blockquote cite {
 .makePeopleAwesome-section,
 .deliverValueContinuously-section,
 .makeSafetyAPrerequisite-section,
-.experimentAndLearnRapidly-section  {
+.experimentAndLearnRapidly-section {
+  padding-top: 50px;
   color: #333;
   color: rgba(0,0,0, 0.70);
+}
+.join-section  {
+  padding-top: 50px;
 }
 .makePeopleAwesome-section {
   background: #fbd35c;
