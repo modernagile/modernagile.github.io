@@ -21,6 +21,12 @@ section blockquote cite {
   color: rgba(255,255,255, 0.70);
 }
 
+section iframe {
+  border: 0;
+  width: 100%;
+  height: 200px;
+}
+
 .navbar-default {
   background-color: #434d5b;
   border-color: #5E6B80;
