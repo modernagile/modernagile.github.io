@@ -1,8 +1,38 @@
 //out: ./main.css, compress: true
+
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
+
+@makePeopleAwesome-color: #fad25c;
+@deliverValueContinuously-color: #a3d96f;
+@makeSafetyAPrerequisite-color: #a0bce2;
+@experimentAndLearnRapidly-color: #f97977;
+
+body {
+  @media (min-width: @screen-sm-min) {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
 section {
+  height: 100%;
+  text-align: center;
+  background: #fff;
+  padding-top: 50px;
+  color: #333;
+  color: rgba(0,0,0, 0.70);
+  &:first-of-type {
+      padding-top: 150px;
+  }
   p {
     padding: 0 20px;
     text-align: left;
+    @media (min-width: @screen-sm-min) {
+      font-weight: 300;
+      margin-bottom: 1.5em;
+    }
   }
   blockquote {
     text-align: left;
@@ -25,96 +55,98 @@ section {
     width: 100%;
     height: 200px;
   }
+  .sectionTitle {
+    opacity: 0.75;
+    color: #000;
+    font-weight: 200;
+    margin-bottom: 20px;
+    .principle-icon {
+      display:block;
+      height: 2em;
+      margin: 0 auto;
+      margin-bottom: 0.5em;
+    }
+  }
 }
 
 .navbar-default {
   background-color: #434d5b;
   border-color: #5E6B80;
-}
-.navbar-default .navbar-brand {
-  color: #fefefe;
-  color: rgba(255,255,255,0.9);
-}
-
-#modernAgileWheel {
-  width: 100%;
+  .navbar-brand {
+    color: #fefefe;
+    color: rgba(255,255,255,0.9);
+  }
 }
 
-.intro-section {
+section.intro-section {
   padding-top: 100px;
-  background: #4b5666;
-  color: #fefefe;
-  color: rgba(255,255,255, 0.90);
-}
-.intro-section {
   background: #dde1ee;
   color: #495664;
   color: rgba(73,86,100, 0.90);
+  img {
+    width: 100%;
+    margin-bottom: 10px;
+    @media (min-width: @screen-sm-min) {
+      width: 50%;
+    }
+  }
 }
-.join-section {
+
+section.join-section  {
   background: #4b5666;
   color: #fefefe;
   color: rgba(255,255,255, 0.90);
+  padding-top: 50px;
+  .sectionTitle {
+    color: #FFF;
+  }
 }
 
-.sectionTitle {
-  opacity: 0.75;
-  color: #000;
-  font-weight: 200;
-  margin-bottom: 20px;
+section.makePeopleAwesome-section {
+  background: @makePeopleAwesome-color;
 }
-.sectionTitle .principle-icon {
-  display:block;
-  height: 2em;
-  margin: 0 auto;
-  margin-bottom: 0.5em;
+section.deliverValueContinuously-section {
+  background: @deliverValueContinuously-color;
 }
-.makePeopleAwesome-section,
-.deliverValueContinuously-section,
-.makeSafetyAPrerequisite-section,
-.experimentAndLearnRapidly-section {
-  padding-top: 50px;
-  color: #333;
-  color: rgba(0,0,0, 0.70);
+section.makeSafetyAPrerequisite-section {
+  background: @makeSafetyAPrerequisite-color;
 }
-.join-section  {
-  padding-top: 50px;
-}
-.join-section .sectionTitle{
-  color: #FFF;
-}
-.makePeopleAwesome-section {
-  background: #fbd35c;
-}
-.deliverValueContinuously-section {
-  background: #a4d970;
-}
-.makeSafetyAPrerequisite-section {
-  background: #9ebeed;
-}
-.experimentAndLearnRapidly-section {
-  background: #fa7977;
+section.experimentAndLearnRapidly-section {
+  background: @experimentAndLearnRapidly-color;
 }
 
-.fourPrinciples-section {
+section.fourPrinciples-section {
   padding-top: 0;
+  .container {
+    height: 100%;
+    .row {
+      height: 50%;
+      .principle {
+         height: 100%;
+         width: 50%;
+         box-sizing: border-box;
+         padding-top: 50px;
+      }
+      .makePeopleAwesome-principle {
+        svg {
+          fill: @makePeopleAwesome-color;
+        }
+      }
+      .deliverValueContinuously-principle {
+        svg {
+          fill: @deliverValueContinuously-color;
+        }
+      }
+      .makeSafetyAPrerequisite-principle {
+        svg {
+          fill: @makeSafetyAPrerequisite-color;
+        }
+      }
+      .experimentAndLearnRapidly-principle {
+        svg {
+          fill: @experimentAndLearnRapidly-color;
+        }
+      }
+    }
+  }
 }
-.fourPrinciples-section .container {
-  height: 100%;
-}
-.fourPrinciples-section .row {
-  height: 50%;
-}
-.fourPrinciples-section .makePeopleAwesome-content,
-.fourPrinciples-section .deliverValueContinuously-content,
-.fourPrinciples-section .makeSafetyAPrerequisite-content,
-.fourPrinciples-section .experimentAndLearnRapidly-content {
-  height: 100%;
-  width: 50%;
-  box-sizing: border-box;
-  padding-top: 50px;
-}
-.fourPrinciples-section .makePeopleAwesome-content {}
-.fourPrinciples-section .deliverValueContinuously-content {}
-.fourPrinciples-section .makeSafetyAPrerequisite-content {}
-.fourPrinciples-section .experimentAndLearnRapidly-content {}

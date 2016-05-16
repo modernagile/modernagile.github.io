@@ -18,6 +18,7 @@ html {
     .navbar {
         padding: 20px 0;
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -o-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
     }
@@ -25,11 +26,4 @@ html {
     .top-nav-collapse {
         padding: 0;
     }
-}
-
-[class*="-section"] {
-  height: 100%;
-  padding-top: 150px;
-  text-align: center;
-  background: #fff;
 }
