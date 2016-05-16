@@ -53,16 +53,19 @@
                     <li class="hidden">
                         <a class="page-scroll" href="#page-top"></a>
                     </li>
-                    <li>
+                    <li class="hidden-xs">
+                        <a data-toggle="collapse" data-target=".navbar-collapse.in" class="page-scroll" href="#fourPrinciples">The Four Principles</a>
+                    </li>
+                    <li class="visible-xs">
                         <a data-toggle="collapse" data-target=".navbar-collapse.in" class="page-scroll" href="#makePeopleAwesome">Make People Awesome</a>
                     </li>
-                    <li>
+                    <li class="visible-xs">
                         <a data-toggle="collapse" data-target=".navbar-collapse.in" class="page-scroll" href="#deliverValueContinuously">Deliver Value Continuously</a>
                     </li>
-                    <li>
+                    <li class="visible-xs">
                         <a data-toggle="collapse" data-target=".navbar-collapse.in" class="page-scroll" href="#makeSafetyAPrerequisite">Make Safety a Prerequisite</a>
                     </li>
-                    <li>
+                    <li class="visible-xs">
                         <a data-toggle="collapse" data-target=".navbar-collapse.in" class="page-scroll" href="#experimentAndLearnRapidly">Experiment and Learn Rapidly</a>
                     </li>
                     <li>
@@ -76,21 +79,51 @@
     </nav>
 
     <!-- Intro Section -->
-    <section id="intro" class="intro-section">
+    <section id="intro" name="intro" class="intro-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-xs-12 col-sm-6">
                     <p>
                       <img id="modernAgileWheel" src="img/modern_agile_wheel.png" />
                     </p>
                     <blockquote>Modern Agile is outcome oriented, principle driven and framework free.<cite><strong>Joshua Kerievsky,</strong> CEO, Industrial Logic</cite></blockquote>
                 </div>
+                <div class="col-xs-12 col-sm-6 hidden-xs">
+                    <p>Insert long description here</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Four Principles Section (only visible on desktop)-->
+    <section id="fourPrinciples"  name="fourPrinciples" class="fourPrinciples-section hidden-xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 makePeopleAwesome-content">
+                    <h1 class="sectionTitle"><img class="principle-icon" src="img/icon-makePeopleAwesome.png" />Make People Awesome</h1>
+                    <p>Steve Jobs used to ask his colleagues, “What incredible benefits can we give to the customer? Where can we take the customer?" In modern agile we ask how we can make people in our ecosystem awesome. This includes the people who use, make, buy, sell or fund our products or services. We learn their context and pain points, what holds them back and what they aspire to achieve. How can we make them awesome?</p>
+                </div>
+                <div class="col-lg-6 deliverValueContinuously-content">
+                <h1 class="sectionTitle"><img class="principle-icon" src="img/icon-deliverValueContinuously.png" />Deliver Value Continuously</h1>
+                    <p>Anything that isn’t delivered isn’t helping anyone become more awesome or safe. In modern agile we ask ourselves, “How could valuable work be delivered faster?” Delivering value continuously requires us to divide larger amounts of value into smaller pieces that may be delivered safely now rather than later.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 makeSafetyAPrerequisite-content">
+                <h1 class="sectionTitle"><img class="principle-icon" src="img/icon-makeSafetyAPrerequisite.png" />Make Safety a Prerequisite</h1>
+                    <p>Protecting people unlocks their potential and frees them to take risks. We actively make safety a prerequisite by establishing safety before engaging in hazardous work. This means understanding how to protect people’s time, information, reputation, money, health and relationships. We endeavor to make our collaborations, products and services resilient and safe.</p>
+                </div>
+                <div class="col-lg-6 experimentAndLearnRapidly-content">
+                    <h1 class="sectionTitle"><img class="principle-icon" src="img/icon-experimentAndLearnRapidly.png" />Experiment & Learn Rapidly</h1>
+                    <p>You can’t make people awesome or make safety a prerequisite if you aren’t learning. We learn rapidly by experimenting frequently. We make our experiments “safe to fail” so we are not afraid to conduct more experiments. When we get stuck or aren’t learning enough, we take it as a sign that we need to learn more by running more experiments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Sections below are only visible on mobile -->
     <!-- Make People Awesome Section -->
-    <section id="makePeopleAwesome" class="makePeopleAwesome-section">
+    <section id="makePeopleAwesome" name="makePeopleAwesome" class="makePeopleAwesome-section visible-xs">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -102,7 +135,7 @@
     </section>
 
     <!-- Deliver Value Continuously Section -->
-    <section id="deliverValueContinuously" class="deliverValueContinuously-section">
+    <section id="deliverValueContinuously" name="deliverValueContinuously"  class="deliverValueContinuously-section visible-xs">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -114,7 +147,7 @@
     </section>
 
     <!-- Make Safety a Prerequisite Section -->
-    <section id="makeSafetyAPrerequisite" class="makeSafetyAPrerequisite-section">
+    <section id="makeSafetyAPrerequisite" name="makeSafetyAPrerequisite" class="makeSafetyAPrerequisite-section visible-xs">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -126,7 +159,7 @@
     </section>
 
     <!-- Experiment & Learn Rapidly Section -->
-    <section id="experimentAndLearnRapidly" class="experimentAndLearnRapidly-section">
+    <section id="experimentAndLearnRapidly" name="experimentAndLearnRapidly" class="experimentAndLearnRapidly-section visible-xs">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -138,7 +171,7 @@
     </section>
 
     <!-- Join Section -->
-    <section id="join" class="join-section">
+    <section id="join" name="join" class="join-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
