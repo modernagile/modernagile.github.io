@@ -1,5 +1,6 @@
 //out: ./main.css, compress: true
 
+@images: '../img';
 @screen-sm-min: 768px;
 @screen-md-min: 992px;
 @screen-lg-min: 1200px;
@@ -82,7 +83,11 @@ section {
 
 section.intro-section {
   padding-top: 100px;
-  background: #dde1ee;
+  background: #dde1ee; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(top, #dde1ee, #eef2f3);
+  background: -o-linear-gradient(top, #dde1ee, #eef2f3);
+  background: linear-gradient(to bottom, #dde1ee, #eef2f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: #495664;
   color: rgba(73,86,100, 0.90);
   @media (min-width: @screen-sm-min) {
@@ -102,6 +107,8 @@ section.join-section  {
   color: #fefefe;
   color: rgba(255,255,255, 0.90);
   padding-top: 50px;
+  background: url('@{images}/community.jpg') no-repeat center center;
+  background-size: 100%;
   .sectionTitle {
     color: #FFF;
   }
