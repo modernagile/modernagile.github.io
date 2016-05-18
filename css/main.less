@@ -40,6 +40,10 @@ ul li {
   color: white;
   font-size: 0.5em;
   padding: 0 1em;
+  @media (max-width: @screen-sm-min) {
+    padding: 0.5em 1em;
+    font-size: 1em;
+  }
   a {
 
   }
@@ -140,6 +144,9 @@ section.join-section  {
   position: relative;
   .sectionTitle {
     color: #FFF;
+  }
+  @media (orientation:portrait) {
+    background-size: auto 100%;
   }
 }
 
