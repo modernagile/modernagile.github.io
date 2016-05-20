@@ -32,5 +32,8 @@ function loadSVGAndAppend(container) {
 }
 
 jQuery(document).ready(function() {
-  jQuery('div.inlineSvg').each(function() { loadSVGAndAppend(jQuery(this)); });
+  jQuery('div.inlineSvg').each(function() {
+    loadSVGAndAppend(jQuery(this));
+  });
+  readingList.createList(bibliography, 3, '#readingList');
 });
