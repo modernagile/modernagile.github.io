@@ -9,7 +9,7 @@ readingList = {
         if(count >= data.length)
           break;
 
-        row.append('<div class="col-lg-'+cols+'">'+this.listItemTemplate(entryObj.cover, entryObj.title, entryObj.resume, entryObj.categories, entryObj.amazonLink, entryObj.downloadLink)+'</div>');
+        row.append('<div class="col-sm-'+cols+'">'+this.listItemTemplate(entryObj.cover, entryObj.title, entryObj.resume, entryObj.categories, entryObj.amazonLink, entryObj.downloadLink)+'</div>');
         count++;
       }
       list.append(row);
