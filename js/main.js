@@ -31,9 +31,18 @@ function loadSVGAndAppend(container) {
   }, 'xml');
 }
 
+function duplicateParagraphs() {
+  jQuery('[data-copy-from]').each(function() {
+    var target = jQuery(jQuery(this).attr('data-copy-from'));
+    if (target.length > 0) {
+      jQuery(this).html(target.html());
+    }
+  });
+}
 jQuery(document).ready(function() {
   jQuery('div.inlineSvg').each(function() {
     loadSVGAndAppend(jQuery(this));
   });
+  duplicateParagraphs();
   //readingList.createList(bibliography, 3, '#readingList');
 });
