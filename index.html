@@ -219,11 +219,29 @@
 
     <!-- Join Section -->
     <section id="join" name="join" class="join-section">
+        <h1 class="sectionTitle">Community</h1>
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="sectionTitle">Community</h1>
+                <div class="col-sm-6">
                     <p><iframe src="https://www.industriallogic.com/join-modern-agile/"></iframe></p>
+                </div>
+                <div class="col-sm-6">
+                    <div id="disqus_thread" class="disqus"></div>
+                    <script>
+                    var disqus_config = function () {
+                      this.page.url = 'http://www.modernagile.org'; // Replace PAGE_URL with your page's canonical URL variable
+                      this.page.identifier = 'modernagile'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+
+                    s.src = '//modernagile.disqus.com/embed.js';
+
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
                 </div>
             </div>
         </div>
