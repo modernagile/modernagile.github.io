@@ -1,4 +1,4 @@
-bibliography = [
+LearnMoreEntries = [
   {
     thumbnail: null,
     title: 'Badass: Making Users Awesome',

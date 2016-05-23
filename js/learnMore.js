@@ -1,4 +1,4 @@
-readingList = {
+learnMore = {
   createList: function(data, cols, parent) {
     var list = jQuery('<div />');
     var count = 0;
