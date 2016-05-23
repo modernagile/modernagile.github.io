@@ -56,6 +56,34 @@ ul li {
   border-radius: 10px;
 }
 
+.thumbnail.square {
+  width:100%;
+  padding-bottom:100%;
+  margin:1em auto;
+  overflow:hidden;
+  position:relative;
+  background:#CCC;
+  border: 0;
+  margin: 0;
+  img {
+    position:absolute;
+    width:auto;
+    min-width:100%;
+    min-height:100%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+.caption {
+  text-align: left;
+  p {
+    padding-left: 0;
+    padding-rigt: 0;
+  }
+}
+
 section {
   min-height: 100%;
   text-align: center;
@@ -169,6 +197,12 @@ section.makeSafetyAPrerequisite-section {
 }
 section.experimentAndLearnRapidly-section {
   background: @experimentAndLearnRapidly-color;
+}
+section.learnMore-section {
+  background: #EFEFEF;
+  .sectionTitle {
+    margin-bottom: 40px;
+  }
 }
 
 section.fourPrinciples-section {
