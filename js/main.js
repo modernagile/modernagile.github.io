@@ -44,5 +44,5 @@ jQuery(document).ready(function() {
     loadSVGAndAppend(jQuery(this));
   });
   duplicateParagraphs();
-  //learnMore.createList(learnMoreEntries, 6, '#readingList');
+  //learnMore.createList(learnMoreEntries, 2, '#readingList');
 });

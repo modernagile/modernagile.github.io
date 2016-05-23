@@ -12,7 +12,7 @@ learnMore = {
 
         var entryObj = data[count];
 
-        row.append('<div class="col-sm-'+cols+'">'+this.listItemTemplate(entryObj.thumbnail, entryObj.title, entryObj.resume, entryObj.categories, entryObj.url)+'</div>');
+        row.append('<div class="col-sm-'+parseInt(12/cols)+'">'+this.listItemTemplate(entryObj.thumbnail, entryObj.title, entryObj.resume, entryObj.categories, entryObj.url)+'</div>');
         count++;
       }
       list.append(row);
