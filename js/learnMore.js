@@ -18,6 +18,17 @@ learnMore = {
       list.append(row);
     }
     jQuery(parent).html(list);
+    //this.createNavigation(parent);
+  },
+  createNavigation: function(parent) {
+    var html = ' \
+    <nav> \
+      <ul class="pager"> \
+        <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li> \
+        <li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li> \
+      </ul> \
+    </nav>';
+    jQuery(parent).append(html);
   },
   isEmpty: function(string) {
       if(typeof string === 'undefined' || !string)
@@ -63,7 +74,7 @@ learnMore = {
       return false;
     modifiedUrl = url.trim();
     var regex = /[.].{3}$/;
-    return regex.text(modifiedUrl);
+    return regex.test(modifiedUrl);
   },
   contains: function(string, match, disableCase) {
     disableCase = disableCase || false;
