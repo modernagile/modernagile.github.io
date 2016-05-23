@@ -203,6 +203,13 @@ section.learnMore-section {
   .sectionTitle {
     margin-bottom: 40px;
   }
+  .caption {
+    h4 {
+      margin-top: 0;
+      line-height: 1.2em;
+      min-height: 2.4em;
+    }
+  }
 }
 
 section.fourPrinciples-section {
@@ -232,5 +239,34 @@ section.fourPrinciples-section {
         fill: @experimentAndLearnRapidly-color;
       }
     }
+  }
+}
+
+.categories {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #DDD;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.3em;
+  li {
+    color: #333;
+    color: rgba(0,0,0, 0.70);
+    font-size: 0.6em;
+    padding: 0 0.5em;
+    display: inline-block;
+    border-radius: 5px;
+  }
+  .makePeopleAwesome-category {
+    background: @makePeopleAwesome-color;
+  }
+  .deliverValueContinuously-category {
+    background: @deliverValueContinuously-color;
+  }
+  .makeSafetyAPrerequisite-category {
+    background: @makeSafetyAPrerequisite-color;
+  }
+  .experimentAndLearnRapidly-category {
+    background: @experimentAndLearnRapidly-color;
   }
 }

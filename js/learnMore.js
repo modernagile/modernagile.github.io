@@ -42,6 +42,22 @@ learnMore = {
 
     return '<a href="'+ url +'" target="_blank">'+ linkText +'</a>';
   },
+  showCategories: function(categories) {
+    var html = '';
+
+    if(categories.makePeopleAwesome)
+      html += '<li class="makePeopleAwesome-category">Make People Awesome</li>';
+    if(categories.makeSafetyAPrerequisite)
+      html += '<li class="makeSafetyAPrerequisite-category">Make Safety a Prerequisite</li>';
+    if(categories.experimentAndLearnRapidly)
+      html += '<li class="experimentAndLearnRapidly-category">Experiment & Learn Rapidly</li>';
+    if(categories.deliverValueContinuously)
+      html += '<li class="deliverValueContinuously-category">Deliver Value Continuously</li>';
+
+    if(!this.isEmpty(html))
+      html = '<ul class="categories">'+ html +'</ul>';
+    return html;
+  },
   isDownloadableFile: function(url) {
     if(this.isEmpty(url))
       return false;
@@ -73,7 +89,7 @@ learnMore = {
           <div class="col-xs-9"> \
             <div class="caption"> \
               <h4>'+title+'</h4>'
-              + resumeParagraph + link +
+              + resumeParagraph + this.showCategories(categories) + link +
             '</div> \
           </div> \
         </div> \
