@@ -27,5 +27,16 @@ learnMoreEntries = [
       deliverValueContinuously: false
     },
     url: 'http://www.amazon.com/Delivering-Happiness-Profits-Passion-Purpose/dp/160941280X'
+  },
+  {
+    thumbnail: getLearnMoreEntryThumbNail('bookOfBusiness.jpg'),
+    title: 'The Book of Business Awesome / The Book of Business UnAwesome',
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: false,
+      experimentAndLearnRapidly: false,
+      deliverValueContinuously: false
+    },
+    url: 'http://www.amazon.com/Book-Business-Awesome-UnAwesome/dp/1118315227'
   }
 ];
