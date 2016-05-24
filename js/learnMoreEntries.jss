@@ -1,5 +1,6 @@
 function getLearnMoreEntryThumbNail (filename) {
   return 'img/readingList/'+filename;
+  //
 }
 
 learnMoreEntries = [
