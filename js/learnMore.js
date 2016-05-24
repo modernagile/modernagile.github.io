@@ -1,34 +1,80 @@
-String.prototype.i
-
 learnMore = {
-  createList: function(data, cols, parent) {
+  entriesPerPage: 0,
+  currentPage: 1,
+  data: null,
+  cols: null,
+  parent: null,
+
+  setup: function(data, cols, parent, firstEntry, entriesPerPage) {
+    this.data = data;
+    this.cols = cols;
+    this.parent = parent;
+    this.entriesPerPage = entriesPerPage;
+    this.createList(0);
+  },
+  createList: function(firstEntry) {
+    firstEntry = firstEntry || 0;
     var list = jQuery('<div />');
-    var count = 0;
-    while(count < data.length) {
+    var count = firstEntry;
+    while(count < this.data.length && count-firstEntry < this.entriesPerPage) {
       var row = jQuery('<div/>').addClass('row');
-      for(var col=0; col<cols; col++) {
-        if(count >= data.length)
+      for(var col=0; col<this.cols; col++) {
+        if(count >= this.data.length)
           break;
 
-        var entryObj = data[count];
+        var entryObj = this.data[count];
 
-        row.append('<div class="col-sm-'+parseInt(12/cols)+'">'+this.listItemTemplate(entryObj.thumbnail, entryObj.title, entryObj.resume, entryObj.categories, entryObj.url)+'</div>');
+        row.append('<div class="col-sm-'+parseInt(12/this.cols)+'">'+this.listItemTemplate(entryObj.thumbnail, entryObj.title, entryObj.resume, entryObj.categories, entryObj.url)+'</div>');
         count++;
       }
       list.append(row);
     }
-    jQuery(parent).html(list);
-    //this.createNavigation(parent);
+    jQuery(this.parent).html(list);
+    this.createPagination(this.parent);
   },
-  createNavigation: function(parent) {
-    var html = ' \
+  nextPage: function() {
+    //this.createList(this.data, this.cols, this.parent)
+  },
+  gotoPage: function(page) {
+    var firstEntry = this.entriesPerPage * (page-1);
+    this.currentPage = page;
+    this.createList(firstEntry);
+  },
+  createPagination: function(parent) {
+    var numberOfPages = Math.ceil(this.data.length/this.entriesPerPage);
+    var pages = '';
+    for(var page=1; page<=numberOfPages; page++) {
+      var active = (page == this.currentPage) ? 'active' : '';
+      pages+= '<li class="'+ active +'"><a title="page '+ page +'" class="pagination-pageNumber">'+ page +'</a></li>';
+    }
+    var prevDisabledCss = (this.currentPage === 1) ? 'disabled' : '';
+    var nextDisabledCss = (this.currentPage === numberOfPages) ? 'disabled' : '';
+    var pagination = ' \
     <nav> \
-      <ul class="pager"> \
-        <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li> \
-        <li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li> \
+      <ul class="pagination"> \
+        <li class="'+ prevDisabledCss +'"> \
+          <a class="pagination-button" data-page-mod="-1" title="Previous" aria-label="Previous"> \
+            <span aria-hidden="true">&laquo;</span> \
+          </a> \
+        </li>'
+        + pages +
+        '<li class="'+ nextDisabledCss +'"> \
+          <a class="pagination-button" data-page-mod="1" title="Next" aria-label="Next"> \
+            <span aria-hidden="true">&raquo;</span> \
+          </a> \
+        </li> \
       </ul> \
-    </nav>';
-    jQuery(parent).append(html);
+      </nav>';
+    jQuery(parent).append(pagination);
+    jQuery('.pagination-pageNumber').click(function() {
+      learnMore.gotoPage(parseInt(jQuery(this).text()));
+    });
+    jQuery('.pagination-button').click(function() {
+      if(jQuery(this).parent().hasClass('disabled'))
+        return;
+
+      learnMore.gotoPage(learnMore.currentPage+parseInt(jQuery(this).attr('data-page-mod')));
+    });
   },
   isEmpty: function(string) {
       if(typeof string === 'undefined' || !string)
