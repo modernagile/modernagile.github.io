@@ -43,9 +43,10 @@ learnMore = {
   createPagination: function(parent) {
     var numberOfPages = Math.ceil(this.data.length/this.entriesPerPage);
     var pages = '';
+    var scrollTo = '#'+jQuery(this.parent).closest('section').attr('id');
     for(var page=1; page<=numberOfPages; page++) {
       var active = (page == this.currentPage) ? 'active' : '';
-      pages+= '<li class="'+ active +'"><a title="page '+ page +'" class="pagination-pageNumber">'+ page +'</a></li>';
+      pages+= '<li class="'+ active +'"><a href="'+scrollTo+'" title="page '+ page +'" class="pagination-pageNumber">'+ page +'</a></li>';
     }
     var prevDisabledCss = (this.currentPage === 1) ? 'disabled' : '';
     var nextDisabledCss = (this.currentPage === numberOfPages) ? 'disabled' : '';
@@ -53,13 +54,13 @@ learnMore = {
     <nav> \
       <ul class="pagination"> \
         <li class="'+ prevDisabledCss +'"> \
-          <a class="pagination-button" data-page-mod="-1" title="Previous" aria-label="Previous"> \
+          <a class="pagination-button" href="#'+scrollTo+'" data-page-mod="-1" title="Previous" aria-label="Previous"> \
             <span aria-hidden="true">&laquo;</span> \
           </a> \
         </li>'
         + pages +
         '<li class="'+ nextDisabledCss +'"> \
-          <a class="pagination-button" data-page-mod="1" title="Next" aria-label="Next"> \
+          <a class="pagination-button" href="'+scrollTo+'" data-page-mod="1" title="Next" aria-label="Next"> \
             <span aria-hidden="true">&raquo;</span> \
           </a> \
         </li> \
