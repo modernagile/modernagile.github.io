@@ -108,6 +108,7 @@ learnMoreEntries = [
   {
     thumbnail: getLearnMoreEntryThumbNail('leanStartup.jpg'),
     title: 'The Lean Startup: How Today\'s Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses',
+    cssClass: 'onTop',
     categories: {
       makePeopleAwesome: false,
       makeSafetyAPrerequisite: false,

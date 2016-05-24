@@ -24,7 +24,7 @@ learnMore = {
 
         var entryObj = this.data[count];
 
-        row.append('<div class="col-sm-'+parseInt(12/this.cols)+'">'+this.listItemTemplate(entryObj.thumbnail, entryObj.title, entryObj.resume, entryObj.categories, entryObj.url)+'</div>');
+        row.append('<div class="col-sm-'+parseInt(12/this.cols)+'">'+this.listItemTemplate(entryObj.thumbnail, entryObj.title, entryObj.resume, entryObj.cssClass, entryObj.categories, entryObj.url)+'</div>');
         count++;
       }
       list.append(row);
@@ -132,15 +132,16 @@ learnMore = {
 
     return (modifiedString.indexOf(modifiedMatch) > -1);
   },
-  listItemTemplate: function(thumbnail, title, resume, categories, url) {
+  listItemTemplate: function(thumbnail, title, resume, cssClass, categories, url) {
     var link = this.getLink(url);
     var resumeParagraph = (!this.isEmpty(resume)) ? '<p>'+resume+'</p>' : '';
+    cssClass = cssClass || '';
     var html = ' \
       <div class="content"> \
         <div class="row"> \
           <div class="col-xs-3"> \
             <div class="thumbnail square"> \
-              <img alt="'+title+'" src="'+thumbnail+'"> \
+              <img class="'+ cssClass +'" alt="'+title+'" src="'+thumbnail+'"> \
             </div> \
           </div> \
           <div class="col-xs-9"> \
