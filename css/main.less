@@ -12,7 +12,6 @@
 @modernAgileRing-color: #4b5666;
 
 body {
-  font-size: 15px;
   @media (min-width: @screen-sm-min) {
     font-size: 18px;
     line-height: 26px;
@@ -107,6 +106,9 @@ section {
   p {
     padding: 0 20px;
     text-align: left;
+    @media (max-width: @screen-sm-min) {
+      font-size: 15px;
+    }
     @media (min-width: @screen-sm-min) {
       font-weight: 300;
       margin-bottom: 1.5em;
@@ -139,6 +141,9 @@ section {
     color: #000;
     font-weight: 200;
     margin-bottom: 20px;
+    @media (max-width: @screen-sm-min) {
+      padding: 0 20px;
+    }
     .principle-icon {
       display:block;
       height: 1.5em;
@@ -175,6 +180,9 @@ section.intro-section {
     @media (min-width: @screen-sm-min) {
       width: 65%;
       margin-bottom: 2em;
+    }
+    @media (max-width: @screen-sm-min) {
+      padding: 0 20px;
     }
   }
 }
