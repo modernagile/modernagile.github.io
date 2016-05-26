@@ -160,5 +160,16 @@ learnMoreEntries = [
       deliverValueContinuously: true
     },
     url: 'http://timothyfitz.com/2009/02/10/continuous-deployment-at-imvu-doing-the-impossible-fifty-times-a-day/'
+  },
+  {
+    thumbnail: getLearnMoreEntryThumbNail('yourBrainAtWork.jpg'),
+    title: 'Your Brain At Work: Strategies for overcoming distractaion, regaining focus, and working smarter all day long',
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: false,
+      deliverValueContinuously: false
+    },
+    url: 'http://www.your-brain-at-work.com/'
   }
 ];
