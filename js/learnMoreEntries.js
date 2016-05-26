@@ -164,6 +164,7 @@ learnMoreEntries = [
   {
     thumbnail: getLearnMoreEntryThumbNail('yourBrainAtWork.jpg'),
     title: 'Your Brain At Work: Strategies for overcoming distractaion, regaining focus, and working smarter all day long',
+    cssClass: 'onTop',
     categories: {
       makePeopleAwesome: true,
       makeSafetyAPrerequisite: true,
