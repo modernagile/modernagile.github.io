@@ -220,9 +220,16 @@ section.learnMore-section {
   .sectionTitle {
     margin-bottom: 40px;
   }
-  .row {
-    &:not(:first-child) {
-      margin-top: 30px;
+  .container {
+    & > .row {
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
+      & > div:not(:first-child) {
+        @media (max-width: @screen-sm-min) {
+          margin-top: 30px;
+        }
+      }
     }
   }
   .caption {
@@ -230,6 +237,9 @@ section.learnMore-section {
       margin-top: 0;
       line-height: 1.2em;
       min-height: 2.4em;
+      @media (max-width: @screen-sm-min) {
+        font-size: 15px;
+      }
     }
   }
 }
@@ -277,7 +287,10 @@ section.fourPrinciples-section {
     font-size: 0.6em;
     padding: 0 0.5em;
     display: inline-block;
-    border-radius: 5px;
+    border-radius: 0.3em;
+    @media (max-width: @screen-sm-min) {
+      font-size: 12px;
+    }
   }
   .makePeopleAwesome-category {
     background: @makePeopleAwesome-color;

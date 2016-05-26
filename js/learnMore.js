@@ -29,7 +29,7 @@ learnMore = {
       }
       list.append(row);
     }
-    jQuery(this.parent).html(list);
+    jQuery(this.parent).html(list.html());
     this.createPagination(this.parent);
   },
   nextPage: function() {
