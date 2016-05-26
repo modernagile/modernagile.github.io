@@ -142,6 +142,7 @@ learnMoreEntries = [
   {
     thumbnail: getLearnMoreEntryThumbNail('kanban.jpg'),
     title: 'Kanban: Successful Evolutionary Change for Your Technology Business',
+    cssClass: 'onTop',
     categories: {
       makePeopleAwesome: false,
       makeSafetyAPrerequisite: false,
