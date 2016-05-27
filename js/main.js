@@ -39,10 +39,12 @@ function duplicateParagraphs() {
     }
   });
 }
-jQuery(document).ready(function() {
+//jQuery(document).ready(function() {
   jQuery('div.inlineSvg').each(function() {
     loadSVGAndAppend(jQuery(this));
   });
   duplicateParagraphs();
-  learnMore.setup(learnMoreEntries, 2, '#readingList', 0, 6);
-});
+  var learnMore = new LearnMore('#readingList', learnMoreEntries, 2, 6);
+  learnMore.render();
+  //learnMore.setup(learnMoreEntries, 2, '#readingList', 0, 6);
+//});
