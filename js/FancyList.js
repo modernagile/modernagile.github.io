@@ -1,41 +1,40 @@
-var FancyList = function(container, data, cols, entriesPerPage) {
-  this.conainer = container;
+var FancyList = function(container, data, columns, entriesPerPage) {
+  this.container = jQuery(container);
   this.data = data;
-  this.columnsPerPage = columns;
+  this.columns = columns;
   if(entriesPerPage && entriesPerPage > 0) {
     this.entriesPerPage = entriesPerPage;
     this.currentPage = 1;
   }
 
-  //Pivate Methods
-  var isPaginated = function() {
+  this.isPaginated = function() {
     return (this.entriesPerPage > 0);
   }
-  var getNumberOfPages = function() {
+  this.getNumberOfPages = function() {
     var numberOfPages = Math.ceil(this.data.length/this.entriesPerPage);
     return numberOfPages;
   }
-  var isOnFirstPage = function() {
+  this.isOnFirstPage = function() {
     return (this.currentPage === 1);
   }
-  var isOnLastPage = function() {
+  this.isOnLastPage = function() {
     return (this.currentPage === this.getNumberOfPages());
   }
-  var isEmpty = function(string) {
+  this.isEmpty = function(string) {
       if(typeof string === 'undefined' || !string)
         return true;
       if(string.length === 0 || !string.trim())
         return true;
       return false;
   }
-  var isDownloadableFile = function(url) {
+  this.isDownloadableFile = function(url) {
     if(this.isEmpty(url))
       return false;
     modifiedUrl = url.trim();
     var regex = /[.].{3}$/;
     return regex.test(modifiedUrl);
   }
-  var contains = function(string, match, disableCase) {
+  this.contains = function(string, match, disableCase) {
     disableCase = disableCase || false;
     if(this.isEmpty(string))
       return false;
@@ -45,7 +44,7 @@ var FancyList = function(container, data, cols, entriesPerPage) {
 
     return (modifiedString.indexOf(modifiedMatch) > -1);
   }
-  var renderCategories = function(categories) {
+  this.renderCategories = function(categories) {
     var html = '';
 
     if(categories.makePeopleAwesome)
@@ -61,10 +60,11 @@ var FancyList = function(container, data, cols, entriesPerPage) {
       html = '<ul class="categories">'+ html +'</ul>';
     return html;
   }
-  var renderPagination = function(parent) {
+  this.renderPagination = function(parent) {
     var numberOfPages = Math.ceil(this.data.length/this.entriesPerPage);
     var pages = '';
-    var scrollTo = '#'+jQuery(this.parent).closest('section').attr('id');
+    var scrollTo = '#'+ this.container.closest('section').attr('id');
+    var numberOfPages = this.getNumberOfPages();
     for(var page=1; page<=numberOfPages; page++) {
       var active = (page == this.currentPage) ? 'active' : '';
       pages+= '<li class="'+ active +'"><a href="'+scrollTo+'" title="page '+ page +'" class="pagination-pageNumber">'+ page +'</a></li>';
@@ -87,31 +87,37 @@ var FancyList = function(container, data, cols, entriesPerPage) {
         </li> \
       </ul> \
       </nav>';
-    jQuery(parent).append(pagination);
-    jQuery('.pagination-pageNumber').click(function() {
-      learnMore.gotoPage(parseInt(jQuery(this).text()));
+    this.container.append(pagination);
+    var that = this;
+    this.container.find('.pagination-pageNumber').click(function() {
+      that.gotoPage(parseInt(jQuery(this).text()));
     });
-    jQuery('.pagination-button').click(function() {
+    this.container.find('.pagination-button').click(function() {
       if(jQuery(this).parent().hasClass('disabled'))
         return;
 
-      learnMore.gotoPage(learnMore.currentPage+parseInt(jQuery(this).attr('data-page-mod')));
+      that.gotoPage(that.currentPage+parseInt(jQuery(this).attr('data-page-mod')));
     });
   }
-  var renderList = function(entries) {
-    var list = '';
+  this.renderList = function(entries) {
+    var list = jQuery('<div/>');
     var numberOfEntries = entries.length;
-    for(var i=0; i<numberOfEntries; i++) {
-      var entryData = entries[i];
-      var entry = '<div class="col-sm-'+parseInt(12/this.columnsPerPage)+'">'+this.renderEntry(entryData)+'</div>';
-      if(i % columnsPerPage === 0)
-        entry = '<div class="row">'+ entry +'</div>';
-      list += entry;
-    }
-    jQuery(this.parent).html(list);
-  }
+    var count = 0;
+    while(count < entries.length) {
+      var row = jQuery('<div/>').addClass('row');
+      for(var col=0; col<this.columns; col++) {
+        if(count >= entries.length)
+          break;
 
-  //Privileged methods
+        var entryData = entries[count];
+
+        row.append('<div class="col-sm-'+parseInt(12/this.columns)+'">'+this.renderEntry(entryData)+'</div>');
+        count++;
+      }
+      list.append(row);
+    }
+    this.container.html(list.html());
+  }
   this.previousPage = function() {
     if(!this.isPaginated() || this.isOnFirstPage())
       return;
@@ -132,24 +138,22 @@ var FancyList = function(container, data, cols, entriesPerPage) {
     this.currentPage = pageNumber;
     this.render();
   }
-  this.render function() {
+  this.renderEntry = function(entryData) {
+    var entry = '';
+    for (var property in entryData) {
+      if (entryData.hasOwnProperty(property)) {
+          entry += '<p class="truncate" style="margin: 0;">'+ property + ':'+ entryData[property] +'</p>';
+      }
+    }
+    return entry;
+  }
+  this.render = function() {
     var firstEntry = (this.isPaginated()) ? this.entriesPerPage * (this.currentPage-1) : 0;
-    var lastEntry = (this.isPaginated()) ? Math.min(firstEntry + this.entriesPerPage, this.data.length-1) : this.data.length-1;
+    var lastEntry = (this.isPaginated()) ? Math.min(firstEntry + this.entriesPerPage - 1, this.data.length-1) : this.data.length-1;
 
     this.renderList(this.data.slice(firstEntry, lastEntry+1));
 
     if (this.isPaginated())
       this.renderPagination();
   }
-}
-
-//Public methods
-FancyList.renderEntry = function(entryData) {
-  var entry = '';
-  for (var property in entryData) {
-    if (entryData.hasOwnProperty(property)) {
-        entry += '<p>'+ property + ':'+ entryData.property +'</p>';
-    }
-  }
-  return entry;
 }
