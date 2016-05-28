@@ -45,5 +45,9 @@ jQuery('div.inlineSvg').each(function() {
 });
 
 duplicateParagraphs();
+
 var learnMore = new LearnMore('#readingList', learnMoreEntries, 2, 6);
 learnMore.render();
+
+//var upcomingEvents = new UpcomingEvents('#upcomingEvents', upcomingEventsEntries);
+//upcomingEvents.render();

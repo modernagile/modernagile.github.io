@@ -6,6 +6,7 @@ var FancyList = function(container, data, columns, entriesPerPage) {
     this.entriesPerPage = entriesPerPage;
     this.currentPage = 1;
   }
+  this.container.addClass('fancyList');
 
   this.isPaginated = function() {
     return (this.entriesPerPage > 0);

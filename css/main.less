@@ -93,6 +93,29 @@ ul li {
   cursor: pointer;
 }
 
+.fancyList {
+  & > .row {
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+    & > div:not(:first-child) {
+      @media (max-width: @screen-sm-min) {
+        margin-top: 30px;
+      }
+    }
+  }
+  .caption {
+    h4 {
+      margin-top: 0;
+      line-height: 1.2em;
+      min-height: 2.4em;
+      @media (max-width: @screen-sm-min) {
+        font-size: 1em;
+      }
+    }
+  }
+}
+
 .truncate {
   max-width: 100%;
   white-space: nowrap;
@@ -203,6 +226,20 @@ section.join-section  {
   .sectionTitle {
     color: #FFF;
   }
+  .fancyList {
+    padding: 1em;
+    background: white;
+    border-radius: 0.5em;
+    color: #333;
+    color: rgba(0,0,0, 0.70);
+    span {
+      margin-bottom: 10px;
+      display: block;
+    }
+    .categories {
+      border-bottom: 0;
+    }
+  }
   @media (orientation:portrait) {
     background-size: auto 100%;
   }
@@ -224,28 +261,6 @@ section.learnMore-section {
   background: #EFEFEF;
   .sectionTitle {
     margin-bottom: 40px;
-  }
-  .container {
-    & > .row {
-      &:not(:first-child) {
-        margin-top: 30px;
-      }
-      & > div:not(:first-child) {
-        @media (max-width: @screen-sm-min) {
-          margin-top: 30px;
-        }
-      }
-    }
-  }
-  .caption {
-    h4 {
-      margin-top: 0;
-      line-height: 1.2em;
-      min-height: 2.4em;
-      @media (max-width: @screen-sm-min) {
-        font-size: 1em;
-      }
-    }
   }
 }
 
