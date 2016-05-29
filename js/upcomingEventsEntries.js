@@ -7,9 +7,9 @@ upcomingEventsEntries = [
     date: '2016-06-22',
     categories: {
       makePeopleAwesome: true,
-      makeSafetyAPrerequisite: false,
-      experimentAndLearnRapidly: false,
-      deliverValueContinuously: false
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
     },
     url: 'http://www.eventbrite.com/e/agile-israel-2016-tickets-17249151677'
   },
