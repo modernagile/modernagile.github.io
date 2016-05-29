@@ -56,13 +56,13 @@ var FancyList = function(container, data, columns, entriesPerPage, paginationAnc
     var html = '';
 
     if(categories.makePeopleAwesome)
-      html += '<li class="makePeopleAwesome-category">Make People Awesome</li>';
+      html += '<li class="makePeopleAwesome-category" title="Make People Awesome"><span>Make People Awesome</span></li>';
     if(categories.makeSafetyAPrerequisite)
-      html += '<li class="makeSafetyAPrerequisite-category">Make Safety a Prerequisite</li>';
+      html += '<li class="makeSafetyAPrerequisite-category" title="Make Safety a Prerequisite"><span>Make Safety a Prerequisite</span></li>';
     if(categories.experimentAndLearnRapidly)
-      html += '<li class="experimentAndLearnRapidly-category">Experiment & Learn Rapidly</li>';
+      html += '<li class="experimentAndLearnRapidly-category" title="Experiment & Learn Rapidly"><span>Experiment & Learn Rapidly</span></li>';
     if(categories.deliverValueContinuously)
-      html += '<li class="deliverValueContinuously-category">Deliver Value Continuously</li>';
+      html += '<li class="deliverValueContinuously-category" title="Deliver Value Continuously"><span>Deliver Value Continuously</span></li>';
 
     if(!this.isEmpty(html))
       html = '<ul class="categories">'+ html +'</ul>';

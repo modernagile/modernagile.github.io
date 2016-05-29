@@ -323,15 +323,43 @@ section.fourPrinciples-section {
     }
   }
   .makePeopleAwesome-category {
-    background: @makePeopleAwesome-color;
-  }
-  .deliverValueContinuously-category {
-    background: @deliverValueContinuously-color;
+    background-color: @makePeopleAwesome-color;
   }
   .makeSafetyAPrerequisite-category {
-    background: @makeSafetyAPrerequisite-color;
+    background-color: @makeSafetyAPrerequisite-color;
   }
   .experimentAndLearnRapidly-category {
-    background: @experimentAndLearnRapidly-color;
+    background-color: @experimentAndLearnRapidly-color;
+  }
+  .deliverValueContinuously-category {
+    background-color: @deliverValueContinuously-color;
+  }
+  .showCategoriesAsIcons .categories {
+    ul {
+      li {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        span {
+          display: none;
+        }
+      }
+      .makePeopleAwesome-category {
+        background-image: url('@{images}/icon-makePeopleAwesome.svg');
+      }
+      .makeSafetyAPrerequisite-category {
+        background-image: url('@{images}/icon-makeSafetyAPrerequisite.svg');
+      }
+      .experimentAndLearnRapidly-category {
+        background-image: url('@{images}/icon-experimentAndLearnRapidly.svg');
+      }
+      .deliverValueContinuously-category {
+        background-image: url('@{images}/icon-deliverValueContinuously.svg');
+      }
+    }
+
   }
 }
