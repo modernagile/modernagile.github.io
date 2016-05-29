@@ -1,5 +1,5 @@
-function LearnMore(container, data, columns, entriesPerPage) {
-  FancyList.call(this, container, data, columns, entriesPerPage);
+function LearnMore(container, data, columns, entriesPerPage, paginationAnchor) {
+  FancyList.call(this, container, data, columns, entriesPerPage, paginationAnchor);
   this.getLink =  function(url) {
     if(this.isEmpty(url))
       return '';

@@ -1,15 +1,22 @@
-var FancyList = function(container, data, columns, entriesPerPage) {
+var FancyList = function(container, data, columns, entriesPerPage, paginationAnchor) {
   this.container = jQuery(container);
   this.data = data;
   this.columns = columns;
   if(entriesPerPage && entriesPerPage > 0) {
     this.entriesPerPage = entriesPerPage;
     this.currentPage = 1;
+    if(paginationAnchor)
+      this.paginationAnchor = paginationAnchor;
   }
   this.container.addClass('fancyList');
 
   this.isPaginated = function() {
     return (this.entriesPerPage > 0);
+  }
+  this.hasPaginationAnchor = function() {
+    if(this.isPaginated() && this.paginationAnchor)
+      return true;
+    return false;
   }
   this.getNumberOfPages = function() {
     var numberOfPages = Math.ceil(this.data.length/this.entriesPerPage);
@@ -64,11 +71,11 @@ var FancyList = function(container, data, columns, entriesPerPage) {
   this.renderPagination = function(parent) {
     var numberOfPages = Math.ceil(this.data.length/this.entriesPerPage);
     var pages = '';
-    var scrollTo = '#'+ this.container.closest('section').attr('id');
     var numberOfPages = this.getNumberOfPages();
+    var paginationAnchor = (this.hasPaginationAnchor()) ? ' href="'+ this.paginationAnchor +'" ' : ' ';
     for(var page=1; page<=numberOfPages; page++) {
       var active = (page == this.currentPage) ? 'active' : '';
-      pages+= '<li class="'+ active +'"><a href="'+scrollTo+'" title="page '+ page +'" class="pagination-pageNumber">'+ page +'</a></li>';
+      pages+= '<li class="'+ active +'"><a'+ paginationAnchor +'title="page '+ page +'" class="pagination-pageNumber">'+ page +'</a></li>';
     }
     var prevDisabledCss = (this.currentPage === 1) ? 'disabled' : '';
     var nextDisabledCss = (this.currentPage === numberOfPages) ? 'disabled' : '';

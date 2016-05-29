@@ -48,7 +48,7 @@ jQuery('div.inlineSvg').each(function() {
 
 duplicateParagraphs();
 
-var learnMore = new LearnMore('#readingList', learnMoreEntries, 2, 6);
+var learnMore = new LearnMore('#readingList', learnMoreEntries, 2, 6, '#learnMore');
 learnMore.render();
 
 //var upcomingEvents = new UpcomingEvents('#upcomingEvents', upcomingEventsEntries);
