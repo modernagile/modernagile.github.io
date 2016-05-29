@@ -55,18 +55,17 @@ var FancyList = function(container, data, columns, entriesPerPage, paginationAnc
   this.renderCategories = function(categories) {
     var html = '';
 
-    if(categories.makePeopleAwesome)
-      html += '<li class="makePeopleAwesome-category" title="Make People Awesome"><span>Make People Awesome</span></li>';
-    if(categories.makeSafetyAPrerequisite)
-      html += '<li class="makeSafetyAPrerequisite-category" title="Make Safety a Prerequisite"><span>Make Safety a Prerequisite</span></li>';
-    if(categories.experimentAndLearnRapidly)
-      html += '<li class="experimentAndLearnRapidly-category" title="Experiment & Learn Rapidly"><span>Experiment & Learn Rapidly</span></li>';
-    if(categories.deliverValueContinuously)
-      html += '<li class="deliverValueContinuously-category" title="Deliver Value Continuously"><span>Deliver Value Continuously</span></li>';
+    html += '<li class="makePeopleAwesome-category'+ this.categoryCSSClass(categories.makePeopleAwesome) +'" title="Make People Awesome"><span>Make People Awesome</span></li>';
+    html += '<li class="makeSafetyAPrerequisite-category'+ this.categoryCSSClass(categories.makeSafetyAPrerequisite) +'" title="Make Safety a Prerequisite"><span>Make Safety a Prerequisite</span></li>';
+    html += '<li class="experimentAndLearnRapidly-category'+ this.categoryCSSClass(categories.experimentAndLearnRapidly) +'" title="Experiment & Learn Rapidly"><span>Experiment & Learn Rapidly</span></li>';
+    html += '<li class="deliverValueContinuously-category'+ this.categoryCSSClass(categories.deliverValueContinuously) +'" title="Deliver Value Continuously"><span>Deliver Value Continuously</span></li>';
 
     if(!this.isEmpty(html))
       html = '<ul class="categories">'+ html +'</ul>';
     return html;
+  }
+  this.categoryCSSClass = function(hasCategory) {
+    return (hasCategory) ? '' : ' hidden';
   }
   this.renderPagination = function(parent) {
     var numberOfPages = Math.ceil(this.data.length/this.entriesPerPage);

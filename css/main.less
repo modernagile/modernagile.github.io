@@ -322,8 +322,8 @@ section.fourPrinciples-section {
     @media (max-width: @screen-sm-min) {
       font-size: 12px;
     }
-    &:not(:first-child) {
-      margin-left: 0.5em;
+    &:not(:last-child) {
+      margin-right: 0.5em;
     }
   }
   .makePeopleAwesome-category {
@@ -364,5 +364,10 @@ section.fourPrinciples-section {
   }
   .deliverValueContinuously-category {
     background-image: url('@{images}/icon-deliverValueContinuously.svg');
+  }
+  li.hidden {
+    display: inline-block!important;
+    background-color: #CCC;
+    opacity: 0.35;
   }
 }
