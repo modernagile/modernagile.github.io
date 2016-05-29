@@ -234,17 +234,18 @@ section.join-section  {
     margin-bottom: 30px;
   }
   .fancyList {
-    padding: 1em;
+    padding: 10px;
     background: white;
     border-radius: 0.5em;
     color: #333;
     color: rgba(0,0,0, 0.70);
     span {
-      margin-bottom: 10px;
-      display: block;
     }
     .categories {
       border-bottom: 0;
+      margin-top: 10px;
+      padding-bottom: 0;
+      margin-bottom: 0;
     }
   }
   @media (orientation:portrait) {
@@ -334,32 +335,31 @@ section.fourPrinciples-section {
   .deliverValueContinuously-category {
     background-color: @deliverValueContinuously-color;
   }
-  .showCategoriesAsIcons .categories {
-    ul {
-      li {
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: contain;
-        width: 20px;
-        height: 20px;
-        border-radius: 10px;
-        span {
-          display: none;
-        }
-      }
-      .makePeopleAwesome-category {
-        background-image: url('@{images}/icon-makePeopleAwesome.svg');
-      }
-      .makeSafetyAPrerequisite-category {
-        background-image: url('@{images}/icon-makeSafetyAPrerequisite.svg');
-      }
-      .experimentAndLearnRapidly-category {
-        background-image: url('@{images}/icon-experimentAndLearnRapidly.svg');
-      }
-      .deliverValueContinuously-category {
-        background-image: url('@{images}/icon-deliverValueContinuously.svg');
-      }
+}
+.showCategoriesAsIcons .categories {
+  height: 30px;
+  li {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 0;
+    span {
+      display: none;
     }
-
+  }
+  .makePeopleAwesome-category {
+    background-image: url('@{images}/icon-makePeopleAwesome.svg');
+  }
+  .makeSafetyAPrerequisite-category {
+    background-image: url('@{images}/icon-makeSafetyAPrerequisite.svg');
+  }
+  .experimentAndLearnRapidly-category {
+    background-image: url('@{images}/icon-experimentAndLearnRapidly.svg');
+  }
+  .deliverValueContinuously-category {
+    background-image: url('@{images}/icon-deliverValueContinuously.svg');
   }
 }

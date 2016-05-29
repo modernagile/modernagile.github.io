@@ -3,7 +3,7 @@ upcomingEventsEntries = [
   {
     thumbnail: 'img/upcomingEvents/josh.jpg',
     title: 'Agile Israel 2016 - Keynote on Modern Agile',
-    location: 'West Rishon LeZion - Israel',
+    location: 'West Rishon LeZion, Israel',
     date: '2016-06-22',
     categories: {
       makePeopleAwesome: true,
