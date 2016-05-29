@@ -21,6 +21,8 @@ function loadSVGAndAppend(container) {
 
     if(typeof imgID !== 'undefined')
       $svg = $svg.attr('id', imgID);
+    else
+      $svg = $svg.removeAttr('id');
 
     if(typeof imgClass !== 'undefined')
       $svg = $svg.attr('class', imgClass+' replaced-svg');

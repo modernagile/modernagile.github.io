@@ -76,7 +76,7 @@ var FancyList = function(container, data, columns, entriesPerPage) {
     <nav> \
       <ul class="pagination"> \
         <li class="'+ prevDisabledCss +'"> \
-          <a class="pagination-button" href="#'+scrollTo+'" data-page-mod="-1" title="Previous" aria-label="Previous"> \
+          <a class="pagination-button" href="'+scrollTo+'" data-page-mod="-1" title="Previous" aria-label="Previous"> \
             <span aria-hidden="true">&laquo;</span> \
           </a> \
         </li>'
