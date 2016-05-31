@@ -1,6 +1,6 @@
 upcomingEventsEntries = [
   {
-    thumbnail: 'img/upcomingEvents/josh.jpg',
+    thumbnail: 'img/upcomingEvents/agileIsrael.jpg',
     title: 'Agile Israel 2016 - Keynote on Modern Agile',
     location: 'West Rishon LeZion, Israel',
     date: '2016-06-22',
@@ -10,10 +10,10 @@ upcomingEventsEntries = [
       experimentAndLearnRapidly: true,
       deliverValueContinuously: true
     },
-    url: 'http://www.eventbrite.com/e/agile-israel-2016-tickets-17249151677'
+    url: 'https://agile-israel-2016.events.co.il/home'
   },
   {
-    thumbnail: 'img/upcomingEvents/josh.jpg',
+    thumbnail: 'img/upcomingEvents/agile2016.jpg',
     title: 'Agile 2016 - Keynote on Modern Agile',
     location: 'Atlanta, Georgia',
     date: '2016-07-27',
