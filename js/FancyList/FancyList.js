@@ -124,7 +124,7 @@ var FancyList = function(container, data, columns, entriesPerPage, paginationAnc
 
         var entryData = entries[count];
 
-        row.append('<div class="col-sm-'+parseInt(12/this.columns)+'">'+this.renderEntry(entryData)+'</div>');
+        row.append('<div class="col-sm-'+parseInt(12/this.columns)+'  fancyListEntry">'+this.renderEntry(entryData)+'</div>');
         count++;
       }
       list.append(row);
@@ -155,7 +155,7 @@ var FancyList = function(container, data, columns, entriesPerPage, paginationAnc
     var entry = '';
     for (var property in entryData) {
       if (entryData.hasOwnProperty(property)) {
-          entry += '<p class="truncate" style="margin: 0;">'+ property + ':'+ entryData[property] +'</p>';
+          entry += '<p class="truncate" style="margin: 0;">'+ property + ': '+ entryData[property] +'</p>';
       }
     }
     return entry;
