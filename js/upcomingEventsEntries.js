@@ -1,5 +1,4 @@
 upcomingEventsEntries = [
-
   {
     thumbnail: 'img/upcomingEvents/josh.jpg',
     title: 'Agile Israel 2016 - Keynote on Modern Agile',
@@ -12,6 +11,19 @@ upcomingEventsEntries = [
       deliverValueContinuously: true
     },
     url: 'http://www.eventbrite.com/e/agile-israel-2016-tickets-17249151677'
+  },
+  {
+    thumbnail: 'img/upcomingEvents/josh.jpg',
+    title: 'Agile 2016 - Keynote on Modern Agile',
+    location: 'Atlanta, Georgia',
+    date: '2016-07-27',
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'https://www.agilealliance.org/agile2016/program/keynotes/#Joshua'
   },
   {
     thumbnail: 'img/upcomingEvents/josh.jpg',
