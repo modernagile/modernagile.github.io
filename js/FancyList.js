@@ -82,13 +82,13 @@ var FancyList = function(container, data, columns, entriesPerPage, paginationAnc
     <nav> \
       <ul class="pagination"> \
         <li class="'+ prevDisabledCss +'"> \
-          <a class="pagination-button" href="'+scrollTo+'" data-page-mod="-1" title="Previous" aria-label="Previous"> \
+          <a class="pagination-button previous"'+ paginationAnchor +'title="Previous" aria-label="Previous"> \
             <span aria-hidden="true">&laquo;</span> \
           </a> \
         </li>'
         + pages +
         '<li class="'+ nextDisabledCss +'"> \
-          <a class="pagination-button" href="'+scrollTo+'" data-page-mod="1" title="Next" aria-label="Next"> \
+          <a class="pagination-button next"'+ paginationAnchor +'title="Next" aria-label="Next"> \
             <span aria-hidden="true">&raquo;</span> \
           </a> \
         </li> \
@@ -99,11 +99,17 @@ var FancyList = function(container, data, columns, entriesPerPage, paginationAnc
     this.container.find('.pagination-pageNumber').click(function() {
       that.gotoPage(parseInt(jQuery(this).text()));
     });
-    this.container.find('.pagination-button').click(function() {
+    this.container.find('.pagination-button.next').click(function() {
       if(jQuery(this).parent().hasClass('disabled'))
         return;
 
-      that.gotoPage(that.currentPage+parseInt(jQuery(this).attr('data-page-mod')));
+      that.nextPage();
+    });
+    this.container.find('.pagination-button.previous').click(function() {
+      if(jQuery(this).parent().hasClass('disabled'))
+        return;
+
+      that.previousPage();
     });
   }
   this.renderList = function(entries) {
