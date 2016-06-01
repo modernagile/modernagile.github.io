@@ -25,6 +25,10 @@ ul li {
   font-weight: 300;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .navbar {
   .container {
     @media (min-width: @screen-sm-min) {
@@ -69,8 +73,8 @@ ul li {
   img {
     position:absolute;
     width:auto;
-    min-width:100%;
-    min-height:100%;
+    min-width:101%;
+    min-height:101%;
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -241,17 +245,29 @@ section.join-section  {
   }
   .fancyList {
     padding: 10px;
-    background: white;
+    background: rgba(0,0,0,0.75);
     border-radius: 0.5em;
-    color: #333;
+    color: #CCC;
     color: rgba(0,0,0, 0.70);
-    span {
-    }
-    .categories {
-      border-bottom: 0;
-      margin-top: 10px;
-      padding-bottom: 0;
-      margin-bottom: 0;
+    .caption {
+      .eventTitle {
+        color: #0693E3;
+        &:hover {
+          color: #26AAF5;
+        }
+      }
+      .eventLocation {
+        color: #BBB;
+      }
+      .eventAuthor {
+
+      }
+      .categories {
+        border-bottom: 0;
+        margin-top: 10px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
     }
   }
   @media (orientation:portrait) {

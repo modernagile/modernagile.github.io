@@ -36,8 +36,8 @@ function UpcomingEvents(container, data, entriesPerPage) {
         </div> \
         <div class="col-xs-9"> \
           <div class="caption"> \
-            <a href="'+ entryData.url +'" target="_blank">'+ entryData.title +'</a> \
-            <span>'+ entryData.location +' - '+ this.formatDate(entryData.date) +'</span>'
+            <a href="'+ entryData.url +'" target="_blank" class="eventTitle">'+ entryData.title +'</a> \
+            <span class="eventLocation">'+ entryData.location +' - '+ this.formatDate(entryData.date) +'</span>'
             + this.renderCategories(entryData.categories) +
           '</div> \
         </div> \
