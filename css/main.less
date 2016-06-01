@@ -256,11 +256,25 @@ section.join-section  {
           color: #26AAF5;
         }
       }
-      .eventLocation {
+      .eventLocation,
+      .eventAuthor {
+        font-size: 0.75em;
+        line-height: normal;
         color: #BBB;
+        display: block;
+        margin-bottom: 5px;
+      }
+      .eventLocation {
       }
       .eventAuthor {
-
+        a {
+          display: inline;
+          text-decoration: underline;
+          color: #BBB;
+        }
+        &:before {
+          content: 'By ';
+        }
       }
       .categories {
         border-bottom: 0;

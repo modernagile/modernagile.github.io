@@ -24,7 +24,7 @@ function LearnMore(container, data, columns, entriesPerPage, paginationAnchor) {
       <div class="row"> \
         <div class="col-xs-3"> \
           <div class="thumbnail square"> \
-            <img class="'+ cssClass +'" alt="'+ entryData.title +'" src="'+ entryData.thumbnail +'"> \
+            <a title="'+ entryData.title +'" href="'+ entryData.url +'" target="_blank"><img class="'+ cssClass +'" alt="'+ entryData.title +'" src="'+ entryData.thumbnail +'"></a> \
           </div> \
         </div> \
         <div class="col-xs-9"> \

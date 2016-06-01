@@ -25,19 +25,30 @@ function UpcomingEvents(container, data, entriesPerPage) {
     var date = new Date(dateString);
     return monthNames[date.getMonth()] +' '+ date.getDay() +', '+ date.getFullYear();
   }
+  this.renderAuthor = function(author, authorPage) {
+    if(this.isEmpty(author))
+      return '';
+
+    var authorPageLink = author;
+    if(!this.isEmpty(authorPage))
+      authorPageLink = '<a title="'+ author +'" target="_blank" href="'+ authorPage +'">'+ authorPageLink +'</a>';
+
+    return '<span class="eventAuthor">'+ authorPageLink +'</span>';
+  }
   this.renderEntry = function(entryData) {
     var cssClass = entryData.cssClass || '';
     var html = ' \
       <div class="row"> \
         <div class="col-xs-3"> \
           <div class="thumbnail square"> \
-            <img class="'+ cssClass +'" alt="'+ entryData.title +'" src="'+ entryData.thumbnail +'"> \
+            <a title="'+ entryData.title +'" href="'+ entryData.url +'" target="_blank"><img class="'+ cssClass +'" alt="'+ entryData.title +'" src="'+ entryData.thumbnail +'"></a> \
           </div> \
         </div> \
         <div class="col-xs-9"> \
           <div class="caption"> \
-            <a href="'+ entryData.url +'" target="_blank" class="eventTitle">'+ entryData.title +'</a> \
-            <span class="eventLocation">'+ entryData.location +' - '+ this.formatDate(entryData.date) +'</span>'
+            <a href="'+ entryData.url +'" target="_blank" class="eventTitle">'+ entryData.title +'</a>'
+            + this.renderAuthor(entryData.author, entryData.authorPage) +
+            '<span class="eventLocation">'+ entryData.location +' - '+ this.formatDate(entryData.date) +'</span>'
             + this.renderCategories(entryData.categories) +
           '</div> \
         </div> \
