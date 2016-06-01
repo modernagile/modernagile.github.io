@@ -58,6 +58,17 @@ learnMoreEntries = [
     url: 'http://www.amazon.com/Driving-Fear-Out-Workplace-High-Performance/dp/0787939684'
   },
   {
+    thumbnail: 'img/readingList/simon_tavik_frantisek.jpg',
+    title: 'Crucial Conversations: Tools for Talking When Stakes Are High',
+    categories: {
+      makePeopleAwesome: false,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: false,
+      deliverValueContinuously: false
+    },
+    url: 'http://www.amazon.com/Crucial-Conversations-Tools-Talking-Stakes/dp/0071401946'
+  },  
+  {
     thumbnail: 'img/readingList/whatGoogleLearned.jpg',
     title: 'What Google Learned From Its Quest to Build the Perfect Team',
     categories: {
