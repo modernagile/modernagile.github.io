@@ -88,7 +88,8 @@ function enableWheel() {
 }
 function addBubble() {
 	var bubbleTitle = principles[currentPrinciple];
-	var bubbleContent = tips[currentPrinciple][Math.round(Math.random()*(tips[currentPrinciple].length-1))];
+	var bubbleContent = (tips[currentPrinciple].length > 0) ? tips[currentPrinciple][Math.round(Math.random()*(tips[currentPrinciple].length-1))] : '';
+
 	var bubble = document.createElement('div');
 	bubble.classList.add('bubble');
 	bubble.classList.add('in');
@@ -104,7 +105,9 @@ function addBubble() {
 		bubble.style.width = (window.innerWidth-wheelDiameter-3*wheelMargin)+'px';
 		bubble.style.transform = 'translateY(-50%)';
 	}
-	bubble.innerHTML = '<h3>'+bubbleTitle+'</h3>'+bubbleContent;
+
+	var titleTag = (bubbleContent === '') ? 'h1' : 'h3'
+	bubble.innerHTML = '<'+ titleTag +'>'+bubbleTitle+'</'+ titleTag +'>'+bubbleContent;
 	contents.appendChild(bubble);
 	setTimeout(showBubble, 10);
 }

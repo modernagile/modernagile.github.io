@@ -64,6 +64,11 @@ body {
   margin: 0 0 0.5em 0;
   text-align: left;
 }
+#contents .bubble h1 {
+  text-align: center;
+  line-height: normal;
+  font-weight: lighter;
+}
 #contents .bubble:after {
   content: '';
   position: absolute;
