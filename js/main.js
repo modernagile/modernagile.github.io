@@ -53,3 +53,17 @@ learnMore.render();
 
 var upcomingEvents = new UpcomingEvents('#upcomingEvents', upcomingEventsEntries);
 upcomingEvents.render();
+
+window.addEventListener('message', function (e) {
+    var iframe = $('.join-section iframe');
+
+    var eventName = e.data[0];
+    var data      = e.data[1];
+
+    switch (eventName) {
+        case 'setHeight':
+            console.log(data);
+            iframe.height(data);
+            break;
+    }
+}, false);
