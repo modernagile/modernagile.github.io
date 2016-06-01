@@ -11,6 +11,16 @@
 @experimentAndLearnRapidly-color: #f97977;
 @modernAgileRing-color: #4b5666;
 
+.transition(@value) {
+  -webkit-transition: @value;
+  -o-transition: @value;
+  -moz-transition: @value;
+  transition: @value;
+}
+.transition-delay(@delay) {
+  -webkit-transition-delay: @delay;
+  transition-delay: @delay;
+}
 body {
   font-size: 16px;
   position: relative;
@@ -46,11 +56,17 @@ a:hover {
     color: #DDD;
     color: rgba(255,255,255,0.85);
   }
-  .navbar-nav>li.active>a {
+  .navbar-nav>li.active>a,
+  .navbar-nav>li.active>a:hover,
+  .navbar-nav>li.active>a:focus {
     color: #DDD;
     color: rgba(255,255,255,0.85);
     background-color: rgba(0,0,0,0.2);
   }
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+  color: white;
 }
 
 .author {
@@ -424,5 +440,36 @@ section.fourPrinciples-section {
     display: inline-block!important;
     background-color: #CCC;
     opacity: 0.35;
+  }
+}
+.MABrand {
+  position: relative;
+  padding-left: 0m;
+  .transition(all 300ms ease-out);
+  .transition-delay(.5s);
+  overflow: hidden;
+  img {
+    height: 1em;
+    top: 50%;
+    left: -1em;
+    margin-top: -0.5em;
+    position: absolute;
+    opacity: 0;
+    @duration1: 300ms;
+    @duration2: 1.5s;
+    -webkit-transition: opacity @duration1 ease-out, -webkit-transform @duration2 ease-out, left @duration1 ease-out;
+    -o-transition: opacity @duration1 ease-out, transform @duration2 ease-out, left @duration1 ease-out;
+    -moz-transition: opacity @duration1 ease-out, transform @duration2 ease-out, left @duration1 ease-out;
+    transition: opacity @duration1 ease-out, transform @duration2 ease-out, left @duration1 ease-out;
+    .transition-delay(.5s);
+    transform: rotate(0deg);
+  }
+}
+.MABrand.expanded {
+  padding-left: 1.5em;
+  img {
+    opacity: 1;
+    left: 0;
+    transform: rotate(360deg);
   }
 }
