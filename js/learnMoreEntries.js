@@ -47,7 +47,7 @@ learnMoreEntries = [
     url: 'http://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Group_Performance/Edmondson%20Psychological%20safety.pdf'
   },
   {
-    thumbnail: 'img/readingList/simon_tavik_frantisek.jpg',
+    thumbnail: 'img/readingList/drivingFear.jpg',
     title: 'Driving Fear Out of the Workplace: Creating the High-Trust, High-Performance Organization',
     categories: {
       makePeopleAwesome: false,
@@ -58,7 +58,7 @@ learnMoreEntries = [
     url: 'http://www.amazon.com/Driving-Fear-Out-Workplace-High-Performance/dp/0787939684'
   },
   {
-    thumbnail: 'img/readingList/simon_tavik_frantisek.jpg',
+    thumbnail: 'img/readingList/crucialConversations.jpg',
     title: 'Crucial Conversations: Tools for Talking When Stakes Are High',
     categories: {
       makePeopleAwesome: false,
@@ -67,7 +67,7 @@ learnMoreEntries = [
       deliverValueContinuously: false
     },
     url: 'http://www.amazon.com/Crucial-Conversations-Tools-Talking-Stakes/dp/0071401946'
-  },  
+  },
   {
     thumbnail: 'img/readingList/whatGoogleLearned.jpg',
     title: 'What Google Learned From Its Quest to Build the Perfect Team',
