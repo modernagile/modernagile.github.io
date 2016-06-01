@@ -442,34 +442,44 @@ section.fourPrinciples-section {
     opacity: 0.35;
   }
 }
-.MABrand {
-  position: relative;
-  padding-left: 0m;
-  .transition(all 300ms ease-out);
-  .transition-delay(.5s);
-  overflow: hidden;
-  img {
-    height: 1em;
-    top: 50%;
-    left: -1em;
-    margin-top: -0.5em;
-    position: absolute;
-    opacity: 0;
-    @duration1: 300ms;
-    @duration2: 1.5s;
-    -webkit-transition: opacity @duration1 ease-out, -webkit-transform @duration2 ease-out, left @duration1 ease-out;
-    -o-transition: opacity @duration1 ease-out, transform @duration2 ease-out, left @duration1 ease-out;
-    -moz-transition: opacity @duration1 ease-out, transform @duration2 ease-out, left @duration1 ease-out;
-    transition: opacity @duration1 ease-out, transform @duration2 ease-out, left @duration1 ease-out;
-    .transition-delay(.5s);
-    transform: rotate(0deg);
+
+@media(max-width: @screen-sm-min) {
+  .MABrand {
+    img {
+      display: none;
+    }
   }
 }
-.MABrand.expanded {
-  padding-left: 1.5em;
-  img {
-    opacity: 1;
-    left: 0;
-    transform: rotate(360deg);
+@media (min-width: @screen-sm-min) {
+  .MABrand {
+    position: relative;
+    padding-left: 0m;
+    .transition(all 300ms ease-out);
+    .transition-delay(.5s);
+    overflow: hidden;
+    img {
+      height: 1em;
+      top: 50%;
+      left: -1em;
+      margin-top: -0.5em;
+      position: absolute;
+      opacity: 0;
+      @duration1: 300ms;
+      @duration2: 1.5s;
+      -webkit-transition: opacity @duration1 ease-out, -webkit-transform @duration2 ease-out, left @duration1 ease-out;
+      -o-transition: opacity @duration1 ease-out, transform @duration2 ease-out, left @duration1 ease-out;
+      -moz-transition: opacity @duration1 ease-out, transform @duration2 ease-out, left @duration1 ease-out;
+      transition: opacity @duration1 ease-out, transform @duration2 ease-out, left @duration1 ease-out;
+      .transition-delay(.5s);
+      transform: rotate(0deg);
+    }
+  }
+  .MABrand.expanded {
+    padding-left: 1.5em;
+    img {
+      opacity: 1;
+      left: 0;
+      transform: rotate(360deg);
+    }
   }
 }
