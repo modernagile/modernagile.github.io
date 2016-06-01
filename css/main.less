@@ -279,49 +279,54 @@ section.join-section  {
     margin-bottom: 30px;
   }
   .fancyList {
-    padding: 10px;
-    background: rgba(0,0,0,0.75);
-    border-radius: 0.5em;
-    color: #CCC;
-    color: rgba(0,0,0, 0.70);
-    .thumbnail.square {
-      background: transparent;
+    & >.row:not(:first-child) {
+      margin-top: 0.8em;
     }
-    .caption {
-      .eventTitle {
-        color: #0693E3;
-        &:hover {
-          color: #26AAF5;
-        }
+    .fancyListEntry {
+      padding: 10px;
+      background: rgba(0,0,0,0.75);
+      border-radius: 0.5em;
+      color: #CCC;
+      color: rgba(0,0,0, 0.70);
+      .thumbnail.square {
+        background: transparent;
       }
-      .eventLocation,
-      .eventAuthor {
-        font-size: 0.75em;
-        line-height: normal;
-        color: #BBB;
-        display: block;
-        margin-bottom: 5px;
-      }
-      .eventLocation {
-      }
-      .eventAuthor {
-        a {
-          display: inline;
-          text-decoration: underline;
-          color: #BBB;
+      .caption {
+        .eventTitle {
+          color: #0693E3;
           &:hover {
-            color: #DDD;
+            color: #26AAF5;
           }
         }
-        &:before {
-          content: 'By ';
+        .eventLocation,
+        .eventAuthor {
+          font-size: 0.75em;
+          line-height: normal;
+          color: #BBB;
+          display: block;
+          margin-bottom: 5px;
         }
-      }
-      .categories {
-        border-bottom: 0;
-        margin-top: 10px;
-        padding-bottom: 0;
-        margin-bottom: 0;
+        .eventLocation {
+        }
+        .eventAuthor {
+          a {
+            display: inline;
+            text-decoration: underline;
+            color: #BBB;
+            &:hover {
+              color: #DDD;
+            }
+          }
+          &:before {
+            content: 'By ';
+          }
+        }
+        .categories {
+          border-bottom: 0;
+          margin-top: 10px;
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -446,43 +451,6 @@ section.fourPrinciples-section {
   }
 }
 
-@media(max-width: @screen-sm-min) {
-  .MABrand {
-    img {
-      display: none;
-    }
-  }
-}
-@media (min-width: @screen-sm-min) {
-  .MABrand {
-    position: relative;
-    padding-left: 0m;
-    .transition(all 300ms ease-out);
-    .transition-delay(.5s);
-    overflow: hidden;
-    img {
-      height: 1em;
-      top: 50%;
-      left: -1em;
-      margin-top: -0.5em;
-      position: absolute;
-      opacity: 0;
-      @duration1: 300ms;
-      @duration2: 1.5s;
-      -webkit-transition: opacity @duration1 ease-out, -webkit-transform @duration2 ease-out, left @duration1 ease-out;
-      -o-transition: opacity @duration1 ease-out, transform @duration2 ease-out, left @duration1 ease-out;
-      -moz-transition: opacity @duration1 ease-out, transform @duration2 ease-out, left @duration1 ease-out;
-      transition: opacity @duration1 ease-out, transform @duration2 ease-out, left @duration1 ease-out;
-      .transition-delay(.5s);
-      transform: rotate(0deg);
-    }
-  }
-  .MABrand.expanded {
-    padding-left: 1.5em;
-    img {
-      opacity: 1;
-      left: 0;
-      transform: rotate(360deg);
-    }
-  }
+#brand {
+  height: 1em;
 }
