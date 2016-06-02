@@ -21,17 +21,19 @@ function LearnMore(container, data, columns, entriesPerPage, paginationAnchor) {
     var resumeParagraph = (!this.isEmpty(entryData.resume)) ? '<p>'+ entryData.resume +'</p>' : '';
     var cssClass = entryData.cssClass || '';
     var html = ' \
-      <div class="row"> \
-        <div class="col-xs-3"> \
-          <div class="thumbnail square"> \
-            <a title="'+ entryData.title +'" href="'+ entryData.url +'" target="_blank"><img class="'+ cssClass +'" alt="'+ entryData.title +'" src="'+ entryData.thumbnail +'"></a> \
+      <div class="content"> \
+        <div class="row"> \
+          <div class="col-xs-3"> \
+            <div class="thumbnail square"> \
+              <a title="'+ entryData.title +'" href="'+ entryData.url +'" target="_blank"><img class="'+ cssClass +'" alt="'+ entryData.title +'" src="'+ entryData.thumbnail +'"></a> \
+            </div> \
           </div> \
-        </div> \
-        <div class="col-xs-9"> \
-          <div class="caption"> \
-            <h4>'+ entryData.title +'</h4>'
-            + resumeParagraph + this.renderCategories(entryData.categories) + link +
-          '</div> \
+          <div class="col-xs-9"> \
+            <div class="caption"> \
+              <h4>'+ entryData.title +'</h4>'
+              + resumeParagraph + this.renderCategories(entryData.categories) + link +
+            '</div> \
+          </div> \
         </div> \
       </div> \
     ';
