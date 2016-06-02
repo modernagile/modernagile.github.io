@@ -123,6 +123,18 @@ learnMoreEntries = [
     },
     url: 'http://www.amazon.com/Drift-into-Failure-Components-Understanding/dp/1409422216'
   },
+
+  {
+    thumbnail: 'img/readingList/simon_tavik_frantisek.jpg',
+    title: 'Resilience Engineering: New directions for measuring and maintaining safety in complex systems',
+    categories: {
+      makePeopleAwesome: false,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: false,
+      deliverValueContinuously: false
+    },
+    url: 'https://www.msb.se/Upload/Kunskapsbank/Forskningsrapporter/Slutrapporter/2009%20Resilience%20Engineering%20New%20directions%20for%20measuring%20and%20maintaining%20safety%20in%20complex%20systems.pdf'
+  },
   {
     thumbnail: 'img/readingList/leanStartup.jpg',
     title: 'The Lean Startup: How Today\'s Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses',
