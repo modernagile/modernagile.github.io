@@ -125,7 +125,7 @@ learnMoreEntries = [
   },
 
   {
-    thumbnail: 'img/readingList/simon_tavik_frantisek.jpg',
+    thumbnail: 'img/readingList/resilienceEngineering.jpg',
     title: 'Resilience Engineering: New directions for measuring and maintaining safety in complex systems',
     categories: {
       makePeopleAwesome: false,
