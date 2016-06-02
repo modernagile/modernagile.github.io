@@ -62,8 +62,11 @@ window.addEventListener('message', function (e) {
 
     switch (eventName) {
         case 'setHeight':
-            console.log(data);
             iframe.height(data);
             break;
     }
 }, false);
+
+jQuery('.collapseMobileMenu').click(function () {
+   jQuery('.navbar-collapse').collapse('hide');
+});
