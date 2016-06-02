@@ -38,6 +38,7 @@ function UpcomingEvents(container, data, entriesPerPage) {
   this.renderEntry = function(entryData) {
     var cssClass = entryData.cssClass || '';
     var html = ' \
+    <div class="content"> \
       <div class="row"> \
         <div class="col-xs-3"> \
           <div class="thumbnail square"> \
@@ -51,6 +52,7 @@ function UpcomingEvents(container, data, entriesPerPage) {
             '<span class="eventLocation">'+ entryData.location +' - '+ this.formatDate(entryData.date) +'</span>'
             + this.renderCategories(entryData.categories) +
           '</div> \
+        </div> \
         </div> \
       </div> \
     ';

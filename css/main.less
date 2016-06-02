@@ -207,7 +207,7 @@ section {
       // max-width: 300px;
     }
     @media (max-width: @screen-sm-min) {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
   }
   .sectionTitle {
@@ -283,49 +283,51 @@ section.join-section  {
       margin-top: 0.8em;
     }
     .fancyListEntry {
-      padding: 10px;
-      background: rgba(0,0,0,0.75);
-      border-radius: 0.5em;
-      color: #CCC;
-      color: rgba(0,0,0, 0.70);
-      .thumbnail.square {
-        background: transparent;
-      }
-      .caption {
-        .eventTitle {
-          color: #0693E3;
-          &:hover {
-            color: #26AAF5;
-          }
+      .content {
+        padding: 10px;
+        background: rgba(0,0,0,0.75);
+        border-radius: 0.5em;
+        color: #CCC;
+        color: rgba(0,0,0, 0.70);
+        .thumbnail.square {
+          background: transparent;
         }
-        .eventLocation,
-        .eventAuthor {
-          font-size: 0.75em;
-          line-height: normal;
-          color: #BBB;
-          display: block;
-          margin-bottom: 5px;
-        }
-        .eventLocation {
-        }
-        .eventAuthor {
-          a {
-            display: inline;
-            text-decoration: underline;
-            color: #BBB;
+        .caption {
+          .eventTitle {
+            color: #0693E3;
             &:hover {
-              color: #DDD;
+              color: #26AAF5;
             }
           }
-          &:before {
-            content: 'By ';
+          .eventLocation,
+          .eventAuthor {
+            font-size: 0.75em;
+            line-height: normal;
+            color: #BBB;
+            display: block;
+            margin-bottom: 5px;
           }
-        }
-        .categories {
-          border-bottom: 0;
-          margin-top: 10px;
-          padding-bottom: 0;
-          margin-bottom: 0;
+          .eventLocation {
+          }
+          .eventAuthor {
+            a {
+              display: inline;
+              text-decoration: underline;
+              color: #BBB;
+              &:hover {
+                color: #DDD;
+              }
+            }
+            &:before {
+              content: 'By ';
+            }
+          }
+          .categories {
+            border-bottom: 0;
+            margin-top: 10px;
+            padding-bottom: 0;
+            margin-bottom: 0;
+          }
         }
       }
     }
