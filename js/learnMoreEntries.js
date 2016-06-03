@@ -123,7 +123,6 @@ learnMoreEntries = [
     },
     url: 'http://www.amazon.com/Drift-into-Failure-Components-Understanding/dp/1409422216'
   },
-
   {
     thumbnail: 'img/readingList/resilienceEngineering.jpg',
     title: 'Resilience Engineering: New directions for measuring and maintaining safety in complex systems',
@@ -134,6 +133,18 @@ learnMoreEntries = [
       deliverValueContinuously: false
     },
     url: 'https://www.msb.se/Upload/Kunskapsbank/Forskningsrapporter/Slutrapporter/2009%20Resilience%20Engineering%20New%20directions%20for%20measuring%20and%20maintaining%20safety%20in%20complex%20systems.pdf'
+  },
+  {
+    thumbnail: 'img/readingList/simon_tavik_frantisek.jpg',
+    title: 'The Fifth Discipline: The Art & Practice of The Learning Organization',
+    cssClass: 'onTop',
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: false,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: false
+    },
+    url: 'http://www.amazon.com/Fifth-Discipline-Practice-Learning-Organization/dp/0553456342'
   },
   {
     thumbnail: 'img/readingList/leanStartup.jpg',
