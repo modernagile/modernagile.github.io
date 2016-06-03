@@ -135,7 +135,7 @@ learnMoreEntries = [
     url: 'https://www.msb.se/Upload/Kunskapsbank/Forskningsrapporter/Slutrapporter/2009%20Resilience%20Engineering%20New%20directions%20for%20measuring%20and%20maintaining%20safety%20in%20complex%20systems.pdf'
   },
   {
-    thumbnail: 'img/readingList/simon_tavik_frantisek.jpg',
+    thumbnail: 'img/readingList/fifthDiscipline.jpg',
     title: 'The Fifth Discipline: The Art & Practice of The Learning Organization',
     cssClass: 'onTop',
     categories: {
