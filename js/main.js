@@ -55,7 +55,7 @@ var upcomingEvents = new UpcomingEvents('#upcomingEvents', upcomingEventsEntries
 upcomingEvents.render();
 
 window.addEventListener('message', function (e) {
-    var iframe = $('.join-section iframe');
+    var iframe = $('.community-section iframe');
 
     var eventName = e.data[0];
     var data      = e.data[1];
@@ -70,3 +70,14 @@ window.addEventListener('message', function (e) {
 jQuery('.collapseMobileMenu').click(function () {
    jQuery('.navbar-collapse').collapse('hide');
 });
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-78734019-1', 'auto');
+ga('send', 'pageview');
+
+analytics.trackScrollSpy('.navbar-fixed-top');
+analytics.trackAnalyticsEvents();

@@ -1,6 +1,6 @@
 function LearnMore(container, data, columns, entriesPerPage, paginationAnchor) {
   FancyList.call(this, container, data, columns, entriesPerPage, paginationAnchor);
-  this.getLink =  function(url) {
+  this.getLink =  function(url, title) {
     if(this.isEmpty(url))
       return '';
 
@@ -14,10 +14,10 @@ function LearnMore(container, data, columns, entriesPerPage, paginationAnchor) {
     else
       linkText = 'Read Article';
 
-    return '<a href="'+ url +'" target="_blank">'+ linkText +'</a>';
+    return '<a href="'+ url +'" target="_blank" data-analytics-event="'+title+',Open text link'+'">'+ linkText +'</a>';
   }
   this.renderEntry = function(entryData) {
-    var link = this.getLink(entryData.url);
+    var link = this.getLink(entryData.url, entryData.title);
     var resumeParagraph = (!this.isEmpty(entryData.resume)) ? '<p>'+ entryData.resume +'</p>' : '';
     var cssClass = entryData.cssClass || '';
     var html = ' \
@@ -25,7 +25,7 @@ function LearnMore(container, data, columns, entriesPerPage, paginationAnchor) {
         <div class="row"> \
           <div class="col-xs-3"> \
             <div class="thumbnail square"> \
-              <a title="'+ entryData.title +'" href="'+ entryData.url +'" target="_blank"><img class="'+ cssClass +'" alt="'+ entryData.title +'" src="'+ entryData.thumbnail +'"></a> \
+              <a title="'+ entryData.title +'" href="'+ entryData.url +'" target="_blank" data-analytics-event="'+entryData.title+',Open image link'+'"><img class="'+ cssClass +'" alt="'+ entryData.title +'" src="'+ entryData.thumbnail +'"></a> \
             </div> \
           </div> \
           <div class="col-xs-9"> \
