@@ -144,7 +144,7 @@ learnMoreEntries = [
       experimentAndLearnRapidly: true,
       deliverValueContinuously: false
     },
-    url: 'http://www.amazon.com/Fifth-Discipline-Practice-Learning-Organization/dp/0553456342'
+    url: 'http://www.amazon.com/Fifth-Discipline-Practice-Learning-Organization/dp/0385517254'
   },
   {
     thumbnail: 'img/readingList/leanStartup.jpg',
