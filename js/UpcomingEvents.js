@@ -25,13 +25,13 @@ function UpcomingEvents(container, data, entriesPerPage) {
     var date = new Date(dateString);
     return monthNames[date.getMonth()] +' '+ date.getDay() +', '+ date.getFullYear();
   }
-  this.renderAuthor = function(author, authorPage) {
+  this.renderAuthor = function(author, authorPage, eventTitle) {
     if(this.isEmpty(author))
       return '';
 
     var authorPageLink = author;
     if(!this.isEmpty(authorPage))
-      authorPageLink = '<a title="'+ author +'" target="_blank" href="'+ authorPage +'">'+ authorPageLink +'</a>';
+      authorPageLink = '<a title="'+ author +'" target="_blank" href="'+ authorPage +'" data-analytics-event="'+eventTitle+',Open author link'+'">'+ authorPageLink +'</a>';
 
     return '<span class="eventAuthor">'+ authorPageLink +'</span>';
   }
@@ -42,13 +42,13 @@ function UpcomingEvents(container, data, entriesPerPage) {
       <div class="row"> \
         <div class="col-xs-3"> \
           <div class="thumbnail square"> \
-            <a title="'+ entryData.title +'" href="'+ entryData.url +'" target="_blank"><img class="'+ cssClass +'" alt="'+ entryData.title +'" src="'+ entryData.thumbnail +'"></a> \
+            <a title="'+ entryData.title +'" href="'+ entryData.url +'" target="_blank" data-analytics-event="'+entryData.title+',Open image link'+'"><img class="'+ cssClass +'" alt="'+ entryData.title +'" src="'+ entryData.thumbnail +'"></a> \
           </div> \
         </div> \
         <div class="col-xs-9"> \
           <div class="caption"> \
-            <a href="'+ entryData.url +'" target="_blank" class="eventTitle">'+ entryData.title +'</a>'
-            + this.renderAuthor(entryData.author, entryData.authorPage) +
+            <a href="'+ entryData.url +'" target="_blank" class="eventTitle" data-analytics-event="'+entryData.title+',Open text link'+'">'+ entryData.title +'</a>'
+            + this.renderAuthor(entryData.author, entryData.authorPage, entryData.title) +
             '<span class="eventLocation">'+ entryData.location +' - '+ this.formatDate(entryData.date) +'</span>'
             + this.renderCategories(entryData.categories) +
           '</div> \
