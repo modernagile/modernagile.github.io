@@ -68,51 +68,57 @@ var FancyList = function(container, data, columns, entriesPerPage, paginationAnc
     return (hasCategory) ? '' : ' hidden';
   }
   this.renderPagination = function(parent) {
-    var numberOfPages = Math.ceil(this.data.length/this.entriesPerPage);
-    var pages = '';
-    var numberOfPages = this.getNumberOfPages();
-    var paginationAnchor = (this.hasPaginationAnchor()) ? ' href="'+ this.paginationAnchor +'" ' : ' ';
-    for(var page=1; page<=numberOfPages; page++) {
-      var active = (page == this.currentPage) ? 'active' : '';
-      pages+= '<li class="'+ active +'"><a'+ paginationAnchor +'title="page '+ page +'" class="pagination-pageNumber">'+ page +'</a></li>';
+    if(this.container.find('.pagination').length === 0) {
+      var numberOfPages = Math.ceil(this.data.length/this.entriesPerPage);
+      var pages = '';
+      var numberOfPages = this.getNumberOfPages();
+      var paginationAnchor = (this.hasPaginationAnchor()) ? ' href="'+ this.paginationAnchor +'" ' : ' ';
+      for(var page=1; page<=numberOfPages; page++) {
+        var active = (page == this.currentPage) ? 'active' : '';
+        pages+= '<li class="'+ active +'"><a'+ paginationAnchor +'title="page '+ page +'" class="pagination-pageNumber" data-analytics-event="Pagination,Goto page,'+page+'" data-page="'+page+'">'+ page +'</a></li>';
+      }
+      var prevDisabledCss = (this.currentPage === 1) ? 'disabled' : '';
+      var nextDisabledCss = (this.currentPage === numberOfPages) ? 'disabled' : '';
+      var pagination = ' \
+      <nav> \
+        <ul class="pagination"> \
+          <li class="'+ prevDisabledCss +'"> \
+            <a class="pagination-button previous"'+ paginationAnchor +'title="Previous" aria-label="Previous" data-analytics-event="Pagination,Previous page"> \
+              <span aria-hidden="true">&laquo;</span> \
+            </a> \
+          </li>'
+          + pages +
+          '<li class="'+ nextDisabledCss +'"> \
+            <a class="pagination-button next"'+ paginationAnchor +'title="Next" aria-label="Next" data-analytics-event="Pagination,Next page"> \
+              <span aria-hidden="true">&raquo;</span> \
+            </a> \
+          </li> \
+        </ul> \
+        </nav>';
+      this.container.append(pagination);
+      var that = this;
+      this.container.find('.pagination-pageNumber').click(function() {
+        that.gotoPage(parseInt(jQuery(this).attr('data-page')));
+      });
+      this.container.find('.pagination-button.next').click(function() {
+        if(jQuery(this).parent().hasClass('disabled'))
+          return;
+
+        that.nextPage();
+      });
+      this.container.find('.pagination-button.previous').click(function() {
+        if(jQuery(this).parent().hasClass('disabled'))
+          return;
+
+        that.previousPage();
+      });
+    } else {
+      jQuery('li.active').removeClass('active');
+      jQuery('.pagination-pageNumber[data-page='+this.currentPage+']').parent().addClass('active');
     }
-    var prevDisabledCss = (this.currentPage === 1) ? 'disabled' : '';
-    var nextDisabledCss = (this.currentPage === numberOfPages) ? 'disabled' : '';
-    var pagination = ' \
-    <nav> \
-      <ul class="pagination"> \
-        <li class="'+ prevDisabledCss +'"> \
-          <a class="pagination-button previous"'+ paginationAnchor +'title="Previous" aria-label="Previous"> \
-            <span aria-hidden="true">&laquo;</span> \
-          </a> \
-        </li>'
-        + pages +
-        '<li class="'+ nextDisabledCss +'"> \
-          <a class="pagination-button next"'+ paginationAnchor +'title="Next" aria-label="Next"> \
-            <span aria-hidden="true">&raquo;</span> \
-          </a> \
-        </li> \
-      </ul> \
-      </nav>';
-    this.container.append(pagination);
-    var that = this;
-    this.container.find('.pagination-pageNumber').click(function() {
-      that.gotoPage(parseInt(jQuery(this).text()));
-    });
-    this.container.find('.pagination-button.next').click(function() {
-      if(jQuery(this).parent().hasClass('disabled'))
-        return;
-
-      that.nextPage();
-    });
-    this.container.find('.pagination-button.previous').click(function() {
-      if(jQuery(this).parent().hasClass('disabled'))
-        return;
-
-      that.previousPage();
-    });
   }
   this.renderList = function(entries) {
+    this.container.children('.row').remove();
     var list = jQuery('<div/>');
     var numberOfEntries = entries.length;
     var count = 0;
@@ -129,7 +135,7 @@ var FancyList = function(container, data, columns, entriesPerPage, paginationAnc
       }
       list.append(row);
     }
-    this.container.html(list.html());
+    this.container.prepend(list.html());
   }
   this.previousPage = function() {
     if(!this.isPaginated() || this.isOnFirstPage())
@@ -147,7 +153,6 @@ var FancyList = function(container, data, columns, entriesPerPage, paginationAnc
     if(!this.isPaginated() || pageNumber < 1 || pageNumber > this.getNumberOfPages())
       return;
 
-    //var pageEntry = this.entriesPerPage * (pageNumber-1);
     this.currentPage = pageNumber;
     this.render();
   }
