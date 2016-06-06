@@ -64,6 +64,9 @@ window.addEventListener('message', function (e) {
         case 'setHeight':
             iframe.height(data);
             break;
+        case 'sendToAnalytics':
+            analytics.send(data);
+            break;
     }
 }, false);
 
