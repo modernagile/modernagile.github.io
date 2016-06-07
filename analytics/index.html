@@ -18,8 +18,9 @@
     <style>
       body {
         background: #434d5b;
+        margin: 1em 0;
       }
-      .col-lg-6 {
+      .col-sm-6 {
         overflow: hidden;
       }
       iframe {
@@ -27,6 +28,20 @@
         overflow: hidden;
         transform-origin: top left;
         display: none;
+      }
+      .row:not(:first-child) {
+        margin-top: 2em;
+      }
+      @media (max-width: 768px) {
+        .row:not(:first-child) {
+          margin-top: 0;
+        }
+        .col-sm-6 {
+          margin-top: 1em;
+        }
+        .row:first-child .col-sm-6:first-child {
+          margin-top: 0;
+        }
       }
     </style>
 
@@ -43,26 +58,26 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-sm-6">
           <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1GMwx7c2P1lhwxxmVDBLed3fnE5QKgzSS2G_fZqPH4-I/pubchart?oid=1140514466&amp;format=interactive"></iframe>
         </div>
-        <div class="col-lg-6">
+        <div class="col-sm-6">
           <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1GMwx7c2P1lhwxxmVDBLed3fnE5QKgzSS2G_fZqPH4-I/pubchart?oid=2141070145&amp;format=interactive"></iframe>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-sm-6">
           <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1GMwx7c2P1lhwxxmVDBLed3fnE5QKgzSS2G_fZqPH4-I/pubchart?oid=2010426206&amp;format=interactive"></iframe>
         </div>
-        <div class="col-lg-6">
+        <div class="col-sm-6">
           <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1GMwx7c2P1lhwxxmVDBLed3fnE5QKgzSS2G_fZqPH4-I/pubchart?oid=291719509&amp;format=interactive"></iframe>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-sm-6">
           <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1GMwx7c2P1lhwxxmVDBLed3fnE5QKgzSS2G_fZqPH4-I/pubchart?oid=1588956295&amp;format=interactive"></iframe>
         </div>
-        <div class="col-lg-6">
+        <div class="col-sm-6">
           <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1GMwx7c2P1lhwxxmVDBLed3fnE5QKgzSS2G_fZqPH4-I/pubchart?oid=1774808135&amp;format=interactive"></iframe>
         </div>
       </div>
@@ -75,16 +90,19 @@
 
     <script>
       function resizeCharts() {
-        var sampleCol = jQuery('.col-lg-6').first();
+        var sampleCol = jQuery('.col-sm-6').first();
         var colWidth = sampleCol.width();
         var iframeWidth = 600;
+        var iframeHeight = 371;
         var extraSize = iframeWidth - colWidth;
         var ratio = 1 - (extraSize / iframeWidth);
 
-        jQuery('iframe').css('transform','scale('+ ratio +','+ ratio +')').show();
+        jQuery('iframe').css('transform','scale('+ ratio +')').show();
+        jQuery('iframe').parent().height(iframeHeight*ratio);
       }
 
       jQuery(document).ready(resizeCharts);
+      jQuery(window).resize(resizeCharts);
     </script>
 
 </body>
