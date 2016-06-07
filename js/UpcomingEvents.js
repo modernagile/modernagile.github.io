@@ -31,7 +31,7 @@ function UpcomingEvents(container, data, entriesPerPage) {
 
     var authorPageLink = author;
     if(!this.isEmpty(authorPage))
-      authorPageLink = '<a title="'+ author +'" target="_blank" href="'+ authorPage +'" data-analytics-event="'+eventTitle+',Open author link'+'">'+ authorPageLink +'</a>';
+      authorPageLink = '<a title="'+ author +'" target="_blank" href="'+ authorPage +'" data-analytics-event="Upcoming Events,'+ author +'">'+ authorPageLink +'</a>';
 
     return '<span class="eventAuthor">'+ authorPageLink +'</span>';
   }
@@ -42,12 +42,12 @@ function UpcomingEvents(container, data, entriesPerPage) {
       <div class="row"> \
         <div class="col-xs-3"> \
           <div class="thumbnail square"> \
-            <a title="'+ entryData.title +'" href="'+ entryData.url +'" target="_blank" data-analytics-event="'+entryData.title+',Open image link'+'"><img class="'+ cssClass +'" alt="'+ entryData.title +'" src="'+ entryData.thumbnail +'"></a> \
+            <a title="'+ entryData.title +'" href="'+ entryData.url +'" target="_blank" data-analytics-event="Upcoming Events,'+ entryData.title +',0"><img class="'+ cssClass +'" alt="'+ entryData.title +'" src="'+ entryData.thumbnail +'"></a> \
           </div> \
         </div> \
         <div class="col-xs-9"> \
           <div class="caption"> \
-            <a href="'+ entryData.url +'" target="_blank" class="eventTitle" data-analytics-event="'+entryData.title+',Open text link'+'">'+ entryData.title +'</a>'
+            <a href="'+ entryData.url +'" target="_blank" class="eventTitle" data-analytics-event="Upcoming Events,'+ entryData.title +',1">'+ entryData.title +'</a>'
             + this.renderAuthor(entryData.author, entryData.authorPage, entryData.title) +
             '<span class="eventLocation">'+ entryData.location +' - '+ this.formatDate(entryData.date) +'</span>'
             + this.renderCategories(entryData.categories) +

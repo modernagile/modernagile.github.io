@@ -14,7 +14,7 @@ function LearnMore(container, data, columns, entriesPerPage, paginationAnchor) {
     else
       linkText = 'Read Article';
 
-    return '<a href="'+ url +'" target="_blank" data-analytics-event="'+title+',Open text link'+'">'+ linkText +'</a>';
+    return '<a href="'+ url +'" target="_blank" data-analytics-event="Learn More,'+ title +',1">'+ linkText +'</a>';
   }
   this.renderEntry = function(entryData) {
     var link = this.getLink(entryData.url, entryData.title);
@@ -25,7 +25,7 @@ function LearnMore(container, data, columns, entriesPerPage, paginationAnchor) {
         <div class="row"> \
           <div class="col-xs-3"> \
             <div class="thumbnail square"> \
-              <a title="'+ entryData.title +'" href="'+ entryData.url +'" target="_blank" data-analytics-event="'+entryData.title+',Open image link'+'"><img class="'+ cssClass +'" alt="'+ entryData.title +'" src="'+ entryData.thumbnail +'"></a> \
+              <a title="'+ entryData.title +'" href="'+ entryData.url +'" target="_blank" data-analytics-event="Learn More,'+ entryData.title +',0"><img class="'+ cssClass +'" alt="'+ entryData.title +'" src="'+ entryData.thumbnail +'"></a> \
             </div> \
           </div> \
           <div class="col-xs-9"> \
