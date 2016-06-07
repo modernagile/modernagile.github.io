@@ -9,13 +9,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="../favicon.png">
     <title>Modern Agile Analytics</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+      body {
+        background: #434d5b;
+      }
+      iframe {
+        border-radius: 0.5em;
+        overflow: hidden;
+      }
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -56,10 +63,22 @@
       </div>
     </div>
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script>
+      function resizeCharts() {
+        var sampleCol = jQuery('.col-lg-6').first();
+        var colWidth = sampleCol.width();
+        var iframeWidth = sampleCol.children('iframe').width();
+        var ratio = 1 - (iframeWidth / colWidth - 1);
+        jQuery('iframe').css('transform','scale('+ ratio +','+ ratio +')');
+      }
+
+      resizeCharts();
+    </script>
 
 </body>
 
