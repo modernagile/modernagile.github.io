@@ -115,6 +115,12 @@ var FancyList = function(container, data, columns, entriesPerPage, paginationAnc
     } else {
       jQuery('li.active').removeClass('active');
       jQuery('.pagination-pageNumber[data-page='+this.currentPage+']').parent().addClass('active');
+
+      jQuery('.pagination-button.previous, .pagination-button.next').parent().removeClass('disabled');
+      if(this.currentPage === 1)
+        jQuery('.pagination-button.previous').parent().addClass('disabled');
+      else if(this.currentPage === this.getNumberOfPages())
+        jQuery('.pagination-button.next').parent().addClass('disabled');
     }
   }
   this.renderList = function(entries) {
