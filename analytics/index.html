@@ -19,9 +19,14 @@
       body {
         background: #434d5b;
       }
+      .col-lg-6 {
+        overflow: hidden;
+      }
       iframe {
         border-radius: 0.5em;
         overflow: hidden;
+        transform-origin: top left;
+        display: none;
       }
     </style>
 
@@ -72,12 +77,14 @@
       function resizeCharts() {
         var sampleCol = jQuery('.col-lg-6').first();
         var colWidth = sampleCol.width();
-        var iframeWidth = sampleCol.children('iframe').width();
-        var ratio = 1 - (iframeWidth / colWidth - 1);
-        jQuery('iframe').css('transform','scale('+ ratio +','+ ratio +')');
+        var iframeWidth = 600;
+        var extraSize = iframeWidth - colWidth;
+        var ratio = 1 - (extraSize / iframeWidth);
+
+        jQuery('iframe').css('transform','scale('+ ratio +','+ ratio +')').show();
       }
 
-      resizeCharts();
+      jQuery(document).ready(resizeCharts);
     </script>
 
 </body>
