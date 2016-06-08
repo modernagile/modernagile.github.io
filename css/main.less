@@ -460,3 +460,55 @@ section.guidingPrinciples-section {
 
   }
 }
+
+.suggestEntry {
+  h4 {
+    color: #BBB;
+    font-weight: 300;
+    cursor: pointer;
+  }
+  .form {
+    display: none;
+    margin-top: 0.5em;
+    text-align: left;
+    input[type=text],
+    input[type=submit]  {
+      &:not(:first-child) {
+        margin-top: 0.5em;
+      }
+    }
+    .suggestionPrinciples {
+      color: #bbb;
+      font-size: 0.75em;
+      margin: 1em 0;
+      input {
+        margin-right: 0.5em;
+      }
+    }
+  }
+
+}
+span.addIcon {
+  position: relative;
+  padding-left: 1.5em;
+  &:before {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    margin-right: 5px;
+    content: "";
+    background: url('@{images}/icon-add.svg') no-repeat 0 0;
+    background-size: 100%;
+    left: 0;
+    top: 50%;
+    margin-top: -0.5em;
+  }
+}
+.suggestEntry.open {
+  h4 {
+    cursor: default;
+  }
+  .form {
+    display: block;
+  }
+}

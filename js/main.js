@@ -42,7 +42,7 @@ function duplicateParagraphs() {
   });
 }
 
-function getJSON(url, data, success) {
+function getJSON(url, data, success, error) {
   var properties = {
     cache: false,
     url: url,
@@ -54,6 +54,9 @@ function getJSON(url, data, success) {
 
   if(success)
     properties.success = success;
+
+  if(error)
+    properties.error = error;
 
   jQuery.ajax(properties);
 }
@@ -69,6 +72,87 @@ learnMore.render();
 
 var upcomingEvents = new UpcomingEvents('#upcomingEvents', upcomingEventsEntries);
 upcomingEvents.render();
+
+function cleanSuggestion() {
+  jQuery('.suggestEntry input[data-slack]').val('');
+  jQuery('.suggestEntry .suggestionPrinciples input:checked').prop('checked', false);
+  jQuery('.suggestEntry').removeClass('open');
+}
+function addSuggestEventBox(parent) {
+  var html = '<div class="row"> \
+    <div class="col-sm-12  fancyListEntry suggestEntry"> \
+      <div class="content"> \
+        <div class="row"> \
+          <div class="col-xs-12"> \
+            <h4><span class="addIcon">Suggest an event</span></h4> \
+          </div> \
+          <div class="col-xs-12 form"> \
+            <form> \
+              <input type="text" name="suggentionEventTitle" class="form-control" data-slack="Title" placeholder="How should we call it?"> \
+              <input type="text" name="suggentionSpeaker" class="form-control" data-slack="Speaker" placeholder="Who is speaking there?"> \
+              <input type="text" name="suggentionSpeakerPage" class="form-control" data-slack="Speaker page" placeholder="Where can we find him online?"> \
+              <input type="text" name="suggentionLocation" class="form-control" data-slack="Location" placeholder="What is the event location?"> \
+              <input type="text" name="suggentionDate" class="form-control" data-slack="Date" placeholder="When it is happening?"> \
+              <div class="suggestionPrinciples"> \
+                <input type="checkbox" name="suggestionPrinciples" value="Make People Awesome">Make People Awesome<br/> \
+                <input type="checkbox" name="suggestionPrinciples" value="Make Safety a Prerequisite">Make Safety a Prerequisite<br/> \
+                <input type="checkbox" name="suggestionPrinciples" value="Experiment and Learn Rapidly">Experiment & Learn Rapidly<br/> \
+                <input type="checkbox" name="suggestionPrinciples" value="Deliver Value Continuously">Deliver Value Continuously<br/> \
+              </div> \
+                <div class="row"> \
+                  <div class="col-sm-6"> \
+                    <input type="button" class="btn btn-default btn-block btn-cancel" value="cancel"> \
+                  </div> \
+                  <div class="col-sm-6"> \
+                    <input type="submit" class="btn btn-primary btn-block btn-submit"> \
+                  </div> \
+                </div> \
+            </form> \
+          </div> \
+        </div> \
+      </div> \
+    </div>';
+
+    jQuery(parent).append(html);
+    jQuery('.suggestEntry .btn-cancel').click(function() {
+      cleanSuggestion();
+    });
+    jQuery('.suggestEntry h4').click(function() {
+      jQuery('.suggestEntry').addClass('open');
+    });
+    jQuery('.suggestEntry form').submit(function(e) {
+      e.preventDefault();
+      var details = [];
+      var principles = [];
+      var linebreak = '\n';
+      jQuery('.suggestEntry input[data-slack]').each(function() {
+        if(jQuery(this).val() != '')
+          details.push('*'+ jQuery(this).attr('data-slack') +':* '+ jQuery(this).val());
+      });
+
+      if(details.length === 0)
+        return;
+
+      jQuery('.suggestEntry .suggestionPrinciples input:checked').each(function() {
+        principles.push(jQuery(this).val());
+      });
+
+      var msg = '*Event Suggestion*' + linebreak;
+      msg += '>>>' + details.join(linebreak);
+
+      if(principles.length != 0)
+        msg += linebreak + '*Principles:* '+ principles.join(', ');
+
+      getJSON('https://www.industriallogic.com/maAPI/sendToSlack.php', {
+        key: '0avitm6pOH253DN4ZV6zlY8Pc1pB9kX0',
+        message: msg
+      });
+
+      cleanSuggestion();
+    });
+}
+addSuggestEventBox('#upcomingEvents');
+
 
 window.addEventListener('message', function (e) {
     var iframe = $('.community-section iframe');
