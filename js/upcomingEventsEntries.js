@@ -43,6 +43,20 @@ upcomingEventsEntries = [
       deliverValueContinuously: true
     },
     url: 'http://2016.agilesingapore.org/'
+  },
+  {
+    thumbnail: 'img/upcomingEvents/agileNZ.jpg',
+    title: 'Agile New Zealand 2016 - Keynote on Modern Agile',
+    author: 'Joshua Kerievsky',
+    authorPage: 'https://twitter.com/joshuakerievsky',
+    location: 'Auckland',
+    date: '2016-11-30',
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'http://agilenz.co.nz/2016'
   }
-
 ]
