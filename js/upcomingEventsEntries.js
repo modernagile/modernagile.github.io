@@ -28,6 +28,21 @@ upcomingEventsEntries = [
       deliverValueContinuously: true
     },
     url: 'https://www.agilealliance.org/agile2016/program/keynotes/#Joshua'
+  },
+  {
+    thumbnail: 'img/upcomingEvents/agileSingapore.jpg',
+    title: 'Agile Singapore 2016 - Keynote on Modern Agile',
+    author: 'Joshua Kerievsky',
+    authorPage: 'https://twitter.com/joshuakerievsky',
+    location: 'Singapore',
+    date: '2016-10-06',
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'http://2016.agilesingapore.org/'
   }
 
 ]
