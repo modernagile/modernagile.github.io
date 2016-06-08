@@ -43,22 +43,19 @@ function duplicateParagraphs() {
 }
 
 function getJSON(url, data, success) {
-  if(success) {
-    $.ajax({
-      cache: false,
-      url: url,
-      dataType: "json",
-      data: data,
-      success: success
-    });
-  } else {
-    $.ajax({
-      cache: false,
-      url: url,
-      dataType: "json",
-      data: data
-    });
+  var properties = {
+    cache: false,
+    url: url,
+    dataType: "json"
   }
+
+  if(data)
+    properties.data = data;
+
+  if(success)
+    properties.success = success;
+
+  jQuery.ajax(properties);
 }
 
 jQuery('div.inlineSvg').each(function() {
