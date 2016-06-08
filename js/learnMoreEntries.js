@@ -13,6 +13,18 @@ learnMoreEntries = [
     url: 'http://www.amazon.com/Badass-Making-Awesome-Kathy-Sierra/dp/1491919019'
   },
   {
+    thumbnail: 'img/readingList/SteveJobs.jpg',
+    title: 'Steve Jobs: Where Can We Take The Customer?',
+    resume: null,
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: false,
+      deliverValueContinuously: false
+    },
+    url: 'https://www.youtube.com/watch?v=FF-tKLISfPE'
+  },  
+  {
     thumbnail: 'img/readingList/deliveringHapiness.jpg',
     title: 'Delivering Happiness: A Path to Profits, Passion, and Purpose',
     resume: null,
