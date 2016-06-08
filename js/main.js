@@ -42,6 +42,25 @@ function duplicateParagraphs() {
   });
 }
 
+function getJSON(url, data, success) {
+  if(success) {
+    $.ajax({
+      cache: false,
+      url: url,
+      dataType: "json",
+      data: data,
+      success: success
+    });
+  } else {
+    $.ajax({
+      cache: false,
+      url: url,
+      dataType: "json",
+      data: data
+    });
+  }
+}
+
 jQuery('div.inlineSvg').each(function() {
   loadSVGAndAppend(jQuery(this));
 });
