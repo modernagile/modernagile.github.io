@@ -23,7 +23,7 @@ function UpcomingEvents(container, data, entriesPerPage) {
     var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
     ];
     var date = new Date(dateString);
-    return monthNames[date.getMonth()] +' '+ date.getDay() +', '+ date.getFullYear();
+    return monthNames[date.getMonth()] +' '+ date.getDate() +', '+ date.getFullYear();
   }
   this.renderAuthor = function(author, authorPage, eventTitle) {
     if(this.isEmpty(author))

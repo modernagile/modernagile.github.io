@@ -5,7 +5,7 @@ upcomingEventsEntries = [
     author: 'Joshua Kerievsky',
     authorPage: 'https://twitter.com/joshuakerievsky',
     location: 'West Rishon LeZion, Israel',
-    date: '2016-06-22',
+    date: '2016/06/22',
     categories: {
       makePeopleAwesome: true,
       makeSafetyAPrerequisite: true,
@@ -20,7 +20,7 @@ upcomingEventsEntries = [
     author: 'Joshua Kerievsky',
     authorPage: 'https://twitter.com/joshuakerievsky',
     location: 'Atlanta, Georgia',
-    date: '2016-07-27',
+    date: '2016/07/27',
     categories: {
       makePeopleAwesome: true,
       makeSafetyAPrerequisite: true,
@@ -35,7 +35,7 @@ upcomingEventsEntries = [
     author: 'Joshua Kerievsky',
     authorPage: 'https://twitter.com/joshuakerievsky',
     location: 'Singapore',
-    date: '2016-10-06',
+    date: '2016/10/06',
     categories: {
       makePeopleAwesome: true,
       makeSafetyAPrerequisite: true,
@@ -50,7 +50,7 @@ upcomingEventsEntries = [
     author: 'Joshua Kerievsky',
     authorPage: 'https://twitter.com/joshuakerievsky',
     location: 'Auckland',
-    date: '2016-11-30',
+    date: '2016/11/30',
     categories: {
       makePeopleAwesome: true,
       makeSafetyAPrerequisite: true,
