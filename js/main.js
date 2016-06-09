@@ -93,7 +93,7 @@ function addSuggestEventBox(parent) {
               <input type="text" name="suggentionSpeaker" class="form-control" data-slack="Speaker" placeholder="Who is speaking there?"> \
               <input type="text" name="suggentionSpeakerPage" class="form-control" data-slack="Speaker URL" placeholder="Please supply a URL with info about the speaker(s)"> \
               <input type="text" name="suggentionLocation" class="form-control" data-slack="Location" placeholder="Where is the event taking place?"> \
-              <input type="text" name="suggentionDate" class="form-control" data-slack="Date" placeholder=""When is the event happening?"> \
+              <input type="text" name="suggentionDate" class="form-control" data-slack="Date" placeholder="When is the event happening?"> \
               <div class="suggestionPrinciples"> \
                 <input type="checkbox" name="suggestionPrinciples" value="Make People Awesome">Make People Awesome<br/> \
                 <input type="checkbox" name="suggestionPrinciples" value="Make Safety a Prerequisite">Make Safety a Prerequisite<br/> \
