@@ -88,11 +88,12 @@ function addSuggestEventBox(parent) {
           </div> \
           <div class="col-xs-12 form"> \
             <form> \
-              <input type="text" name="suggentionEventTitle" class="form-control" data-slack="Title" placeholder="How should we call it?"> \
+              <input type="text" name="suggentionEventTitle" class="form-control" data-slack="Title" placeholder="What is the name of the event?"> \
+              <input type="text" name="suggentionEventURL" class="form-control" data-slack="Event URL" placeholder="Please supply a URL with info about the event"> \
               <input type="text" name="suggentionSpeaker" class="form-control" data-slack="Speaker" placeholder="Who is speaking there?"> \
-              <input type="text" name="suggentionSpeakerPage" class="form-control" data-slack="Speaker page" placeholder="Where can we find him online?"> \
-              <input type="text" name="suggentionLocation" class="form-control" data-slack="Location" placeholder="What is the event location?"> \
-              <input type="text" name="suggentionDate" class="form-control" data-slack="Date" placeholder="When it is happening?"> \
+              <input type="text" name="suggentionSpeakerPage" class="form-control" data-slack="Speaker URL" placeholder="Please supply a URL with info about the speaker(s)"> \
+              <input type="text" name="suggentionLocation" class="form-control" data-slack="Location" placeholder="Where is the event taking place?"> \
+              <input type="text" name="suggentionDate" class="form-control" data-slack="Date" placeholder=""When is the event happening?"> \
               <div class="suggestionPrinciples"> \
                 <input type="checkbox" name="suggestionPrinciples" value="Make People Awesome">Make People Awesome<br/> \
                 <input type="checkbox" name="suggestionPrinciples" value="Make Safety a Prerequisite">Make Safety a Prerequisite<br/> \
@@ -101,7 +102,7 @@ function addSuggestEventBox(parent) {
               </div> \
                 <div class="row"> \
                   <div class="col-sm-6"> \
-                    <input type="button" class="btn btn-default btn-block btn-cancel" value="cancel"> \
+                    <input type="button" class="btn btn-default btn-block btn-cancel" value="Cancel"> \
                   </div> \
                   <div class="col-sm-6"> \
                     <input type="submit" class="btn btn-primary btn-block btn-submit"> \
