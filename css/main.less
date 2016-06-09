@@ -465,7 +465,26 @@ section.guidingPrinciples-section {
   h4 {
     color: #BBB;
     font-weight: 300;
-    cursor: pointer;
+    overflow:hidden;
+    .titles {
+      white-space: nowrap;
+      margin-left: -100%;
+      cursor: pointer;
+      .transition(margin-left 500ms ease-out);
+      &.success {
+        margin-left: 0%;
+        cursor: default;
+      }
+      &.error {
+        margin-left: -200%;
+        cursor: default;
+      }
+      .title {
+        width: 100%;
+        line-height: 1.2em;
+        display: inline-block;
+      }
+    }
   }
   .form {
     display: none;
@@ -488,7 +507,9 @@ section.guidingPrinciples-section {
   }
 
 }
-span.addIcon {
+span.addIcon,
+span.successIcon,
+span.errorIcon {
   position: relative;
   padding-left: 1.5em;
   &:before {
@@ -497,16 +518,28 @@ span.addIcon {
     height: 1em;
     margin-right: 5px;
     content: "";
-    background: url('@{images}/icon-add.svg') no-repeat 0 0;
-    background-size: 100%;
     left: 0;
     top: 50%;
     margin-top: -0.5em;
   }
 }
+span.addIcon:before {
+  background: url('@{images}/icon-add.svg') no-repeat 0 0;
+  background-size: 100%;
+}
+span.successIcon:before {
+  background: url('@{images}/icon-success.svg') no-repeat 0 0;
+  background-size: 100%;
+}
+span.errorIcon:before {
+  background: url('@{images}/icon-error.svg') no-repeat 0 0;
+  background-size: 100%;
+}
 .suggestEntry.open {
   h4 {
-    cursor: default;
+    span.titles {
+      cursor: default;
+    }
   }
   .form {
     display: block;

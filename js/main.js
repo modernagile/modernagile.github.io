@@ -78,13 +78,25 @@ function cleanSuggestion() {
   jQuery('.suggestEntry .suggestionPrinciples input:checked').prop('checked', false);
   jQuery('.suggestEntry').removeClass('open');
 }
+function cleanMsg(timeout) {
+  setTimeout(function() {
+    jQuery('.suggestEntry span.titles').removeClass('success');
+    jQuery('.suggestEntry span.titles').removeClass('error');
+  }, timeout);
+}
 function addSuggestEventBox(parent) {
   var html = '<div class="row"> \
     <div class="col-sm-12  fancyListEntry suggestEntry"> \
       <div class="content"> \
         <div class="row"> \
           <div class="col-xs-12"> \
-            <h4><span class="addIcon">Suggest an event</span></h4> \
+            <h4> \
+              <span class="titles"> \
+                <span class="title"><span class="successIcon">Thanks, we\'ll add your suggestion shortly</span></span> \
+                <span class="title"><span class="addIcon">Suggest an event</span></span> \
+                <span class="title"><span class="errorIcon">Oops, could you try again later?</span></span> \
+              </span> \
+            </h4> \
           </div> \
           <div class="col-xs-12 form"> \
             <form> \
@@ -119,7 +131,11 @@ function addSuggestEventBox(parent) {
       cleanSuggestion();
     });
     jQuery('.suggestEntry h4').click(function() {
+      if(jQuery('.suggestEntry .titles').hasClass('error') || jQuery('.suggestEntry .titles').hasClass('success'))
+        return;
+
       jQuery('.suggestEntry').addClass('open');
+      $("html, body").animate({ scrollTop: jQuery('.suggestEntry').offset().top });
     });
     jQuery('.suggestEntry form').submit(function(e) {
       e.preventDefault();
@@ -144,10 +160,20 @@ function addSuggestEventBox(parent) {
       if(principles.length != 0)
         msg += linebreak + '*Principles:* '+ principles.join(', ');
 
-      getJSON('https://www.industriallogic.com/maAPI/sendToSlack.php', {
-        key: '0avitm6pOH253DN4ZV6zlY8Pc1pB9kX0',
-        message: msg
-      });
+      getJSON('https://www.industriallogic.com/maAPI/sendToSlack.php',
+        {
+          key: '0avitm6pOH253DN4ZV6zlY8Pc1pB9kX0',
+          message: msg
+        },
+        function(data) {
+          jQuery('.suggestEntry span.titles').addClass('success');
+          cleanMsg(5000);
+        },
+        function(data) {
+          jQuery('.suggestEntry span.titles').addClass('error');
+          cleanMsg(5000);
+        }
+      );
 
       cleanSuggestion();
     });
