@@ -467,9 +467,11 @@ section.guidingPrinciples-section {
     font-weight: 300;
     overflow:hidden;
     .titles {
-      white-space: nowrap;
       margin-left: -100%;
+      width: 300%;
       cursor: pointer;
+      height: 1.2em;
+      display: block;
       .transition(margin-left 500ms ease-out);
       &.success {
         margin-left: 0%;
@@ -480,9 +482,10 @@ section.guidingPrinciples-section {
         cursor: default;
       }
       .title {
-        width: 100%;
-        line-height: 1.2em;
-        display: inline-block;
+        width: 33.333333%;
+        line-height: 1em;
+        float: left;
+        display: block;
       }
     }
   }
@@ -512,6 +515,7 @@ span.successIcon,
 span.errorIcon {
   position: relative;
   padding-left: 1.5em;
+  display: inline-block;
   &:before {
     position: absolute;
     width: 1em;
