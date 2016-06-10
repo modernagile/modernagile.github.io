@@ -90,7 +90,7 @@ function addSuggestEventBox(parent) {
       <div class="content"> \
         <div class="row"> \
           <div class="col-xs-12"> \
-            <h4> \
+            <h4 data-analytics-event="Suggest an event,Open dialog"> \
               <span class="titles"> \
                 <span class="title"><span class="successIcon">Thanks, we\'ll add your suggestion shortly</span></span> \
                 <span class="title"><span class="addIcon">Suggest an event</span></span> \
@@ -114,10 +114,10 @@ function addSuggestEventBox(parent) {
               </div> \
                 <div class="row"> \
                   <div class="col-sm-6"> \
-                    <input type="button" class="btn btn-default btn-block btn-cancel" value="Cancel"> \
+                    <input type="button" class="btn btn-default btn-block btn-cancel" value="Cancel" data-analytics-event="Suggest an event,Cancel"> \
                   </div> \
                   <div class="col-sm-6"> \
-                    <input type="submit" class="btn btn-primary btn-block btn-submit"> \
+                    <input type="submit" class="btn btn-primary btn-block btn-submit" data-analytics-event="Suggest an event,Submit"> \
                   </div> \
                 </div> \
             </form> \
