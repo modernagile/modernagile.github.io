@@ -42,7 +42,7 @@ a:hover {
 .navbar {
   .container {
     @media (min-width: @screen-sm-min) {
-      padding-left: 35px;
+      // padding-left: 35px;
     }
   }
 }
@@ -175,7 +175,7 @@ section {
       padding-top: 150px;
   }
   p {
-    padding: 0 20px;
+    // padding: 0 20px;
     text-align: left;
     @media (min-width: @screen-sm-min) {
       font-weight: 300;
@@ -544,7 +544,7 @@ span.errorIcon:before {
 }
 .suggestEntry.open {
   .content {
-    background: rgba(255,255,255,0.9)!important;
+    background: rgba(255,255,255,1)!important;
   }
   h4 {
     display: none;
@@ -562,5 +562,25 @@ span.errorIcon:before {
           margin-top: 0.5em;
       }
     }
+  }
+}
+
+.communityIntro {
+  p {
+    text-shadow: 1px 1px rgba(0,0,0,0.75);
+    a {
+      color: #FF5887;
+      cursor: pointer;
+      &:hover {
+        color: #FF5D8B;
+      }
+    }
+  }
+}
+
+.contactForm {
+  input:not(:first-child),
+  textarea {
+    margin-top: 0.5em;
   }
 }

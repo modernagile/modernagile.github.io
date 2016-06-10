@@ -181,6 +181,39 @@ function addSuggestEventBox(parent) {
 addSuggestEventBox('#upcomingEvents');
 
 
+jQuery('#contactUsModal .submitContact').click(function() {
+  var details = [];
+  var linebreak = '\n';
+  jQuery('.contactForm input, .contactForm textarea').each(function() {
+    if(jQuery(this).val() != '') {
+      if(jQuery(this)[0].hasAttribute('data-slack'))
+        details.push('*'+ jQuery(this).attr('data-slack') +':* '+ jQuery(this).val());
+      else
+        details.push(jQuery(this).val());
+    }
+  });
+
+  if(details.length !== 3)
+    return;
+
+  var msg = '*Contact Us*' + linebreak;
+  msg += '>>>' + details.join(linebreak);
+
+  getJSON('https://www.industriallogic.com/maAPI/sendToSlack.php',
+    {
+      key: '0avitm6pOH253DN4ZV6zlY8Pc1pB9kX0',
+      message: msg
+    }
+  );
+
+  jQuery('.contactForm input, .contactForm textarea').val('');
+});
+
+jQuery('#contactUsModal .cancelContact').click(function() {
+  jQuery('.contactForm input, .contactForm textarea').val('');
+});
+
+
 window.addEventListener('message', function (e) {
     var iframe = $('.community-section iframe');
 
