@@ -462,6 +462,9 @@ section.guidingPrinciples-section {
 }
 
 .suggestEntry {
+  .content {
+    .transition(background 300ms ease-out);
+  }
   h4 {
     color: #BBB;
     font-weight: 300;
@@ -540,12 +543,24 @@ span.errorIcon:before {
   background-size: 100%;
 }
 .suggestEntry.open {
+  .content {
+    background: rgba(255,255,255,0.9)!important;
+  }
   h4 {
+    display: none;
     span.titles {
       cursor: default;
     }
   }
   .form {
     display: block;
+    .suggestionPrinciples {
+      color: #666;
+    }
+    input[type=submit] {
+      @media (max-width: @screen-sm-min) {
+          margin-top: 0.5em;
+      }
+    }
   }
 }
