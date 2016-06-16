@@ -214,7 +214,7 @@ section {
     opacity: 0.75;
     color: #000;
     font-weight: 200;
-    margin: 20px 0;
+    margin: 20px 0 40px 0;
     font-size: 36px;
     @media (max-width: @screen-sm-min) {
       padding: 0 20px;
@@ -228,7 +228,7 @@ section {
   }
   .sectionTitle.subSection {
     font-size: 24px;
-    margin: 20px 0 10px 0;
+    margin: 0px 0 10px 0;
   }
 }
 
@@ -276,7 +276,6 @@ section.community-section  {
   position: relative;
   .sectionTitle {
     color: #FFF;
-    margin-bottom: 30px;
   }
   .fancyList {
     & >.row:not(:first-child) {
@@ -352,16 +351,17 @@ section.experimentAndLearnRapidly-section {
 section.learnMore-section {
   background: #EFEFEF;
   .sectionTitle {
-    margin-bottom: 40px;
   }
 }
 
 section.guidingPrinciples-section {
   .row {
     &:not(:first-child) {
-      margin-top: 1em;
+      margin-top: 1.5em;
     }
     .principle {
+      &:not(:first-child) {
+      }
     }
     .makePeopleAwesome-principle {
       svg {
@@ -603,7 +603,7 @@ span.errorIcon:before {
     width: 20%;
     height: 10px;
     border-radius: 5px;
-    background: #333;
+    background: #666;
     top: 25px;
     left: 50%;
     transform: translateX(-50%);
@@ -622,7 +622,7 @@ span.errorIcon:before {
     transform: translateX(-50%);
   }
   .mobilePhoneScreen {
-    height: 420px;
+    height: 400px;
     width: 240px;
     background: #333;
     iframe {
