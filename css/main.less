@@ -588,3 +588,46 @@ span.errorIcon:before {
     margin-top: 0.5em;
   }
 }
+
+.mobilePhone {
+  padding: 60px 10px;
+  background: white;
+  border-radius: 30px;
+  display: inline-block;
+  border: 4px solid #CCC;
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 20%;
+    height: 10px;
+    border-radius: 5px;
+    background: #333;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid #CCC;
+    box-sizing: border-box;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .mobilePhoneScreen {
+    height: 420px;
+    width: 240px;
+    background: #333;
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
