@@ -251,4 +251,7 @@ function inIframe() {
 }
 document.addEventListener('DOMContentLoaded', function(){
 	setup();
+
+	if(!inIframe())
+		addToHomescreen();
 }, false);
