@@ -253,5 +253,5 @@ document.addEventListener('DOMContentLoaded', function(){
 	setup();
 
 	if(!inIframe())
-		addToHomescreen();
+		addToHomescreen({lifespan: 30});
 }, false);

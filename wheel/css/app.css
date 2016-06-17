@@ -143,3 +143,15 @@ body {
 #contents.landscape .bubble.principle-3:after {
   border-color: transparent #f97977;
 }
+.ath-container {
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+.ath-application-icon {
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  border-radius: 0.3em;
+  overflow: hidden;
+}
