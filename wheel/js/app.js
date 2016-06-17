@@ -240,6 +240,15 @@ function getMode() {
 		return "portrait";
 	return "landscape";
 }
+function inIframe() {
+    try {
+        if (window.frameElement)
+					return true;
+    } catch (e) {
+        return true;
+    }
+		return false;
+}
 document.addEventListener('DOMContentLoaded', function(){
 	setup();
 }, false);
