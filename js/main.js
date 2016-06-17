@@ -234,21 +234,6 @@ jQuery('.collapseMobileMenu').click(function () {
    jQuery('.navbar-collapse').collapse('hide');
 });
 
-function addSpinnerAppLink() {
-  var isMobile = !jQuery('#mobilePhone').is(':visible');
-  var attrs = '';
-  var text = '';
-  if(isMobile) {
-    attrs = ' class="btn btn-lg btn-primary" title="Install Web App" href="./wheel" target="_blank" ';
-    text = 'Install Web App';
-  } else {
-    attrs = ' class="btn btn-lg btn-default disabled" title="Install Web App" ';
-    text = 'Access from a mobile browser to install';
-  }
-  jQuery('#installSpinnerApp').html('<a'+ attrs +'>'+ text +'</a>');
-}
-addSpinnerAppLink();
-
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
