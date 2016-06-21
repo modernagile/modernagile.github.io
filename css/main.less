@@ -490,6 +490,11 @@ section.guidingPrinciples-section {
         line-height: 1em;
         float: left;
         display: block;
+        &:nth-child(2) {
+          @media (max-width: @screen-sm-min) {
+            margin-top: 0.5em;
+          }
+        }
       }
     }
   }
