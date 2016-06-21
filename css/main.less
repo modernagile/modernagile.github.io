@@ -166,7 +166,10 @@ a:hover {
 section {
   min-height: 100%;
   text-align: center;
-  background: #fff;
+  background: #fff; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(top, #fff, #f9f9f9);
+  background: -o-linear-gradient(top, #fff, #f9f9f9);
+  background: linear-gradient(to bottom, #fff, #f9f9f9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding-top: 50px;
   padding-bottom: 50px;
   color: #333;
@@ -246,13 +249,6 @@ section {
 
 section.intro-section {
   padding-top: 100px;
-  background: #dde1ee; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(top, #dde1ee, #eef2f3);
-  background: -o-linear-gradient(top, #dde1ee, #eef2f3);
-  background: linear-gradient(to bottom, #dde1ee, #eef2f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  color: #495664;
-  color: rgba(73,86,100, 0.90);
   @media (min-width: @screen-sm-min) {
     padding-top: 150px;
   }
@@ -270,16 +266,9 @@ section.intro-section {
 }
 
 section.community-section  {
-  background: #343e4c;
-  color: #fefefe;
-  color: rgba(255,255,255, 0.8);
   padding-top: 50px;
-  // background: url('@{images}/community.jpg') no-repeat center center;
   background-size: cover;
   position: relative;
-  .sectionTitle {
-    color: #FFF;
-  }
   .fancyList {
     & >.row:not(:first-child) {
       margin-top: 0.8em;
@@ -287,7 +276,7 @@ section.community-section  {
     .fancyListEntry {
       .content {
         padding: 10px;
-        background: rgba(0,0,0,0.35);
+        background: rgb(216,216,216);
         border-radius: 0.5em;
         color: #CCC;
         color: rgba(0,0,0, 0.70);
@@ -305,7 +294,7 @@ section.community-section  {
           .eventAuthor {
             font-size: 0.75em;
             line-height: normal;
-            color: #BBB;
+            color: #777;
             display: block;
             margin-bottom: 5px;
           }
@@ -315,7 +304,7 @@ section.community-section  {
             a {
               display: inline;
               text-decoration: underline;
-              color: #BBB;
+              color: #777;
               &:hover {
                 color: #DDD;
               }
@@ -352,13 +341,11 @@ section.experimentAndLearnRapidly-section {
   background: @experimentAndLearnRapidly-color;
 }
 section.learnMore-section {
-  background: #EFEFEF;
   .sectionTitle {
   }
 }
 
 section.spinnerApp-section {
-  background: #dedddb;
   #installSpinnerApp {
     text-align: left;
     @media (max-width: @screen-sm-min) {
@@ -480,7 +467,7 @@ section.guidingPrinciples-section {
     //.transition(background 100ms ease-out);
   }
   h4 {
-    color: #BBB;
+    color: #777;
     font-weight: 300;
     overflow:hidden;
     .titles {
@@ -587,10 +574,10 @@ span.errorIcon:before {
   p {
     //text-shadow: 1px 1px rgba(0,0,0,0.75);
     a {
-      color: #FF5887;
+      //color: #FF5887;
       cursor: pointer;
       &:hover {
-        color: #FF5D8B;
+        //color: #FF5D8B;
       }
     }
   }
