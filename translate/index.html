@@ -12,7 +12,7 @@
     <title>Modern Agile</title>
 
     <!-- Modern Agile CSS -->
-    <link href="https://www.google.com/fonts#QuickUsePlace:quickUse/Family:Open+Sans:400,300,600,700,800" rel="stylesheet">
+    <link href="https://www.google.com/fonts#QuickUsePlace:quickUse/Family:Open+Sans:400,300,600,700,800" rel="text/html">
 
     <style>
       body {
@@ -63,20 +63,74 @@
         left: 74px;
         transform: translateX(-50%);
       }
+      #share {
+        margin-top: 30px;
+        text-align: center;
+
+      }
+      #share input {
+        font-size: 20px;
+      }
+      #shareURL {
+        display: none;
+      }
     </style>
 
 </head>
 
 <body id="modernAgile" data-spy="scroll" data-target=".navbar-fixed-top">
+  <form action="index.html" method="get">
   <div id="mawheel">
-    <textarea type=text name="makePeopleAwesome" class="principle makePeopleAwesome">Make People&#013;Awesome</textarea>
-    <textarea type=text name="deliverValueContinuously" class="principle deliverValueContinuously">Deliver Value&#013;Continuously</textarea>
-    <textarea type=text name="makeSafetyaPrerequisite" class="principle makeSafetyaPrerequisite">Make Safety&#013;a Prerequisite</textarea>
-    <textarea type=text name="experimentAndLearnRapidly" class="principle experimentAndLearnRapidly">Experiment &&#013;Learn Rapidly</textarea>
+    <textarea type=text name="makePeopleAwesome" id="makePeopleAwesome" class="principle makePeopleAwesome">Make People&#013;Awesome</textarea>
+    <textarea type=text name="deliverValueContinuously" id="deliverValueContinuously" class="principle deliverValueContinuously">Deliver Value&#013;Continuously</textarea>
+    <textarea type=text name="makeSafetyaPrerequisite" id="makeSafetyaPrerequisite" class="principle makeSafetyaPrerequisite">Make Safety&#013;a Prerequisite</textarea>
+    <textarea type=text name="experimentAndLearnRapidly" id="experimentAndLearnRapidly" class="principle experimentAndLearnRapidly">Experiment &&#013;Learn Rapidly</textarea>
+  </div>
+  <div id="share">
+    <input type="submit" val="Share"></input>
+    <p id="shareURL"></p>
+  </div>
+  </form>
+  <div id="share">
+    <p id="shareURL"></p>
   </div>
 
   <!-- jQuery -->
   <script src="../js/jquery.js"></script>
+
+  <script>
+
+  function getQueryParams(qs) {
+    qs = qs.split("+").join(" ");
+    var params = {},
+        tokens,
+        re = /[?&]?([^=]+)=([^&]*)/g;
+
+    while (tokens = re.exec(qs)) {
+        params[decodeURIComponent(tokens[1])]
+            = decodeURIComponent(tokens[2]);
+    }
+
+    return params;
+  }
+
+  var $_GET = getQueryParams(document.location.search);
+  var hasShare = false;
+
+  for (var property in $_GET) {
+    if ($_GET.hasOwnProperty(property)) {
+        var principle = jQuery('#' + property);
+        if(principle.length > 0) {
+          principle.val($_GET[property]);
+          hasShare = true;
+        }
+    }
+  }
+
+  if(hasShare)
+    jQuery('#shareURL').show().text(document.location);
+
+  </script>
 
 </body>
 
