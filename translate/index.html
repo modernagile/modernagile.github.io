@@ -77,11 +77,6 @@
       }
     </style>
 
-    <link href="https://www.industriallogic.com/maAPI/bitly/css/styles.css" rel="stylesheet" type="text/css">
-
-    <script src="../js/jquery.js"></script>
-    <script type="text/javascript" src="https://www.industriallogic.com/maAPI/bitly/jquery.bitly.js"></script>
-
 </head>
 
 <body id="modernAgile" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -101,7 +96,9 @@
     <p id="shareURL"></p>
   </div>
 
-  <script src="mabitly.js"></script>
+  <!-- jQuery -->
+  <script src="../js/jquery.js"></script>
+
   <script>
 
   function getQueryParams(qs) {
@@ -132,8 +129,7 @@
   }
 
   if(hasShare)
-    jQuery('#shareURL').text(document.location);
-    jQuery('#shareURL').shortenUrl().show();
+    jQuery('#shareURL').show().text(document.location);
 
   </script>
 
