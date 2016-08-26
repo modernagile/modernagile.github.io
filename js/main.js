@@ -233,6 +233,9 @@ $.getJSON('mediakit/mediaKit.json')
     $('#mediaKit-files li[data-language="' + $(this).text() + '"]').show();
     $('#mediaKit-files').show();
   });
+
+  var defaultLanguage = 'english';
+  $('#mediaKit-languages a:contains("' + defaultLanguage + '")').click();
 })
 .fail(function( jqxhr, textStatus, error ) {
   //TODO: Handle fail
