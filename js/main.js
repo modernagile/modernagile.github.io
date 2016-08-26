@@ -213,6 +213,30 @@ jQuery('#contactUsModal .cancelContact').click(function() {
   jQuery('.contactForm input, .contactForm textarea').val('');
 });
 
+$.getJSON('mediakit/mediakit.json')
+.done(function( json ) {
+  var mediaKit = json;
+  for (var language in mediaKit) {
+    if (mediaKit.hasOwnProperty(language)) {
+      $('#mediaKit-languages ul').append('<li><a title="' + language + '" data-analytics-event="Media Kit,' + language + '">' + language + '</a></li>');
+      for(var i=0; i<mediaKit[language].length; i++) {
+        var kit = mediaKit[language][i];
+        $('#mediaKit-files ul').prepend('<li data-language="' + language + '"><a href="mediakit/' + kit.file + '" data-analytics-event="Media Kit,' + kit.label + '">' + kit.label + '</a></li>');
+      }
+    }
+  }
+
+  $('#mediaKit-languages ul li a').click(function() {
+    $('#mediaKit-languages button').html($(this).text() + '<span class="caret"></span>');
+    $('#mediaKit-files li').hide();
+    $('#mediaKit-files li[data-language="all"]').show();
+    $('#mediaKit-files li[data-language="' + $(this).text() + '"]').show();
+    $('#mediaKit-files').show();
+  });
+})
+.fail(function( jqxhr, textStatus, error ) {
+  //TODO: Handle fail
+});
 
 window.addEventListener('message', function (e) {
     var iframe = $('.community-section iframe');

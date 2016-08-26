@@ -295,19 +295,27 @@
                   <div class="mediaKitContainer">
                     <img alt="Media Kit" src="img/mediaKit.svg" />
                   </div>
-                  <div class="dropdown">
+
+                  <div class="dropdown" id="mediaKit-languages">
                     <button class="btn btn-default dropdown-toggle btn-large" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      Download...
+                      Language...
                       <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li><a href="./mediakit/MediaKit_PNG.zip" data-analytics-event="Media Kit,PNG">Media Kit in PNG</a></li>
-                      <li><a href="./mediakit/MediaKit_PDF.zip" data-analytics-event="Media Kit,PDF">Media Kit in PDF</a></li>
-                      <li><a href="./mediakit/MediaKit_SVG.zip" data-analytics-event="Media Kit,SVG">Media Kit in SVG</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a href="./mediakit/Open_Sans.zip" data-analytics-event="Media Kit,Font">Open Sans Font</a></li>
                     </ul>
                   </div>
+
+                  <div class="dropdown disabled" id="mediaKit-files">
+                    <button class="btn btn-default dropdown-toggle btn-large" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      Download...
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                      <li role="separator" class="divider" data-language="all"></li>
+                      <li data-language="all"><a href="./mediakit/Open_Sans.zip" data-analytics-event="Media Kit,Font">Open Sans Font</a></li>
+                    </ul>
+                  </div>
+
               </div>
             </div>
         </div>
