@@ -213,7 +213,7 @@ jQuery('#contactUsModal .cancelContact').click(function() {
   jQuery('.contactForm input, .contactForm textarea').val('');
 });
 
-$.getJSON('mediakit/mediakit.json')
+$.getJSON('mediakit/mediaKit.json')
 .done(function( json ) {
   var mediaKit = json;
   for (var language in mediaKit) {
