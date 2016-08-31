@@ -226,9 +226,9 @@ $.getJSON('mediakit/mediaKit.json')
       }
 
       //Carrousel
-      var spinner = '<div class="item">' +
+      var spinner = '<div class="item" data-language="' + language + '">' +
       '<img id="modernAgileWheel" alt="Modern Agile Principles in "' + language + ' src="img/modernAgileWheel/modern_agile_wheel_' + language + '.svg" />' +
-      '<div class="carousel-caption"></div>' +
+      '<div class="carousel-caption">' + language + '</div>' +
       '</div>';
       $('.carousel-inner').append(spinner);
       $('.carousel-indicators').append('<li data-target="#carousel-spinner" data-slide-to="' + index + '"></li>');
@@ -236,7 +236,8 @@ $.getJSON('mediakit/mediaKit.json')
     }
   }
 
-  $('.carousel-inner .item:first-child, .carousel-indicators li:first-child').addClass('active');
+  $('.carousel-indicators li:first-child').addClass('active');
+  $('.item[data-language="english"]').addClass('active').prependTo('.carousel-inner');
 
   $('#mediaKit-languages ul li a').click(function() {
     $('#mediaKit-languages button').html($(this).text() + '<span class="caret"></span>');

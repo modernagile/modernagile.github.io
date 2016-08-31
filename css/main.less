@@ -684,9 +684,32 @@ span.errorIcon:before {
   display: none;
 }
 
+.carousel-inner>.item {
+  padding-bottom: 90px;
+  opacity: 0;
+  -webkit-transition-property: opacity, transform;
+  -moz-transition-property: opacity, transform;
+  -o-transition-property: opacity, transform;
+  transition-property: opacity, transform;
+}
+.carousel-inner>.item.prev,
+.carousel-inner>.item.next,
+.carousel-inner>.item.active:not(.right):not(.left) {
+  opacity: 1;
+}
 .carousel-inner>.item>a>img,
 .carousel-inner>.item>img {
-    margin: 0 auto 60px auto;
+    margin: 0 auto;
+}
+.carousel-caption {
+  color: #AAA;
+  color: rgba(0,0,0,0.35);
+  text-shadow: none;
+  text-transform: capitalize;
+}
+
+.item[data-language="english"] .carousel-caption {
+  display: none;
 }
 
 .carousel-control.left,
