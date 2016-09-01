@@ -722,6 +722,10 @@ span.errorIcon:before {
   color: rgba(0,0,0,0.7);
   text-shadow: none;
   font-size: 1em;
+  @media (max-width: @screen-sm-min) {
+    bottom: 20px;
+    top: initial;
+  }
 }
 .carousel-indicators li {
   border-color: #333;
