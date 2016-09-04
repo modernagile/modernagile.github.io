@@ -213,10 +213,17 @@ jQuery('#contactUsModal .cancelContact').click(function() {
   jQuery('.contactForm input, .contactForm textarea').val('');
 });
 
+function sortList(selector) {
+    $(selector).find("li").sort(function(a, b) {
+        return $(a).text().localeCompare($(b).text());
+    }).each(function(index, el) {
+        $(el).parent().append(el);
+    });
+}
+
 $.getJSON('mediakit/mediaKit.json')
 .done(function( json ) {
   var mediaKit = json;
-  var index = 0;
   for (var language in mediaKit) {
     if (mediaKit.hasOwnProperty(language)) {
       $('#mediaKit-languages ul').append('<li><a title="' + language + '" data-analytics-event="Media Kit,' + language + '">' + language + '</a></li>');
@@ -224,20 +231,24 @@ $.getJSON('mediakit/mediaKit.json')
         var kit = mediaKit[language][i];
         $('#mediaKit-files ul').prepend('<li data-language="' + language + '"><a href="mediakit/' + kit.file + '" data-analytics-event="Media Kit,' + kit.label + '">' + kit.label + '</a></li>');
       }
-
-      //Carrousel
-      var spinner = '<div class="item" data-language="' + language + '">' +
-      '<img id="modernAgileWheel" alt="Modern Agile Principles in "' + language + ' src="img/modernAgileWheel/modern_agile_wheel_' + language + '.svg" />' +
-      '<div class="carousel-caption">' + language + '</div>' +
-      '</div>';
-      $('.carousel-inner').append(spinner);
-      $('.carousel-indicators').append('<li data-target="#carousel-spinner" data-slide-to="' + index + '"></li>');
-      index++;
     }
   }
 
-  $('.carousel-indicators li:first-child').addClass('active');
-  $('.item[data-language="english"]').addClass('active').prependTo('.carousel-inner');
+  sortList('#mediaKit-languages ul');
+  var index = 0;
+  $('#mediaKit-languages ul li a').each(function() {
+    var language = $(this).text();
+    var spinner = '<div class="item" data-language="' + language + '">' +
+    '<img id="modernAgileWheel" alt="Modern Agile Principles in "' + language + ' src="img/modernAgileWheel/modern_agile_wheel_' + language + '.svg" />' +
+    '<div class="carousel-caption">' + language + '</div>' +
+    '</div>';
+    $('.carousel-inner').append(spinner);
+    $('.carousel-indicators').append('<li data-target="#carousel-spinner" data-language="' + language + '" data-slide-to="' + index + '"></li>');
+    index++;
+  });
+
+  $('.carousel-indicators li[data-language="english"]').addClass('active');
+  $('.item[data-language="english"]').addClass('active');
 
   $('#mediaKit-languages ul li a').click(function() {
     $('#mediaKit-languages button').html($(this).text() + '<span class="caret"></span>');
