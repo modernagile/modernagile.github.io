@@ -1,3 +1,9 @@
+language: node_js
+node_js:
+  - "6"
+before_script:
+  - npm install -g grunt-contrib-qunit --save-dev
+script: cd tests/ && grunt
 deploy:
   provider: cloudfoundry
   api: https://api.run.pivotal.io
