@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - "6"
 before_script:
+  - npm install -g grunt
   - npm install -g grunt-contrib-qunit --save-dev
 script: grunt --base tests --gruntfile tests/Gruntfile.js
 deploy:
