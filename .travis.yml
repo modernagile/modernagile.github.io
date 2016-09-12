@@ -1,17 +1,17 @@
 language: node_js
 node_js:
-  - "6"
+- '6'
 before_script:
-  - npm install -g grunt
-  - npm install -g grunt-contrib-qunit --save-dev
+- npm install -g grunt
+- npm install -g grunt-contrib-qunit --save-dev
 script: grunt --base tests --gruntfile tests/Gruntfile.js
 deploy:
   provider: cloudfoundry
   api: https://api.run.pivotal.io
   username: modernagile@gmail.com
-  password:
-    secure: kna94a7Fji81QScAuks89QmFMw+3yO4JNNZLJX1Mqj9F4Qf4mxCEMKkr2e/AGOFixwOxT6LFXF2dYhjV6788Jk18mIzU7yMXxh8/ou0OlFayNvTb9KizmUKWtrNMDi9Kdmlgq3/woMkx9OzQy5DVVeFf828YVkq9z6QEjbK5nxuuLT4StkHS3MwKHrLCuAWqZvIbMKvRs9Bd/D5q5nRyrqZnt/gi6RmHsj/N4xuOva8fEg4JP+YblsRSBvwWKMCAJeb3DQQ42Y4fpLvxPkF7NsaPGFsMpTsesYdOF2/uH/Y8biR59KRODyke/rkT8AJEwdY5mkwOu5xIPEymC1Q6pxTRNGIUgLPc1uSDdgyu4UWl0uIrL2lhFtDnJicJqstLVbAi42UnhLOTWwJqzzyJta+KZOU//zY8pVk3PKQoQ1KGjT7vSLHYR4sAn18mRsE1YXSH72n7X/L6zsOLYL1QUIEfL5+TE3YACPY9Os6eWqv8TKRG/nIT699YyMbJSJlGn0JIpLz29FMK8WKBchokrxz60lB0EgAMYCADYXNWjxXEYBgogkjPcpXCnNHGI19BXmPs9V8+IuaW1W98ZCOhLkLaMzQQWq8wAGhoxJWYkolWmaHK9WNs/OjYfjIhpn7uV0YUw2g3qJeRjt0nz7R4kQ4ObTjwvYH8oelJUysKfnU=
   organization: Modern Agile
   space: development
   on:
     repo: modernagile/modernagile.github.io
+  password:
+    secure: ROYCfz7Jg7HfYbTEXDAO44OK3ePpWOtWXfjWDVWg5FFPEeSN0xZ+1VT+fWUh4FZrFYpef4lgkEg0BM4qBhSV2rcc99PtjPZbn75h5vQ0ZsW+7Jqju6SlknwomsctJgtIzHCbAxXqRGV5GDGEdksNMp/sePBF1EOQdPFuI14slk4EfLePzdQmSK20LEUPvgWIGZwqzuH7lCd61Pp32i4ugglZ/Cw5LmgOPEYbDKZ4IlIBMdITLa2pCP5EKPA8SIKfzVnsJgD0It0A6i7xxdmWhWNf4AxmaCMcxyry5IRzhhyEjeopAUKhBJ+8G89XXb2Rc4F8WP4o3lac89hunTHFZfMtUetkpzHXhC10T+0D2FvglkEofI5l8q3I6YAOQd/V6WcwwINrF4h83r0cB/5tCpo/W5nvhR/wBWuubYiivGEoGBwgbBUofXKVNqVRUCY9gmuf6Rr5nbud2OLCBEW/zEq3VodN9G7XcNCEMix/liHpZinFHlz6OT9YGwLMSrMhKaMEZz9DlGPsNwNnHUXPS2+dvYe+TdpvRSzMQy/fkbx0rOwVfNNYdBFL97dMnksExQ9FstF2H3tXXMBtVDkcRAmhMaep+G/RM7YdtjrVEoa60zsj4WpyuZeb535YAP5hCHIZA84VUT9+L5RFYZB/hgKdyDBtWeEAKf3Kd6GZpHo=
