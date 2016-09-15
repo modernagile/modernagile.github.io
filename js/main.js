@@ -70,6 +70,9 @@ duplicateParagraphs();
 var learnMore = new LearnMore('#readingList', learnMoreEntries, 2, 6, '#learnMore');
 learnMore.render();
 
+//var activiesList = new ActivitiesList('#activitiesList', activitiesListEntries);
+//ctiviesList.render();
+
 var upcomingEvents = new UpcomingEvents('#upcomingEvents', upcomingEventsEntries);
 upcomingEvents.render();
 
