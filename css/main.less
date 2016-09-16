@@ -780,15 +780,17 @@ section.activities-section {
   }
   #activitiesList {
     & > div.row {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display:         flex;
-      &:not(:first-child) {
-        margin-top: 30px;
-      }
-      .fancyListEntry > .content {
-        min-height: 100%;
+      @media (min-width: @screen-sm-min) {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display:         flex;
+        &:not(:first-child) {
+          margin-top: 30px;
+        }
+        .fancyListEntry > .content {
+          min-height: 100%;
+        }
       }
     }
   }
