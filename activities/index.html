@@ -37,14 +37,14 @@
     <!-- / SEO -->
 
     <!-- Bootstrap Core CSS -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../../css/scrolling-nav.css" rel="stylesheet">
+    <link href="../css/scrolling-nav.css" rel="stylesheet">
 
     <!-- Modern Agile CSS -->
     <link href="https://www.google.com/fonts#QuickUsePlace:quickUse/Family:Open+Sans:400,300,600,700,800" rel="stylesheet">
-    <link href="../../css/main.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -57,11 +57,13 @@
 
 <body id="modernAgile" data-spy="scroll" data-target=".navbar-fixed-top">
 
+  <div id="fb-root"></div>
+
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <a class="navbar-brand page-scroll" href="#modernAgile" data-analytics-event="Navigation,Modern Agile"><img id="brand" alt="Modern Agile" src="../../img/brand.svg" /></a>
+                <a class="navbar-brand page-scroll" href="http://modernagile.org" data-analytics-event="Navigation,Modern Agile"><img id="brand" alt="Modern Agile" src="../img/brand.svg" /></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -76,7 +78,27 @@
 
 
     <!-- Activities Section -->
-    <section id="activities" class="activities-section">
+    <section id="activity" class="activity">
+      <div class="container">
+        <div class="sectionTitle" id="activityTitle"></div>
+        <div class="row">
+          <div class="col-sm-6">
+            <strong style="font-weight: 500;">How to perform it:</strong></br>
+            <div id="activity-description"></div>
+          </div>
+          <div class="col-sm-6">
+            <div id="activity-header">
+              <div class="shortDescription">Objective(s):<p></p></div>
+              <div class="who-wrote-it">Author(s):<p></p></div>
+              <div class="duration">Duration:<p></p></div>
+              <div class="rating">Rating:
+              <div class="rw-ui-container"></div>
+              </div>
+              <div class="fb-comments" data-href="https://moderargile.org/activities/?activityId=defense-mapping" data-numposts="5"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
 
@@ -103,26 +125,105 @@
     </div>
 
     <!-- jQuery -->
-    <script src="/js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <!-- Scrolling Nav JavaScript -->
-    <script src="/js/jquery.easing.min.js"></script>
-    <script src="/js/scrolling-nav.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script src="../js/scrolling-nav.js"></script>
 
     <!-- Modern Agile JavaScript -->
-    <script src="/js/FancyList.js"></script>
-    <script src="/data/learnMoreEntries.js"></script>
-    <script src="/js/LearnMore.js"></script>
-    <script src="/data/upcomingEventsEntries.js"></script>
-    <script src="/js/UpcomingEvents.js"></script>
-    <script src="/data/activitiesListEntries.js"></script>
-    <script src="/js/ActivitiesList.js"></script>
-    <script src="/js/analytics.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/activity.js"></script>
+    <script src="../js/analytics.js"></script>
+    <script src="../data/activitiesListEntries.js"></script>
+
+
+    <script>
+
+    $.ajaxSetup({ cache: false });
+
+    function fillHeaderInfo(id) {
+      var activity = activitiesListEntries.find(function(act) {
+        return act.id === id;
+      });
+      if(!activity) return;
+
+      $('#activityTitle').text(activity.title);
+      $('#activity-header .shortDescription p').text(activity.objective);
+      $('#activity-header .who-wrote-it p').html(activity.author);
+      $('#activity-header .duration p').text(activity.duration);
+      $('#activity-header .rating p').text(activity.score);
+    }
+
+    function getQueryParams() {
+        qs = document.location.search.split("+").join(" ");
+        var params = {},
+            tokens,
+            re = /[?&]?([^=]+)=([^&]*)/g;
+
+        while (tokens = re.exec(qs)) {
+            params[decodeURIComponent(tokens[1])]
+                = decodeURIComponent(tokens[2]);
+        }
+
+        return params;
+    }
+
+      var getParameters = getQueryParams();
+      var activityId = getParameters['activityId'] || 'default';
+
+      $('#activity-description').load('./' + activityId + '/index.html', function() {
+        $(this).find('img').each(function() {
+          var img = $(this);
+          img.attr('src', './' + activityId + '/' + img.attr('src'))
+        });
+        fillHeaderInfo(activityId);
+        $(this).show();
+      });
+
+      $('.fb-comments').attr('data-href', 'https://moderargile.org/activities/?activityId='+activityId);
+      $('.rw-ui-container').attr('data-title', activityId);
+
+    </script>
+
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <script type="text/javascript">(function(d, t, e, m){
+
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+
+        RW.init({
+            huid: "329045",
+            uid: "2d0eb3f3d4545f68f9b884ad0ab7d4fc",
+            source: "website",
+            options: {
+                "style": "flat_blue",
+                "isDummy": false
+            }
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() +
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));</script>
+
 
 </body>
 

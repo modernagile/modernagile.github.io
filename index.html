@@ -98,9 +98,9 @@
                     <li>
                         <a class="page-scroll collapseMobileMenu" href="#spinnerApp" data-analytics-event="Navigation,Spinner App">Spinner App</a>
                     </li>
-                    <!--li>
+                    <li>
                         <a class="page-scroll collapseMobileMenu" href="#activities" data-analytics-event="Navigation,Activities">Activities</a>
-                    </li!-->
+                    </li>
                     <li>
                         <a class="page-scroll collapseMobileMenu" href="#community" data-analytics-event="Navigation,Community">Community</a>
                     </li>
@@ -268,21 +268,15 @@
     </section>
 
     <!-- Activities Section -->
-    <!-- section id="activities" class="activities-section">
+    <section id="activities" class="activities-section">
         <div class="sectionTitle">Activities</div>
         <div class="container">
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="activitiesIntro">
-                  <p>We are asking the Modern Agile community to build a set of activities which promote understanding of and application of the Modern Agile principles.</p>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div id="activitiesList" class="showCategoriesAsIcons fancyList"></div>
-              </div>
-            </div>
+          <div class="activitiesIntro">
+            <p>Teaching Modern Agile to others? Our growing catalog of training activities, including exercises, games, simulations and interactive lectures, is here to help. We regularly prune activities so that this catalog remains awesome. <a href="mailto:modernagile@gmail.com">Please submit your awesome activities.</a></p>
+          </div>
+          <div id="activitiesList" class="showCategoriesAsIcons fancyList"></div>
         </div>
-    </section-->
+    </section>
 
     <!-- Community Section -->
     <section id="community" class="community-section">
@@ -407,6 +401,37 @@
     <script src="js/ActivitiesList.js"></script>
     <script src="js/analytics.js"></script>
     <script src="js/main.js"></script>
+
+    <script type="text/javascript">(function(d, t, e, m){
+
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+
+        RW.init({
+            huid: "329045",
+            uid: "2d0eb3f3d4545f68f9b884ad0ab7d4fc",
+            source: "website",
+            options: {
+                "style": "flat_blue",
+                "isDummy": false,
+                "readOnly": true,
+                "showInfo": false
+            }
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() +
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));</script>
 
 </body>
 

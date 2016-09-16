@@ -266,21 +266,18 @@ section.intro-section {
   }
 }
 
-/*
-.title {
-  font-weight: bolder;
-}
-
-.objective, .score, .duration {
-  font-size: 14px;
-  line-height: 1.4;
-}
-*/
-
 section.activities-section, section.community-section  {
   padding-top: 50px;
   background-size: cover;
   position: relative;
+  .title {
+    font-weight: bolder;
+  }
+
+  .objective, .score, .duration {
+    font-size: 14px;
+    line-height: 1.4;
+  }
   .fancyList {
     & >.row:not(:first-child) {
       margin-top: 0.8em;
@@ -746,5 +743,63 @@ span.errorIcon:before {
     background-color: #333;
     background-color: rgba(0,0,0,0.7);
     border: 0;
+  }
+}
+
+
+section.activity {
+  text-align: left;
+  #activityTitle {
+    text-align: center;
+  }
+  #activity-header {
+    text-align: left;
+    h2 {
+      margin-top: 0;
+    }
+  }
+  #activity-description {
+    display: none;
+  }
+  .fb-comments {
+    margin-top: 30px;
+  }
+}
+
+section.activities-section .fancyList .fancyListEntry .content, section.community-section .fancyList .fancyListEntry .content {
+    background: #f1f1f1;
+}
+
+section.activities-section {
+  .activitiesIntro {
+      max-width: 860px;
+      margin: 0 auto;
+      p {
+        text-align: center;
+      }
+  }
+  #activitiesList {
+    & > div.row {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display:         flex;
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
+      .fancyListEntry > .content {
+        min-height: 100%;
+      }
+    }
+  }
+  .activityContent {
+    padding:10px;
+    .objective {
+      margin-top: 1em;
+    }
+    .categories {
+      margin-top: 1em!important;
+      margin-bottom: 1em!important;
+    }
   }
 }

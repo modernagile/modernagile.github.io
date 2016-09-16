@@ -1,3 +1,17 @@
+function getQueryParams() {
+    qs = document.location.search.split("+").join(" ");
+    var params = {},
+        tokens,
+        re = /[?&]?([^=]+)=([^&]*)/g;
+
+    while (tokens = re.exec(qs)) {
+        params[decodeURIComponent(tokens[1])]
+            = decodeURIComponent(tokens[2]);
+    }
+
+    return params;
+}
+
 function loadSVGAndAppend(container) {
   var $img = container;
   var imgID = $img.attr('data-id');
@@ -70,8 +84,8 @@ duplicateParagraphs();
 var learnMore = new LearnMore('#readingList', learnMoreEntries, 2, 6, '#learnMore');
 learnMore.render();
 
-//var activiesList = new ActivitiesList('#activitiesList', activitiesListEntries);
-//ctiviesList.render();
+var activiesList = new ActivitiesList('#activitiesList', activitiesListEntries, 3);
+activiesList.render();
 
 var upcomingEvents = new UpcomingEvents('#upcomingEvents', upcomingEventsEntries);
 upcomingEvents.render();
