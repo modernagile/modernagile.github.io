@@ -40,7 +40,7 @@ activitiesListEntries = [
   },
   {
     id: 'radar-charting-your-modern-agility',
-    title: 'Radar Charting Your Modern Agility',
+    title: 'Radar Charting your Modern Agility',
     author: 'Joshua Kerievsky',
     duration: '90 minutes',
     objective: 'Help people learn how to think about and rate a real-world project in terms of Modern Agile.',
