@@ -9,6 +9,30 @@ function ActivitiesList(container, data, columns, entriesPerPage) {
     }
     this.data = cleanedData;
   }
+  this.filterRelatedActivities = function(tags, amount, excludeId) {
+    var related = [];
+    for(var i=0; i<this.data.length; i++) {
+      var found = false;
+      for (var tag in tags) {
+        if (tags.hasOwnProperty(tag) && !found) {
+          if(this.data[i].categories[tag] === true) {
+            if(excludeId && excludeId === this.data[i].id) {}
+            else {
+              related.push(this.data[i]);
+              found = true;
+            }
+          }
+        }
+      }
+    }
+
+    if(amount && amount > 1) {
+      amount = Math.min(amount, related.length);
+      related = related.slice(0, amount);
+    }
+
+    this.data = related;
+  }
   this.renderAuthor = function(author) {
     if(this.isEmpty(author.name))
       return '';

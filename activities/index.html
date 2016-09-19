@@ -53,6 +53,12 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+      section {
+        min-height: auto;
+      }
+    </style>
+
 </head>
 
 <body id="modernAgile" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -91,12 +97,21 @@
               <div class="shortDescription">Objective(s):<p></p></div>
               <div class="who-wrote-it">Author(s):<p></p></div>
               <div class="duration">Duration:<p></p></div>
+              <div class="tags">Tags:<p></p></div>
               <div class="rating">Rating:
               <div class="rw-ui-container"></div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Related Activities Section -->
+    <section id="activityRelated" class="activities-section">
+      <div class="container">
+        <div class="sectionTitle">Related Activities</div>
+        <div id="activitiesList" class="showCategoriesAsIcons fancyList noRating"></div>
       </div>
     </section>
 
@@ -135,8 +150,9 @@
 
     <!-- Modern Agile JavaScript -->
     <script src="../js/analytics.js"></script>
+    <script src="../js/FancyList.js"></script>
     <script src="../data/activitiesListEntries.js"></script>
-
+    <script src="../js/ActivitiesList.js"></script>
 
     <script>
 
@@ -153,6 +169,20 @@
       $('#activity-header .who-wrote-it p').html(activity.author);
       $('#activity-header .duration p').text(activity.duration);
       $('#activity-header .rating p').text(activity.score);
+
+      var relatedData = activitiesListEntries.slice();
+      var activiesList = new ActivitiesList('#activitiesList', relatedData, 3);
+      activiesList.filterRelatedActivities(activity.categories, 3, activity.id);
+      activiesList.render();
+      $('#activitiesList .eventTitle').each(function() {
+        var link = $(this);
+        link.removeAttr('target');
+        var originalUrl = link.attr('href');
+        var modifiedUrl = originalUrl.split('?').splice(1,1).join('');
+        link.attr('href', '?'+modifiedUrl);
+      });
+
+      $('#activity-header .tags p').html(activiesList.renderCategories(activity.categories))
     }
 
     function getQueryParams() {
@@ -213,8 +243,6 @@
     rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
     s.parentNode.insertBefore(rw, s);
     }(document, new Date(), "script", "rating-widget.com/"));</script>
-
-
 </body>
 
 </html>
