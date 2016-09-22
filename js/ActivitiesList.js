@@ -1,7 +1,7 @@
-function ActivitiesList(container, data, columns, entriesPerPage) {
+function ActivitiesList(container, data, columns, entriesPerPage, paginationAnchor) {
   columns = columns || 1;
   //Cleaning old events;
-  FancyList.call(this, container, data, columns, entriesPerPage);
+  FancyList.call(this, container, data, columns, entriesPerPage, paginationAnchor);
   this.cleanOldEvents = function() {
     var cleanedData = [];
     for(var i=0; i<data.length; i++) {

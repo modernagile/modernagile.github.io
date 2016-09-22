@@ -68,11 +68,13 @@ var FancyList = function(container, data, columns, entriesPerPage, paginationAnc
     return (hasCategory) ? '' : ' hidden';
   }
   this.renderPagination = function(parent) {
+    if(Math.ceil(this.data.length/this.entriesPerPage) < 2)
+      return;
     if(this.container.find('.pagination').length === 0) {
       var numberOfPages = Math.ceil(this.data.length/this.entriesPerPage);
       var pages = '';
       var numberOfPages = this.getNumberOfPages();
-      var paginationAnchor = (this.hasPaginationAnchor()) ? ' href="'+ this.paginationAnchor +'" ' : ' ';
+      var paginationAnchor = (this.hasPaginationAnchor()) ? ' data-anchor="'+ this.paginationAnchor +'" ' : ' ';
       for(var page=1; page<=numberOfPages; page++) {
         var active = (page == this.currentPage) ? 'active' : '';
         pages+= '<li class="'+ active +'"><a'+ paginationAnchor +'title="page '+ page +'" class="pagination-pageNumber" data-analytics-event="Pagination,Goto page,'+page+'" data-page="'+page+'">'+ page +'</a></li>';
@@ -98,19 +100,25 @@ var FancyList = function(container, data, columns, entriesPerPage, paginationAnc
       this.container.append(pagination);
       var that = this;
       this.container.find('.pagination-pageNumber').click(function() {
-        that.gotoPage(parseInt(jQuery(this).attr('data-page')));
+        that.scrollTo(this, 500);
+        var targetPageNumber = parseInt(jQuery(this).attr('data-page'));
+        setTimeout(function() {
+          that.gotoPage(targetPageNumber);
+        }, 500);
       });
       this.container.find('.pagination-button.next').click(function() {
         if(jQuery(this).parent().hasClass('disabled'))
           return;
 
-        that.nextPage();
+        that.scrollTo(this, 500);
+        setTimeout(function() {that.nextPage()}, 500);
       });
       this.container.find('.pagination-button.previous').click(function() {
         if(jQuery(this).parent().hasClass('disabled'))
           return;
 
-        that.previousPage();
+        that.scrollTo(this, 500);
+        setTimeout(function() {that.previousPage()}, 500);
       });
     } else {
       jQuery('li.active').removeClass('active');
@@ -122,6 +130,14 @@ var FancyList = function(container, data, columns, entriesPerPage, paginationAnc
       else if(this.currentPage === this.getNumberOfPages())
         jQuery('.pagination-button.next').parent().addClass('disabled');
     }
+  }
+  this.scrollTo = function(link, duration) {
+    var pageLink = jQuery(link);
+    if(!pageLink[0].hasAttribute("data-anchor"))
+      return;
+    $('html, body').stop().animate({
+        scrollTop: $(pageLink.attr('data-anchor')).offset().top
+    }, duration, 'easeInOutExpo');
   }
   this.renderList = function(entries) {
     this.container.children('.row').remove();
