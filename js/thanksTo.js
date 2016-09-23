@@ -22,7 +22,7 @@ function addThanksTo(container) {
   thanksTo.sort();
   var lastPerson = thanksTo[thanksTo.length-1];
   thanksTo.pop();
-  var intro = "<strong>This  work would not be possible without the help of:</strong>";
+  var intro = "<strong>Made possible by the  generous translation assistance of:</strong>";
   var html = '<p>' + intro + '<br/>' + thanksTo.join(', ') + ' and ' + lastPerson + '.</p>';
   $(container).append(html);
 }
