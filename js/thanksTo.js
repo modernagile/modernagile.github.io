@@ -18,11 +18,16 @@ thanksTo = [
   "Masanori Kado"
 ];
 
+function getThanksList() {
+  var list = thanksTo.slice();
+  list.sort();
+  var lastPerson = list[list.length-1];
+  list.pop();
+  return list.join(', ') + ' and ' + lastPerson;
+}
 function addThanksTo(container) {
-  thanksTo.sort();
-  var lastPerson = thanksTo[thanksTo.length-1];
-  thanksTo.pop();
   var intro = "<strong>Made possible by the  generous translation assistance of:</strong>";
-  var html = '<p>' + intro + '<br/>' + thanksTo.join(', ') + ' and ' + lastPerson + '.</p>';
+  var outro = "<p>If we missed anyone's name, please let us know so we can be sure to give them the credit they deserve.</p>";
+  var html = '<p>' + intro + '<br/>' + getThanksList() + '.</p>' + outro;
   $(container).append(html);
 }
