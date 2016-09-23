@@ -282,6 +282,8 @@ $.getJSON('mediakit/mediaKit.json')
   //TODO: Handle fail
 });
 
+addThanksTo('#mediaKitIntro');
+
 window.addEventListener('message', function (e) {
     var iframe = $('.community-section iframe');
 
