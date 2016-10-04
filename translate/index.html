@@ -103,6 +103,13 @@
         border: 1px solid #CCC;
         padding: 5px;
       }
+      #shareURL.error {
+        border: 0;
+        color: white;
+        background: red;
+        font-weight: bold;
+        border-radius: 5px;
+      }
       .layoutMode {
         margin-bottom: 20px;
       }
@@ -157,7 +164,7 @@
           Click on the words in the graphic and type in your translation, then press the “Submit” button to get a URL to share here.  Then we can all see what your translation looks like.
         </p>
         <div id="share">
-          <input type="submit" val="Share" class="btn btn-primary btn-lg"></input>
+          <input type="submit" val="Share" id="sharelayout" onclick="validateForm();" class="btn btn-primary btn-lg"></input>
           <p id="shareURL"></p>
         </div>
       </div>
@@ -217,7 +224,26 @@
   setLayout(jQuery('#mode').val());
 
   if(hasShare)
-    jQuery('#shareURL').show().text(document.location);
+    jQuery('#shareURL').show().text(document.location).removeClass('error');
+
+  function validateForm() {
+    var wheel = $('#mawheel');
+    var valid = true;
+    var numberOfLines = wheel.hasClass('lines-3') ? 3 : 2;
+    
+    wheel.children('textarea').each(function() {
+      var text = $(this).val();
+      var lines = text.split(/\r*\n/).length;
+      if(lines !== numberOfLines)
+        valid = false;
+    });
+
+    if(!valid) {
+      event.preventDefault();
+      $('#shareURL').html('Please make all the principles ' + numberOfLines + ' lines.').show().addClass('error');
+
+    }
+  };
 
   </script>
 
