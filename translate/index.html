@@ -106,7 +106,6 @@
       #shareURL.error {
         border: 0;
         background: #ecaf05;
-        font-weight: bold;
         border-radius: 5px;
         padding: 16px;
       }
@@ -230,6 +229,7 @@
     var wheel = $('#mawheel');
     var valid = true;
     var numberOfLines = wheel.hasClass('lines-3') ? 3 : 2;
+    var numberOfLinesString = (numberOfLines === 3) ? 'three' : 'two'
     
     wheel.children('textarea').each(function() {
       var text = $(this).val();
@@ -240,7 +240,7 @@
 
     if(!valid) {
       event.preventDefault();
-      $('#shareURL').html('Please make all the principles ' + numberOfLines + ' lines.').show().addClass('error');
+      $('#shareURL').html('This graphic looks best when the text for all four principle takes up ' + numberOfLinesString + ' lines.').show().addClass('error');
 
     }
   };
