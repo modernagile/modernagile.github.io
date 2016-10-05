@@ -5,7 +5,6 @@ thanksTo = [
   "Rafael Rodrigues",
   "Ingmar van Dijk",
   "Arturo Robles Maloof",
-  "@Reskiebak",
   "Di Cao",
   "Jon Brownstein, Mario",
   "Ola Ellnestam",
