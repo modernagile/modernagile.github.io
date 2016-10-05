@@ -15,7 +15,12 @@ thanksTo = [
   "Mohamed Ragab",
   "Frieh Maha",
   "Karim Mohamed Elsayed",
-  "Masanori Kado"
+  "Masanori Kado",
+  "Carmen Diaz Guadarrama",
+  "Sergio Zamora Rubio",
+  "Javier Tenorio Martínez",
+  "Luis Raúl Mulato Millan",
+  "Javier Garzas"
 ];
 
 function getThanksList() {
