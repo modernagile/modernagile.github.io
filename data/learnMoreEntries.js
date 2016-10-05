@@ -1,5 +1,17 @@
 learnMoreEntries = [
-
+  {
+    thumbnail: 'img/readingList/joshagile2016.jpg',
+    title: 'Agile 2016: Joshua Kerievsky\'s Keynote',
+    resume: null,
+    type: 'video',
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'https://www.agilealliance.org/resources/videos/modern-agile/'
+  },
   {
     thumbnail: 'img/readingList/badass.jpg',
     title: 'Badass: Making Users Awesome',

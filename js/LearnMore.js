@@ -1,12 +1,12 @@
 function LearnMore(container, data, columns, entriesPerPage, paginationAnchor) {
   FancyList.call(this, container, data, columns, entriesPerPage, paginationAnchor);
-  this.getLink =  function(url, title) {
+  this.getLink =  function(url, title, type) {
     if(this.isEmpty(url))
       return '';
 
     var linkText;
-    if(this.contains(url, 'youtube.com', true) || this.contains(linkText, 'youtu.be', true))
-      linkText = 'Watch on Youtube';
+    if(this.contains(url, 'youtube.com', true) || this.contains(linkText, 'youtu.be', true) || type === 'video')
+      linkText = 'Watch Video';
     else if(this.contains(url, 'amazon.com', true))
       linkText = 'Buy on Amazon';
     else if(this.isDownloadableFile(url))
@@ -17,7 +17,7 @@ function LearnMore(container, data, columns, entriesPerPage, paginationAnchor) {
     return '<a href="'+ url +'" target="_blank" data-analytics-event="Learn More,'+ title +',1">'+ linkText +'</a>';
   }
   this.renderEntry = function(entryData) {
-    var link = this.getLink(entryData.url, entryData.title);
+    var link = this.getLink(entryData.url, entryData.title, entryData.type);
     var resumeParagraph = (!this.isEmpty(entryData.resume)) ? '<p>'+ entryData.resume +'</p>' : '';
     var cssClass = entryData.cssClass || '';
     var html = ' \
