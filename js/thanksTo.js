@@ -22,13 +22,18 @@ thanksTo = [
   "Javier Garzas"
 ];
 
+var thanksToUnique = thanksTo.filter(function(item, pos) {
+    return thanksTo.indexOf(item) == pos;
+});
+
 function getThanksList() {
-  var list = thanksTo.slice();
+  var list = thanksToUnique.slice();
   list.sort();
   var lastPerson = list[list.length-1];
   list.pop();
   return list.join(', ') + ' and ' + lastPerson;
 }
+
 function addThanksTo(container) {
   var intro = "<strong>Made possible by the  generous translation assistance of:</strong>";
   var outro = "<p>If we missed anyone's name, please let us know so we can be sure to give them the credit they deserve.</p>";
