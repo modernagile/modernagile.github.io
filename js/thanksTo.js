@@ -19,7 +19,8 @@ thanksTo = [
   "Sergio Zamora Rubio",
   "Javier Tenorio Martínez",
   "Luis Raúl Mulato Millan",
-  "Javier Garzas"
+  "Javier Garzas",
+  "Ruud Wijnands"
 ];
 
 var thanksToUnique = thanksTo.filter(function(item, pos) {
