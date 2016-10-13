@@ -20,7 +20,11 @@ thanksTo = [
   "Javier Tenorio Martínez",
   "Luis Raúl Mulato Millan",
   "Javier Garzas",
-  "Ruud Wijnands"
+  "Ruud Wijnands",
+  "Arunthep Sangvareethip",
+  "Tanat Kitcharoen",
+  "Jenjira Sangvareethip",
+  "Pongrapee Jencharat",
 ];
 
 var thanksToUnique = thanksTo.filter(function(item, pos) {
