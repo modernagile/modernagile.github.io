@@ -40,8 +40,8 @@ function getThanksList() {
 }
 
 function addThanksTo(container) {
-  var intro = "<strong>Made possible by the  generous translation assistance of:</strong>";
-  var outro = "<p>If we missed anyone's name, please let us know so we can be sure to give them the credit they deserve.</p>";
+  var intro = '<strong>Made possible by the  generous translation assistance of:</strong>';
+  var outro = '<p>If we missed anyone\'s name, please <a title="Contact Us" data-toggle="modal" data-target="#contactUsModal" style="cursor:pointer;">let us know</a> so we can be sure to give them the credit they deserve.</p>';
   var html = '<p>' + intro + '<br/>' + getThanksList() + '.</p>' + outro;
   $(container).append(html);
 }
