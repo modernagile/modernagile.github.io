@@ -1,5 +1,17 @@
 learnMoreEntries = [
   {
+    thumbnail: 'img/readingList/modernagile_intro.jpg',
+    title: 'An Introduction to Modern Agile',
+    resume: null,
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'https://www.infoq.com/articles/modern-agile-intro'
+  },
+  {
     thumbnail: 'img/readingList/joshagile2016.jpg',
     title: 'Agile 2016: Joshua Kerievsky\'s Keynote',
     resume: null,
@@ -35,7 +47,7 @@ learnMoreEntries = [
       deliverValueContinuously: false
     },
     url: 'https://www.youtube.com/watch?v=FF-tKLISfPE'
-  },  
+  },
   {
     thumbnail: 'img/readingList/deliveringHapiness.jpg',
     title: 'Delivering Happiness: A Path to Profits, Passion, and Purpose',
