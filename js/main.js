@@ -282,6 +282,10 @@ $.getJSON('mediakit/mediaKit.json')
   //TODO: Handle fail
 });
 
+function scrollTo(id) {
+  $("html, body").animate({ scrollTop: jQuery(id).offset().top });
+}
+
 addThanksTo('#mediaKitIntro');
 
 window.addEventListener('message', function (e) {
