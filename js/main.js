@@ -283,7 +283,7 @@ $.getJSON('mediakit/mediaKit.json')
 });
 
 function scrollTo(id) {
-  $("html, body").animate({ scrollTop: jQuery(id).offset().top });
+  $("html, body").animate({ scrollTop: Math.max(0, jQuery(id).offset().top - 45)});
 }
 
 addThanksTo('#mediaKitIntro');
