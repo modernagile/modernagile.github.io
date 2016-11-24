@@ -17,7 +17,15 @@ function UpcomingEvents(container, data, entriesPerPage) {
   this.hasHappened = function(dateString) {
     var eventDate = new Date(dateString);
     var today = new Date();
-    return (today > eventDate);
+    //return (today > eventDate);
+    if(today.getFullYear() > eventDate.getFullYear())
+      return true;
+    if(today.getMonth() > eventDate.getMonth())
+      return true;
+    if(today.getDate() > eventDate.getDate())
+      return true;
+
+    return false;
   }
   this.formatDate = function(dateString) {
     var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"

@@ -73,5 +73,20 @@ upcomingEventsEntries = [
       deliverValueContinuously: true
     },
     url: 'http://agiles2016.agiles.org/'
+  },
+  {
+    thumbnail: 'img/upcomingEvents/agileNights.jpg',
+    title: ' Agile Nights: Modern Agile - El renacimiento de los principios ágiles',
+    author: 'Arturo Robles Maloof',
+    authorPage: 'https://www.facebook.com/AgileNights/posts/1293967800644258:0',
+    location: 'Praxis México, México City',
+    date: '2016/11/24',
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'https://www.eventbrite.com/e/agile-nights-vol-xxii-tickets-29258395649'
   }
 ]
