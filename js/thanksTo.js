@@ -25,6 +25,7 @@ thanksTo = [
   "Tanat Kitcharoen",
   "Jenjira Sangvareethip",
   "Pongrapee Jencharat",
+  "Zuzi Sochova"
 ];
 
 var thanksToUnique = thanksTo.filter(function(item, pos) {
