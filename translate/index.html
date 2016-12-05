@@ -207,6 +207,15 @@
     return params;
   }
 
+  function cleanRawStringArray(rawStringArray) {
+    var clenedArray = [];
+    for(var i=0; i<rawStringArray.length; i++) {
+      if(rawStringArray[i].trim() != '')
+        clenedArray.push(rawStringArray[i]);
+    }
+    return clenedArray;
+  }
+
   var $_GET = getQueryParams(document.location.search);
   var hasShare = false;
 
@@ -230,10 +239,11 @@
     var valid = true;
     var numberOfLines = wheel.hasClass('lines-3') ? 3 : 2;
     var numberOfLinesString = (numberOfLines === 3) ? 'three' : 'two'
-    
+
     wheel.children('textarea').each(function() {
       var text = $(this).val();
-      var lines = text.split(/\r*\n/).length;
+      var textArray = text.split(/\r*\n/);
+      var lines = cleanRawStringArray(textArray).length;
       if(lines !== numberOfLines)
         valid = false;
     });
