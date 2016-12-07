@@ -177,7 +177,7 @@
   <script>
 
   jQuery.support.cors = true;
-  
+
   $('.layoutMode div').click(function() {
     $('.layoutMode div').removeClass('selected');
     var elm = $(this);
@@ -199,17 +199,30 @@
    var accessToken = 'R_79255a37816e4d0594e35f739416b210';
    var url = 'https://api-ssl.bitly.com/v3/shorten?access_token=' + accessToken + '&longUrl=' + encodeURIComponent(url);
 
-    $.getJSON(
-        url,
-        {},
-        function(response)
-        {
-            if(callback)
-              callback(response.data.url);
-            else
-              console.log(response.data.url);
-        }
-    );
+   var xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+    xhr.onreadystatechange = function() {
+     if(xhr.readyState == 4) {
+         if(xhr.status==200) {
+             console.log("CORS works!", xhr.responseText);
+         } else {
+             console.log("Oops", xhr);
+         }
+     }
+    }
+    xhr.send();
+
+    // $.getJSON(
+    //     url,
+    //     {},
+    //     function(response)
+    //     {
+    //         if(callback)
+    //           callback(response.data.url);
+    //         else
+    //           console.log(response.data.url);
+    //     }
+    // );
   }
 
   function getQueryParams(qs) {
