@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Modern Agile</title>
+
+    <link href="https://www.google.com/fonts#QuickUsePlace:quickUse/Family:Open+Sans:400,300,600,700,800" rel="text/html">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      body {
+        margin-top: 30px;
+      }
+      #mawheel {
+        width: 400px;
+        height: 400px;
+        background: url('modern_agile_wheel.svg') no-repeat;
+        background-size: cover;
+        position: relative;
+        margin: 0 auto;
+      }
+      #mawheel.lines-3 {
+        background: url('modern_agile_wheel_small.svg') no-repeat;
+        background-size: cover;
+      }
+      .principle {
+        font-family: 'Open Sans',sans-serif;
+        border: none;
+        overflow: auto;
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        resize: none;
+        text-align: center;
+        color: #4b5666;
+        font-size: 15px;
+        font-weight: 600;
+        background: transparent;
+        position: absolute;
+        cursor: pointer;
+        overflow: hidden;
+      }
+      #mawheel.lines-3 .principle {
+
+      }
+      .makePeopleAwesome {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 70px;
+      }
+      #mawheel.lines-3 .makePeopleAwesome {
+        top: 55px;
+      }
+
+      .deliverValueContinuously {
+        top: 194px;
+        left: 326px;
+        transform: translateX(-50%);
+      }
+      #mawheel.lines-3 .deliverValueContinuously {
+        top: 183px;
+      }
+
+      .makeSafetyaPrerequisite {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 328px;
+      }
+      #mawheel.lines-3 .makeSafetyaPrerequisite {
+        top: 313px;
+      }
+
+      .experimentAndLearnRapidly {
+        top: 194px;
+        left: 74px;
+        transform: translateX(-50%);
+      }
+      #mawheel.lines-3 .experimentAndLearnRapidly {
+        top: 183px;
+      }
+
+      #share {
+        margin-top: 30px;
+        text-align: left;
+
+      }
+      #share input {
+        font-size: 20px;
+      }
+      #shareURL {
+        display: none;
+        word-wrap: break-word;
+        width: 100%;
+        margin-top: 30px;
+        border: 1px solid #CCC;
+        padding: 5px;
+      }
+      #shareURL.error {
+        border: 0;
+        background: #ecaf05;
+        border-radius: 5px;
+        padding: 16px;
+      }
+      .layoutMode {
+        margin-bottom: 20px;
+      }
+      .layoutMode div {
+        color: #AAA;
+        cursor: pointer;
+        padding: 20px;
+        border: 1px solid #CCC;
+        background: #eee;
+
+      }
+      .layoutMode div.selected {
+        background: #FFF;
+        color: #666;
+        border-bottom: 1px solid white;
+        cursor: default;
+      }
+      .preview {
+        margin-top: -20px;
+        border: 1px solid #CCC;
+        border-top: 0;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+    </style>
+
+</head>
+
+<body id="modernAgile" data-spy="scroll" data-target=".navbar-fixed-top">
+  <form action="index.html" method="get">
+  <div class="container">
+    <div class="row layoutMode">
+      <div class="lines-2 col-xs-6 selected" data-mode="lines-2">
+        Two Lines Layout
+      </div>
+      <div class="lines-3 col-xs-6" data-mode="lines-3">
+        Three Lines Layout
+      </div>
+    </div>
+    <div class="row preview">
+      <div class="col-sm-6">
+        <div id="mawheel">
+          <textarea rows="2" type=text name="makePeopleAwesome" id="makePeopleAwesome" class="principle makePeopleAwesome">Make People&#013;Awesome</textarea>
+          <textarea rows="2" type=text name="deliverValueContinuously" id="deliverValueContinuously" class="principle deliverValueContinuously">Deliver Value&#013;Continuously</textarea>
+          <textarea rows="2" type=text name="makeSafetyaPrerequisite" id="makeSafetyaPrerequisite" class="principle makeSafetyaPrerequisite">Make Safety&#013;a Prerequisite</textarea>
+          <textarea rows="2" type=text name="experimentAndLearnRapidly" id="experimentAndLearnRapidly" class="principle experimentAndLearnRapidly">Experiment &&#013;Learn Rapidly</textarea>
+          <input type="hidden" name="mode" value="lines-2" id="mode">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <p>
+          Click on the words in the graphic and type in your translation, then press the “Submit” button to get a URL to share here.  Then we can all see what your translation looks like.
+        </p>
+        <div id="share">
+          <input type="submit" val="Share" id="sharelayout" onclick="validateForm();" class="btn btn-primary btn-lg"></input>
+          <p id="shareURL"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </form>
+
+  <!-- jQuery -->
+  <script src="../js/jquery.js"></script>
+
+  <script>
+
+  jQuery.support.cors = true;
+  
+  $('.layoutMode div').click(function() {
+    $('.layoutMode div').removeClass('selected');
+    var elm = $(this);
+    $('#mode').val(elm.attr('data-mode'));
+    $('#shareURL').text('').hide();
+    setLayout(elm.attr('data-mode'))
+  });
+
+  function setLayout(m) {
+    $('.layoutMode div').removeClass('selected');
+    var elm = $('[data-mode='+m+']');
+    elm.addClass('selected');
+    var rows = m.split('-')[1];
+    $('#mawheel').attr('class', m);
+    $('#mawheel textarea').attr('rows', rows);
+  }
+
+  function getShortUrl(url, callback) {
+   var accessToken = 'R_79255a37816e4d0594e35f739416b210';
+   var url = 'https://api-ssl.bitly.com/v3/shorten?access_token=' + accessToken + '&longUrl=' + encodeURIComponent(url);
+
+    $.getJSON(
+        url,
+        {},
+        function(response)
+        {
+            if(callback)
+              callback(response.data.url);
+            else
+              console.log(response.data.url);
+        }
+    );
+  }
+
+  function getQueryParams(qs) {
+    qs = qs.split("+").join(" ");
+    var params = {},
+        tokens,
+        re = /[?&]?([^=]+)=([^&]*)/g;
+
+    while (tokens = re.exec(qs)) {
+        params[decodeURIComponent(tokens[1])]
+            = decodeURIComponent(tokens[2]);
+    }
+
+    return params;
+  }
+
+  function cleanRawStringArray(rawStringArray) {
+    var clenedArray = [];
+    for(var i=0; i<rawStringArray.length; i++) {
+      if(rawStringArray[i].trim() != '')
+        clenedArray.push(rawStringArray[i]);
+    }
+    return clenedArray;
+  }
+
+  var $_GET = getQueryParams(document.location.search);
+  var hasShare = false;
+
+  for (var property in $_GET) {
+    if ($_GET.hasOwnProperty(property)) {
+        var principle = jQuery('#' + property);
+        if(principle.length > 0) {
+          principle.val($_GET[property]);
+          hasShare = true;
+        }
+    }
+  }
+
+  setLayout(jQuery('#mode').val());
+
+  if(hasShare) {
+    getShortUrl(document.location);
+    jQuery('#shareURL').show().text(document.location).removeClass('error');
+  }
+
+  function validateForm() {
+    var wheel = $('#mawheel');
+    var valid = true;
+    var numberOfLines = wheel.hasClass('lines-3') ? 3 : 2;
+    var numberOfLinesString = (numberOfLines === 3) ? 'three' : 'two'
+
+    wheel.children('textarea').each(function() {
+      var text = $(this).val();
+      var textArray = text.split(/\r*\n/);
+      var lines = cleanRawStringArray(textArray).length;
+      if(lines !== numberOfLines)
+        valid = false;
+    });
+
+    if(!valid) {
+      event.preventDefault();
+      $('#shareURL').html('This graphic looks best when the text for all four principle takes up ' + numberOfLinesString + ' lines.').show().addClass('error');
+
+    }
+  };
+
+  </script>
+
+</body>
+
+</html>
