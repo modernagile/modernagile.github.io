@@ -365,6 +365,44 @@ section.experimentAndLearnRapidly-section {
 section.learnMore-section {
   .sectionTitle {
   }
+  .jumbotron {
+    background: #4b5667;
+    text-align: left;
+    color: #DDD;
+    color: rgba(255,255,255,0.85);
+    img {
+      width: 100%;
+      height: auto;
+    }
+    p {
+      @media (max-width: @screen-sm-min) {
+        padding-top: 2em;
+      }
+    }
+    ul {
+      list-style: none;
+      padding: 1em 0 0 0;
+      margin: 0;
+      li {
+        img {
+          margin-right: .5em;
+          width: 2em;
+          height: 2em;
+        }
+        &:not(:first-child) {
+          margin-top: 1em;
+        }
+        a {
+          color: #DDD;
+          color: rgba(255,255,255,0.85);
+          font-weight: bold;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
 }
 
 section.spinnerApp-section {
