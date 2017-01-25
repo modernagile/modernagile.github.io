@@ -15,66 +15,18 @@
 
     <itunes:image href="http://www.modernagile.org/podcast/cover_1400.jpg"/>
     
-	<generator>Dropcaster 0.0.6</generator>
-	 
+  <generator>Dropcaster 0.0.6</generator>
+
+
     <item>
-      <title>Deliver Value Continuously Demystified Lean Startup Continuous Deployment Q+A.</title>
+      <title>Cycles of Mistrust explained</title>
       <itunes:author>Joshua Kerievsky</itunes:author>
     
       <itunes:image href=""/>
-      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow%204%20%20Deliver%20Value%20Continuously%20Demystified%20Lean%20Startup%20Continuous%20Deployment%20Q+A.mp3" length="25570875" type="audio/mp3"/>
-      <guid isPermaLink="false">7eb6175ba0313cac6d84fa2d26b539d802686fac</guid>
-      <pubDate>Mon, 19 Dec 2016 20:11:35 -0200</pubDate>
-      <itunes:duration>1065</itunes:duration>
-    
-    </item>
-  
-    <item>
-      <title>Networks Not Hierarchies Who Sets Team Priorities Hardest Principle to Adopt</title>
-      <itunes:author>Joshua Kerievsky</itunes:author>
-    
-      <itunes:image href=""/>
-      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow%203%20%20Networks%20Not%20Hierarchies%20Who%20Sets%20Team%20Priorities%20Hardest%20Principle%20to%20Adopt.mp3" length="20953037" type="audio/mp3"/>
-      <guid isPermaLink="false">790be9550ec5e1912a9161d5b1e7b2197f4a3228</guid>
-      <pubDate>Mon, 19 Dec 2016 20:09:19 -0200</pubDate>
-      <itunes:duration>872</itunes:duration>
-    
-    </item>
-  
-    <item>
-      <title>Vision + Hustle What Product Leaders Do My Product Story Q+A</title>
-      <itunes:author>Joshua Kerievsky</itunes:author>
-    
-      <itunes:image href=""/>
-      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow%205%20%20Vision%20+%20Hustle%20What%20Product%20Leaders%20Do%20My%20Product%20Story%20Q+A.mp3" length="24169037" type="audio/mp3"/>
-      <guid isPermaLink="false">f5fa1cd7fe95361d54f170794466f2c0c3c61267</guid>
-      <pubDate>Mon, 19 Dec 2016 20:09:03 -0200</pubDate>
-      <itunes:duration>1006</itunes:duration>
-    
-    </item>
-  
-    <item>
-      <title>Make People Awesome Horizontally Hobbled Pixar Collaboration Story Badass Ex</title>
-      <itunes:author>Joshua Kerievsky</itunes:author>
-    
-      <itunes:image href=""/>
-      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow%206%20%20Make%20People%20Awesome%20Horizontally%20Hobbled%20Pixar%20Collaboration%20Story%20Badass%20Ex.mp3" length="21337037" type="audio/mp3"/>
-      <guid isPermaLink="false">7f2cb2c41aea82b178b0d15dc46bbf30f9dc81fc</guid>
-      <pubDate>Mon, 19 Dec 2016 20:08:46 -0200</pubDate>
-      <itunes:duration>888</itunes:duration>
-    
-    </item>
-  
-    <item>
-      <title>Jez Humble Interview Lean Enterprise Trunk Based Development</title>
-      <itunes:author>Joshua Kerievsky</itunes:author>
-    
-      <itunes:image href=""/>
-      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow%207%20%20Jez%20Humble%20Interview%20Lean%20Enterprise%20Trunk%20Based%20Development.mp3" length="34648946" type="audio/mp3"/>
-      <guid isPermaLink="false">0c1a97d867d88d2553d4690ac1200b922d94eab5</guid>
-      <pubDate>Mon, 19 Dec 2016 20:08:21 -0200</pubDate>
-      <itunes:duration>1443</itunes:duration>
-    
+      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow%209%20%20Cycles%20of%20Mistrust%20explained.mp3" length="17904000" type="audio/mp3"/>
+      <guid isPermaLink="false">3122b17808c8c84d2dbf1ade53b4c0abcd4ee6e9</guid>
+      <pubDate>Wed, 25 Jan 2017 14:15:34 -0200</pubDate>
+      <itunes:duration>745</itunes:duration>
     </item>
   
     <item>
@@ -86,7 +38,61 @@
       <guid isPermaLink="false">e8f78dd62c5a5a725da07851dfb417d9af1905cb</guid>
       <pubDate>Mon, 19 Dec 2016 20:07:48 -0200</pubDate>
       <itunes:duration>785</itunes:duration>
+    </item>
+
+    <item>
+      <title>Jez Humble Interview Lean Enterprise Trunk Based Development</title>
+      <itunes:author>Joshua Kerievsky</itunes:author>
     
+      <itunes:image href=""/>
+      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow%207%20%20Jez%20Humble%20Interview%20Lean%20Enterprise%20Trunk%20Based%20Development.mp3" length="34648946" type="audio/mp3"/>
+      <guid isPermaLink="false">0c1a97d867d88d2553d4690ac1200b922d94eab5</guid>
+      <pubDate>Mon, 19 Dec 2016 20:08:21 -0200</pubDate>
+      <itunes:duration>1443</itunes:duration>
+    </item>
+
+    <item>
+      <title>Make People Awesome Horizontally Hobbled Pixar Collaboration Story Badass Ex</title>
+      <itunes:author>Joshua Kerievsky</itunes:author>
+    
+      <itunes:image href=""/>
+      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow%206%20%20Make%20People%20Awesome%20Horizontally%20Hobbled%20Pixar%20Collaboration%20Story%20Badass%20Ex.mp3" length="21337037" type="audio/mp3"/>
+      <guid isPermaLink="false">7f2cb2c41aea82b178b0d15dc46bbf30f9dc81fc</guid>
+      <pubDate>Mon, 19 Dec 2016 20:08:46 -0200</pubDate>
+      <itunes:duration>888</itunes:duration>
+    </item>
+
+    <item>
+      <title>Vision + Hustle What Product Leaders Do My Product Story Q+A</title>
+      <itunes:author>Joshua Kerievsky</itunes:author>
+    
+      <itunes:image href=""/>
+      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow%205%20%20Vision%20+%20Hustle%20What%20Product%20Leaders%20Do%20My%20Product%20Story%20Q+A.mp3" length="24169037" type="audio/mp3"/>
+      <guid isPermaLink="false">f5fa1cd7fe95361d54f170794466f2c0c3c61267</guid>
+      <pubDate>Mon, 19 Dec 2016 20:09:03 -0200</pubDate>
+      <itunes:duration>1006</itunes:duration>
+    </item>
+
+    <item>
+      <title>Deliver Value Continuously Demystified Lean Startup Continuous Deployment Q+A.</title>
+      <itunes:author>Joshua Kerievsky</itunes:author>
+    
+      <itunes:image href=""/>
+      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow%204%20%20Deliver%20Value%20Continuously%20Demystified%20Lean%20Startup%20Continuous%20Deployment%20Q+A.mp3" length="25570875" type="audio/mp3"/>
+      <guid isPermaLink="false">7eb6175ba0313cac6d84fa2d26b539d802686fac</guid>
+      <pubDate>Mon, 19 Dec 2016 20:11:35 -0200</pubDate>
+      <itunes:duration>1065</itunes:duration>
+    </item>
+
+    <item>
+      <title>Networks Not Hierarchies Who Sets Team Priorities Hardest Principle to Adopt</title>
+      <itunes:author>Joshua Kerievsky</itunes:author>
+    
+      <itunes:image href=""/>
+      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow%203%20%20Networks%20Not%20Hierarchies%20Who%20Sets%20Team%20Priorities%20Hardest%20Principle%20to%20Adopt.mp3" length="20953037" type="audio/mp3"/>
+      <guid isPermaLink="false">790be9550ec5e1912a9161d5b1e7b2197f4a3228</guid>
+      <pubDate>Mon, 19 Dec 2016 20:09:19 -0200</pubDate>
+      <itunes:duration>872</itunes:duration>
     </item>
   
     <item>
@@ -98,7 +104,6 @@
       <guid isPermaLink="false">e6f36aa0b561fed5369e32bc2e21a1c696f989c1</guid>
       <pubDate>Mon, 19 Dec 2016 20:02:25 -0200</pubDate>
       <itunes:duration>823</itunes:duration>
-    
     </item>
   
     <item>
@@ -110,7 +115,6 @@
       <guid isPermaLink="false">197c40dd40e1db0a19c23428a7c1801f86d4e8bb</guid>
       <pubDate>Mon, 19 Dec 2016 19:55:14 -0200</pubDate>
       <itunes:duration>742</itunes:duration>
-    
     </item>
   
   </channel>
