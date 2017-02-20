@@ -120,5 +120,20 @@ upcomingEventsEntries = [
       deliverValueContinuously: true
     },
     url: 'http://www.agilejapan.org/'
+  },
+  {
+    thumbnail: 'img/upcomingEvents/agileIndy2017.jpg',
+    title: ' AgileIndy 2017 2017: Keynote on Modern Agile',
+    author: 'Joshua Kerievsky',
+    authorPage: 'https://twitter.com/joshuakerievsky',
+    location: 'Indianapolis, Indiana',
+    date: '2017/05/12',
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'http://agileindy.org/conference/'
   }
 ]
