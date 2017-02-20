@@ -45,21 +45,6 @@ upcomingEventsEntries = [
     url: 'http://2016.agilesingapore.org/'
   },
   {
-    thumbnail: 'img/upcomingEvents/agileNZ.jpg',
-    title: 'Agile New Zealand 2016: Keynote on Modern Agile',
-    author: 'Joshua Kerievsky',
-    authorPage: 'https://twitter.com/joshuakerievsky',
-    location: 'Auckland',
-    date: '2016/11/30',
-    categories: {
-      makePeopleAwesome: true,
-      makeSafetyAPrerequisite: true,
-      experimentAndLearnRapidly: true,
-      deliverValueContinuously: true
-    },
-    url: 'http://agilenz.co.nz/2016'
-  },
-  {
     thumbnail: 'img/upcomingEvents/agiles2016.jpg',
     title: ' Ágiles 2016 - 9th Latin-American Agile Conferences: Keynote on Modern Agile',
     author: 'Johnny Ordóñez',
@@ -75,6 +60,21 @@ upcomingEventsEntries = [
     url: 'http://agiles2016.agiles.org/'
   },
   {
+    thumbnail: 'img/upcomingEvents/agileNZ.jpg',
+    title: 'Agile New Zealand 2016: Keynote on Modern Agile',
+    author: 'Joshua Kerievsky',
+    authorPage: 'https://twitter.com/joshuakerievsky',
+    location: 'Auckland',
+    date: '2016/11/30',
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'http://agilenz.co.nz/2016'
+  },
+  {
     thumbnail: 'img/upcomingEvents/agileNights.jpg',
     title: ' Agile Nights: Modern Agile - El renacimiento de los principios ágiles',
     author: 'Arturo Robles Maloof',
@@ -88,5 +88,37 @@ upcomingEventsEntries = [
       deliverValueContinuously: true
     },
     url: 'https://www.eventbrite.com/e/agile-nights-vol-xxii-tickets-29258395649'
+  },
+
+
+  {
+    thumbnail: 'img/upcomingEvents/agileIndia2017.jpg',
+    title: ' Agile India 2017: Modern Agile Workshop',
+    author: 'Joshua Kerievsky',
+    authorPage: 'https://twitter.com/joshuakerievsky',
+    location: 'Bengaluru, India',
+    date: '2017/03/05',
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'http://2017.agileindia.org/'
+  },
+  {
+    thumbnail: 'img/upcomingEvents/agileJapan2017.jpg',
+    title: ' Agile Japan 2017: Keynote on Modern Agile',
+    author: 'Joshua Kerievsky',
+    authorPage: 'https://twitter.com/joshuakerievsky',
+    location: 'Tokyo, Japan',
+    date: '2017/04/13',
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'http://www.agilejapan.org/'
   }
 ]

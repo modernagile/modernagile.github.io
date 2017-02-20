@@ -18,11 +18,11 @@ function UpcomingEvents(container, data, entriesPerPage) {
     var eventDate = new Date(dateString);
     var today = new Date();
     //return (today > eventDate);
-    if(today.getFullYear() > eventDate.getFullYear())
+    if(today.getFullYear() > eventDate.getFullYear()) 
       return true;
-    if(today.getMonth() > eventDate.getMonth())
+    if(today.getFullYear() == eventDate.getFullYear() && today.getMonth() > eventDate.getMonth())
       return true;
-    if(today.getDate() > eventDate.getDate())
+    if(today.getFullYear() == eventDate.getFullYear() && today.getMonth() == eventDate.getMonth() && today.getDate() > eventDate.getDate())
       return true;
 
     return false;
