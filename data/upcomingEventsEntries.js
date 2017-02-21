@@ -46,7 +46,7 @@ upcomingEventsEntries = [
   },
   {
     thumbnail: 'img/upcomingEvents/agiles2016.jpg',
-    title: ' Ágiles 2016 - 9th Latin-American Agile Conferences: Keynote on Modern Agile',
+    title: 'Ágiles 2016 - 9th Latin-American Agile Conferences: Keynote on Modern Agile',
     author: 'Johnny Ordóñez',
     authorPage: 'https://twitter.com/JohnnyOrdonez',
     location: 'Quito, Ecuador',
@@ -76,7 +76,7 @@ upcomingEventsEntries = [
   },
   {
     thumbnail: 'img/upcomingEvents/agileNights.jpg',
-    title: ' Agile Nights: Modern Agile - El renacimiento de los principios ágiles',
+    title: 'Agile Nights: Modern Agile - El renacimiento de los principios ágiles',
     author: 'Arturo Robles Maloof',
     authorPage: 'https://www.facebook.com/AgileNights/posts/1293967800644258:0',
     location: 'Praxis México, México City',
@@ -93,7 +93,7 @@ upcomingEventsEntries = [
 
   {
     thumbnail: 'img/upcomingEvents/agileIndia2017.jpg',
-    title: ' Agile India 2017: Modern Agile Workshop',
+    title: 'Agile India 2017: Modern Agile Workshop',
     author: 'Joshua Kerievsky',
     authorPage: 'https://twitter.com/joshuakerievsky',
     location: 'Bengaluru, India',
@@ -108,7 +108,7 @@ upcomingEventsEntries = [
   },
   {
     thumbnail: 'img/upcomingEvents/agileJapan2017.jpg',
-    title: ' Agile Japan 2017: Keynote on Modern Agile',
+    title: 'Agile Japan 2017: Keynote on Modern Agile',
     author: 'Joshua Kerievsky',
     authorPage: 'https://twitter.com/joshuakerievsky',
     location: 'Tokyo, Japan',
@@ -123,7 +123,7 @@ upcomingEventsEntries = [
   },
   {
     thumbnail: 'img/upcomingEvents/agileIndy2017.jpg',
-    title: ' AgileIndy 2017 2017: Keynote on Modern Agile',
+    title: 'AgileIndy 2017: Keynote on Modern Agile',
     author: 'Joshua Kerievsky',
     authorPage: 'https://twitter.com/joshuakerievsky',
     location: 'Indianapolis, Indiana',
@@ -135,5 +135,35 @@ upcomingEventsEntries = [
       deliverValueContinuously: true
     },
     url: 'http://agileindy.org/conference/'
+  },
+  {
+    thumbnail: 'img/upcomingEvents/agileWorld2017.jpg',
+    title: 'Agile World 2017: Keynote and Workshop on Modern Agile',
+    author: 'Joshua Kerievsky',
+    authorPage: 'https://twitter.com/joshuakerievsky',
+    location: 'Munich, Germany',
+    date: '2017/06/26',
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'http://agileworld.de/'
+  },
+  {
+    thumbnail: 'img/upcomingEvents/agilePrague2017.jpg',
+    title: 'Agile Prague 2017: Keynote and Workshop on Modern Agile',
+    author: 'Joshua Kerievsky',
+    authorPage: 'https://twitter.com/joshuakerievsky',
+    location: 'Prague, Czech Republic',
+    date: '2017/09/11',
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'http://agileprague.com/'
   }
 ]
