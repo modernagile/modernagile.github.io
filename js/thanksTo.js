@@ -34,7 +34,10 @@ thanksTo = [
   "Marek Włodkowski",
   "Kamil Berdychowski",
   "Szymon Kunc",
-  "Łukasz Krupa"
+  "Łukasz Krupa",
+  "Tomasz Fortuna",
+  "Łukasz Szóstek",
+  "Marta Smyrska"
 ];
 
 var thanksToUnique = thanksTo.filter(function(item, pos) {
