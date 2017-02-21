@@ -26,7 +26,15 @@ thanksTo = [
   "Jenjira Sangvareethip",
   "Pongrapee Jencharat",
   "Zuzi Sochova",
-  "Harald Koebler"
+  "Harald Koebler",
+  "Krzysztof Jelski",
+  "Tomasz Łasica",
+  "Paweł Wehr",
+  "Paweł Polewicz",
+  "Marek Włodkowski",
+  "Kamil Berdychowski",
+  "Szymon Kunc",
+  "Łukasz Krupa"
 ];
 
 var thanksToUnique = thanksTo.filter(function(item, pos) {
