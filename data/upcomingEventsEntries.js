@@ -108,7 +108,7 @@ upcomingEventsEntries = [
   },
   {
     thumbnail: 'img/upcomingEvents/agileJapan2017.jpg',
-    title: 'Agile Japan 2017: Keynote on Modern Agile',
+    title: 'Agile Japan 2017: Keynote and Workshop on Modern Agile',
     author: 'Joshua Kerievsky',
     authorPage: 'https://twitter.com/joshuakerievsky',
     location: 'Tokyo, Japan',
@@ -123,7 +123,7 @@ upcomingEventsEntries = [
   },
   {
     thumbnail: 'img/upcomingEvents/agileIndy2017.jpg',
-    title: 'AgileIndy 2017: Keynote on Modern Agile',
+    title: 'AgileIndy 2017: Keynote and Workshop on Modern Agile',
     author: 'Joshua Kerievsky',
     authorPage: 'https://twitter.com/joshuakerievsky',
     location: 'Indianapolis, Indiana',
