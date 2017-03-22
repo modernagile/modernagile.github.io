@@ -483,47 +483,46 @@ section.mediaKit-section {
 
 section.shop-section {
   .merchandise {
-    a {
-      display: block;
-      cursor: pointer;
-      &:focus {
-        text-decoration: none;
-      }
-    }
+    text-align: left;
     .meta {
-      position: relative;
-      height: 2em;
-      border: 1px solid rgb(221, 221, 221);
-      border-radius: 4px 4px 0 0;
-      border-bottom: 0;
-      box-sizing: border-box;
-      overflow: hidden;
+      margin-top: 1em;
+      p {
+        margin: 0;
+      }
       .title {
-        line-height: 2em;
-        height: 2em;
-        padding: 0 10px;
         color: #333!important;
         color: rgba(0,0,0,0.7)!important;
       }
       .price {
-        border-left: 1px solid rgb(221, 221, 221);
-        line-height: 2em;
-        height: 2em;
-        position: absolute;
-        right: 0;
-        top: 0;
-        padding: 0 10px;
-        font-weight: normal;
+        font-weight: bold;
       }
     }
     img {
       width: 100%;
       height: auto;
-      border-radius: 0 0 4px 4px;
+      border-radius: 3px;
+    }
+    a.buy {
+      background-color: #78b657;
+      color: #FFF;
+      border-radius: 3px;
+      border: 0;
+      font-family: "Open Sans", sans-serif;
+      font-size: 15px;
+      line-height: 15px;
+      font-weight: lighter;
+      padding: 12px 40px;
+      margin-top: 22px;
+      display: inline-block;
+      cursor: pointer;
+      &:focus {
+        text-decoration: none;
+      }
     }
     &.soon {
       .price {
         color: #CCC;
+        font-weight: normal;
       }
       img {
         .grayscale();
