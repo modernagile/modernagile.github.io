@@ -83,6 +83,10 @@ a:hover {
   color: white;
 }
 
+.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+    max-height: none;
+}
+
 .author {
   background: black;
   background: rgba(0,0,0,0.75);
@@ -484,6 +488,11 @@ section.mediaKit-section {
 section.shop-section {
   .merchandise {
     text-align: left;
+    @media (max-width: @screen-sm-min) {
+      &:not(.soon) {
+        margin-bottom: 3em;  
+      }
+    }
     .meta {
       margin-top: 1em;
       p {
