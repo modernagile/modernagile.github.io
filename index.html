@@ -368,9 +368,210 @@
                 <img src="img/merchandise/ma_stickers.jpg" alt="Principles Sticker">
                 <div class="meta">
                   <p class="title">Modern Agile Sticker</p>
-                  <p class="price">$ 2.67 (volume discount available)</p>
                 </div>
-                <a class="buy" href="https://www.stickermule.com/user/1070727297/stickers" target="_blank">BUY AT STICKERMULE</a>
+                <div id='product-component-0760983d61c'></div>
+                  <script type="text/javascript">
+                  /*<![CDATA[*/
+
+                  (function () {
+                    var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                    if (window.ShopifyBuy) {
+                      if (window.ShopifyBuy.UI) {
+                        ShopifyBuyInit();
+                      } else {
+                        loadScript();
+                      }
+                    } else {
+                      loadScript();
+                    }
+
+                    function loadScript() {
+                      var script = document.createElement('script');
+                      script.async = true;
+                      script.src = scriptURL;
+                      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                      script.onload = ShopifyBuyInit;
+                    }
+
+                    function ShopifyBuyInit() {
+                      var client = ShopifyBuy.buildClient({
+                        domain: 'modern-agile-shop.myshopify.com',
+                        apiKey: 'afcdcf1bfc7ec4756284549aab0e6c45',
+                        appId: '6',
+                      });
+
+                      ShopifyBuy.UI.onReady(client).then(function (ui) {
+                        ui.createComponent('product', {
+                          id: [9123691528],
+                          node: document.getElementById('product-component-0760983d61c'),
+                          moneyFormat: '%24%7B%7Bamount%7D%7D',
+                          options: {
+                    "product": {
+                      "variantId": "all",
+                      "width": "240px",
+                      "contents": {
+                        "img": false,
+                        "imgWithCarousel": false,
+                        "title": false,
+                        "variantTitle": false,
+                        "price": true,
+                        "description": false,
+                        "buttonWithQuantity": false,
+                        "quantity": false
+                      },
+                      "styles": {
+                        "product": {
+                          "text-align": "left",
+                          "@media (min-width: 601px)": {
+                            "max-width": "100%",
+                            "margin-left": "0",
+                            "margin-bottom": "50px"
+                          }
+                        },
+                        "button": {
+                          "font-family": "Open Sans, sans-serif",
+                          "font-weight": "normal"
+                        },
+                        "variantTitle": {
+                          "font-family": "Open Sans, sans-serif",
+                          "font-weight": "normal"
+                        },
+                        "title": {
+                          "font-family": "Open Sans, sans-serif"
+                        },
+                        "description": {
+                          "font-family": "Open Sans, sans-serif",
+                          "font-weight": "normal"
+                        },
+                        "price": {
+                          "font-family": "Open Sans, sans-serif",
+                          "font-weight": "bold",
+                          "margin-top": "5px",
+                          "font-size": "18px"
+                        },
+                        "compareAt": {
+                          "font-size": "12px",
+                          "font-family": "Open Sans, sans-serif",
+                          "font-weight": "normal"
+                        }
+                      },
+                      "googleFonts": [
+                        "Open Sans",
+                        "Open Sans",
+                        "Open Sans",
+                        "Open Sans",
+                        "Open Sans",
+                        "Open Sans"
+                      ]
+                    },
+                    "cart": {
+                      "contents": {
+                        "button": true
+                      },
+                      "styles": {
+                        "button": {
+                          "font-family": "Open Sans, sans-serif",
+                          "font-weight": "normal"
+                        },
+                        "footer": {
+                          "background-color": "#ffffff"
+                        }
+                      },
+                      "googleFonts": [
+                        "Open Sans"
+                      ]
+                    },
+                    "modalProduct": {
+                      "contents": {
+                        "img": false,
+                        "imgWithCarousel": true,
+                        "variantTitle": false,
+                        "buttonWithQuantity": true,
+                        "button": false,
+                        "quantity": false
+                      },
+                      "styles": {
+                        "product": {
+                          "@media (min-width: 601px)": {
+                            "max-width": "100%",
+                            "margin-left": "0px",
+                            "margin-bottom": "0px"
+                          }
+                        },
+                        "button": {
+                          "font-family": "Open Sans, sans-serif",
+                          "font-weight": "normal"
+                        },
+                        "variantTitle": {
+                          "font-family": "Open Sans, sans-serif",
+                          "font-weight": "normal"
+                        },
+                        "title": {
+                          "font-family": "Open Sans, sans-serif"
+                        },
+                        "description": {
+                          "font-family": "Open Sans, sans-serif",
+                          "font-weight": "normal"
+                        },
+                        "price": {
+                          "font-family": "Open Sans, sans-serif",
+                          "font-weight": "normal"
+                        },
+                        "compareAt": {
+                          "font-family": "Open Sans, sans-serif",
+                          "font-weight": "normal"
+                        }
+                      },
+                      "googleFonts": [
+                        "Open Sans",
+                        "Open Sans",
+                        "Open Sans",
+                        "Open Sans",
+                        "Open Sans",
+                        "Open Sans"
+                      ]
+                    },
+                    "toggle": {
+                      "styles": {
+                        "toggle": {
+                          "font-family": "Open Sans, sans-serif",
+                          "font-weight": "normal"
+                        }
+                      },
+                      "googleFonts": [
+                        "Open Sans"
+                      ]
+                    },
+                    "option": {
+                      "styles": {
+                        "label": {
+                          "font-family": "Open Sans, sans-serif"
+                        },
+                        "select": {
+                          "font-family": "Open Sans, sans-serif"
+                        }
+                      },
+                      "googleFonts": [
+                        "Open Sans",
+                        "Open Sans"
+                      ]
+                    },
+                    "productSet": {
+                      "styles": {
+                        "products": {
+                          "@media (min-width: 601px)": {
+                            "margin-left": "-20px"
+                          }
+                        }
+                      }
+                    }
+                  }
+                        });
+                      });
+                    }
+                  })();
+                  /*]]>*/
+                  </script>
               </div>
             </div>
             <div class="col-sm-4">
@@ -378,7 +579,6 @@
                 <img src="img/merchandise/ma_stop_work.jpg" alt="Stop Work Authority Card">
                 <div class="meta">
                   <p class="title">Stop Work Authority Card</p>
-                  <p class="price">$ 1.00</p>
                 </div>
                 <div id='product-component-b5e2585e082'></div>
                   <script type="text/javascript">
@@ -425,7 +625,7 @@
                         "imgWithCarousel": false,
                         "title": false,
                         "variantTitle": false,
-                        "price": false,
+                        "price": true,
                         "description": false,
                         "buttonWithQuantity": false,
                         "quantity": false
@@ -456,7 +656,9 @@
                         },
                         "price": {
                           "font-family": "Open Sans, sans-serif",
-                          "font-weight": "normal"
+                          "font-weight": "bold",
+                          "margin-top": "5px",
+                          "font-size": "18px"
                         },
                         "compareAt": {
                           "font-size": "12px",
