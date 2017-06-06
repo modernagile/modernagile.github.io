@@ -177,9 +177,11 @@ function addSuggestEventBox(parent) {
       if(principles.length != 0)
         msg += linebreak + '*Principles:* '+ principles.join(', ');
 
-      getJSON('https://www.industriallogic.com/maAPI/sendToSlack.php',
+      getJSON('https://www.industriallogic.com/ilma/api/slack/',
         {
           key: '0avitm6pOH253DN4ZV6zlY8Pc1pB9kX0',
+          teamprefix: 'ma',
+          ts: new Date().getTime(),
           message: msg
         },
         function(data) {
@@ -216,9 +218,11 @@ jQuery('#contactUsModal .submitContact').click(function() {
   var msg = '*Contact Us*' + linebreak;
   msg += '>>>' + details.join(linebreak);
 
-  getJSON('https://www.industriallogic.com/maAPI/sendToSlack.php',
+  getJSON('https://www.industriallogic.com/ilma/api/slack/',
     {
       key: '0avitm6pOH253DN4ZV6zlY8Pc1pB9kX0',
+      teamprefix: 'ma',
+      ts: new Date().getTime(),
       message: msg
     }
   );
