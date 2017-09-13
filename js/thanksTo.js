@@ -39,7 +39,8 @@ thanksTo = [
   "Łukasz Szóstek",
   "Marta Smyrska",
   "Nenad Maljković",
-  "Dejana Šćuric"
+  "Dejana Šćuric",
+  "Lucas Duarte Silveira"
 ];
 
 var thanksToUnique = thanksTo.filter(function(item, pos) {
