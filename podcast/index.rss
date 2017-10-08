@@ -18,6 +18,18 @@
     <generator>Dropcaster 0.0.6</generator>
 
     <item>
+      <title>Interview with Melissa Perri and Matt Barcomb: Issues with Product Owner role</title>
+      <itunes:author>Joshua Kerievsky</itunes:author>
+      
+      <itunes:image href=""/>
+      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow_13_Interview_with_Melissa_Perri_Matt_Barcomb_Issues_with_Product_Owner_role.mp3" length="44256000" type="audio/mp3"/>
+      <guid isPermaLink="false">de1ad140ccc448d59d4d57a0de82d023</guid>
+      <pubDate>Sat, 7 Oct 2017 09:10:29 -0200</pubDate>
+      <itunes:duration>00:19:04</itunes:duration>
+      <description>Episode 13 of the Modern Agile Show features an interview with Melissa Perri and Matt Barcomb. We discuss issues with the Product Owner role, as defined by Scrum and explore the importance of product management and how to make product ownership a team sport.</description>
+    </item>
+
+    <item>
       <title>Interview with Laura Klein, author of Build Better Products</title>
       <itunes:author>Joshua Kerievsky</itunes:author>
       
