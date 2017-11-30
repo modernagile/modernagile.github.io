@@ -41,7 +41,12 @@ thanksTo = [
   "Nenad Maljković",
   "Dejana Šćuric",
   "Lucas Duarte Silveira",
-  "Phil Rautenberg"
+  "Phil Rautenberg",
+  "Janice Qian",
+  "Evelyn Tian",
+  "Steve Shen",
+  "Jason Qian",
+  "Yeming Yang"
 ];
 
 var thanksToUnique = thanksTo.filter(function(item, pos) {
