@@ -10,6 +10,7 @@
     <itunes:explicit>no</itunes:explicit>
     <language>en-US</language>
     <author>Joshua Kerievsky</author>
+    <itunes:author>Joshua Kerievsky</itunes:author>
     <itunes:owner>
       <itunes:name>Joshua Kerievsky</itunes:name>
       <itunes:email>joshua@industriallogic.com</itunes:email>
