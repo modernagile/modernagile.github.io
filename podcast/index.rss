@@ -30,7 +30,7 @@
       <itunes:author>Joshua Kerievsky</itunes:author>
 
       <itunes:image href="http://www.modernagile.org/podcast/cover_1400.jpg" />
-      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow/15_Interview_with_Jeff_Patton_at_YOW2017.mp3" length="24257492" type="audio/mp3"/>
+      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow_15_Interview_with_Jeff_Patton_at_YOW2017.mp3" length="24257492" type="audio/mp3"/>
       <guid isPermaLink="false">0416b4914c3f4f5eb0096a29b5bbee79</guid>
       <pubDate>Tue, 12 Dec 2017 09:10:29 -0200</pubDate>
       <itunes:duration>00:23:02</itunes:duration>
