@@ -26,6 +26,18 @@
     <generator>Dropcaster 0.0.6</generator>
 
     <item>
+      <title>Interview with Jeff Patton at YOW! 2017</title>
+      <itunes:author>Joshua Kerievsky</itunes:author>
+
+      <itunes:image href="http://www.modernagile.org/podcast/cover_1400.jpg" />
+      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow/15_Interview_with_Jeff_Patton_at_YOW2017.mp3" length="24257492" type="audio/mp3"/>
+      <guid isPermaLink="false">0416b4914c3f4f5eb0096a29b5bbee79</guid>
+      <pubDate>Tue, 12 Dec 2017 09:10:29 -0200</pubDate>
+      <itunes:duration>00:23:02</itunes:duration>
+      <description>Episode 15 of the Modern Agile Show features an interview with Jeff Patton, veteran agilest, author of the best-selling book, User Story Mapping and the guy who teaches the fantastic workshop, Passionate Product Leadership.</description>
+    </item>
+
+    <item>
       <title>Interview with David J Bland, Founder and CEO, Precoil</title>
       <itunes:author>Joshua Kerievsky</itunes:author>
 
