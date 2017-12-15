@@ -27,7 +27,20 @@
 
     <generator>Dropcaster 0.0.6</generator>
 
-     <item>
+    <item>
+      <title>Interview with Jeff Patton at YOW! 2017</title>
+      <itunes:author>Joshua Kerievsky</itunes:author>
+      <author>Joshua Kerievsky</author>
+
+      <itunes:image href="http://www.modernagile.org/podcast/cover_1400.jpg" />
+      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow_17_Interview_with_Dave_Farley_CoAuthor_of_Continuous_Delivery.mp3" length="24257492" type="audio/mp3"/>
+      <guid isPermaLink="false">32b1dab0b6094e0c96ee4d29dac068e5</guid>
+      <pubDate>Fri, 15 Dec 2017 09:10:29 -0200</pubDate>
+      <itunes:duration>00:27:24</itunes:duration>
+      <description>Episode 17 of the Modern Agile Show features an interview with Dave Farley, co-author of Continuous Delivery. an independent software programmer and consultant and YOW! 2017 keynote speaker. Dave believes in applying the scientific method to software development and sees Continuous Delivery as a platform for experimentation. He believes that the biggest impact you can have in a software team is to get members of the team sitting next to people using the software and learning from what they observe. He explains how Continuous Compliance flows out of Continuous Delivery to provide rich, valuable audits trails for auditors.Finally, Dave tells us about how he Makes Safety A Prerequisite via "unconditional positive regard” (a concept he learned from his wife, Katherine) and how he creates high-trust team environments.</description>
+    </item>
+
+ 	<item>
       <title>Interview with Lynn Langit</title>
       <itunes:author>Joshua Kerievsky</itunes:author>
       <author>Joshua Kerievsky</author>
