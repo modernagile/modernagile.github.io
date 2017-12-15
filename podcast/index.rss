@@ -27,6 +27,19 @@
 
     <generator>Dropcaster 0.0.6</generator>
 
+     <item>
+      <title>Interview with Lynn Langit</title>
+      <itunes:author>Joshua Kerievsky</itunes:author>
+      <author>Joshua Kerievsky</author>
+
+      <itunes:image href="http://www.modernagile.org/podcast/cover_1400.jpg" />
+      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow_16_Interview_with_Lynn_Langit.mp3" length="24257492" type="audio/mp3"/>
+      <guid isPermaLink="false">8ae9ed8dbb644a8e8edc0c5898f82e7f</guid>
+      <pubDate>Thu, 14 Dec 2017 09:10:29 -0200</pubDate>
+      <itunes:duration>00:19:26</itunes:duration>
+      <description>Episode 16 of the Modern Agile Show features an interview with Lynn Langit, a cloud architect, data architect, coder, instructor, autodidact and keynote speaker. Lynn entered the field of software at age 38, she is the author of a best-selling Hadoop course on Linda.com, she taught her calculus at age 51 in order to learn Machine Learning, she teaches kids how to program and she’s been helping scientists create high performance, cloud-based Genomic editing software.</description>
+    </item>
+
     <item>
       <title>Interview with Jeff Patton at YOW! 2017</title>
       <itunes:author>Joshua Kerievsky</itunes:author>
