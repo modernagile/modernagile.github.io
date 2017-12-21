@@ -28,12 +28,38 @@
     <generator>Dropcaster 0.0.6</generator>
 
     <item>
+      <title>Interview with Brian Beckman of Amazon</title>
+      <itunes:author>Joshua Kerievsky</itunes:author>
+      <author>Joshua Kerievsky</author>
+
+      <itunes:image href="http://www.modernagile.org/podcast/cover_1400.jpg" />
+      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow_19_Interview_with_Brian_Beckman_of_Amazon.mp3" length="29054361" type="audio/mp3"/>
+      <guid isPermaLink="false">79b6c70f118c4ca6a8298278babb9d81</guid>
+      <pubDate>Thu, 21 Dec 2017 09:10:29 -0200</pubDate>
+      <itunes:duration>00:20:11</itunes:duration>
+      <description>Episode 19 of the Modern Agile Show features an interview with Brian Beckman, physicist and principal engineer in robotics at Amazon. Brian met Richard Feynman when he was a child and teenager and became greatly inspired by him. Brian tells a marvelous story that illustrates how serious Amazon is about investing in “customer obsession” and how the company embraces experimentation to discover faster, safer and cheaper ways to serve customers. He explains the necessity of Amazon’s drone delivery service, how it won’t be deployed until it’s safe, as well as why and when Amazon transitioned to microservices. Finally, Brian answers my question, “are people psychologically safe at Amazon?"</description>
+    </item>
+
+    <item>
+      <title>Interview with Jennifer Marsman, Machine Learning and Artificial Intelligence</title>
+      <itunes:author>Joshua Kerievsky</itunes:author>
+      <author>Joshua Kerievsky</author>
+
+      <itunes:image href="http://www.modernagile.org/podcast/cover_1400.jpg" />
+      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow_18_Interview_with_Jennifer_Marsman_Machine_Learning_and_Artificial_Intelligence.mp3" length="31792830" type="audio/mp3"/>
+      <guid isPermaLink="false">96eb72119f2c43588fa3a3c2e912e66f</guid>
+      <pubDate>Thu, 21 Dec 2017 09:10:29 -0200</pubDate>
+      <itunes:duration>00:22:05</itunes:duration>
+      <description>Episode 18 of the Modern Agile Show features an interview with Jennifer Marsman, an expert in machine learning and artificial intelligence and a principal software development engineer at Microsoft. Jennifer spoke at YOW! 2017 about her experiment to use machine learning to analyze brain wave data to determine if people were telling the truth. She explains how supervised machine learning and deep learning via neural networks are helping make people awesome. Finally, she explains how Microsoft’s culture is changing, including how they are encouraging people to conduct experiments and have a growth mindset.</description>
+    </item>
+
+    <item>
       <title>Interview with Dave Farley, Co-Author of Continuous Delivery</title>
       <itunes:author>Joshua Kerievsky</itunes:author>
       <author>Joshua Kerievsky</author>
 
       <itunes:image href="http://www.modernagile.org/podcast/cover_1400.jpg" />
-      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow_17_Interview_with_Dave_Farley_CoAuthor_of_Continuous_Delivery.mp3" length="24257492" type="audio/mp3"/>
+      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow_17_Interview_with_Dave_Farley_CoAuthor_of_Continuous_Delivery.mp3" length="39456000" type="audio/mp3"/>
       <guid isPermaLink="false">32b1dab0b6094e0c96ee4d29dac068e5</guid>
       <pubDate>Fri, 15 Dec 2017 09:10:29 -0200</pubDate>
       <itunes:duration>00:27:24</itunes:duration>
@@ -46,7 +72,7 @@
       <author>Joshua Kerievsky</author>
 
       <itunes:image href="http://www.modernagile.org/podcast/cover_1400.jpg" />
-      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow_16_Interview_with_Lynn_Langit.mp3" length="24257492" type="audio/mp3"/>
+      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow_16_Interview_with_Lynn_Langit.mp3" length="27979161" type="audio/mp3"/>
       <guid isPermaLink="false">8ae9ed8dbb644a8e8edc0c5898f82e7f</guid>
       <pubDate>Thu, 14 Dec 2017 09:10:29 -0200</pubDate>
       <itunes:duration>00:19:26</itunes:duration>
@@ -59,7 +85,7 @@
       <author>Joshua Kerievsky</author>
 
       <itunes:image href="http://www.modernagile.org/podcast/cover_1400.jpg" />
-      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow_15_Interview_with_Jeff_Patton_at_YOW2017.mp3" length="24257492" type="audio/mp3"/>
+      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow_15_Interview_with_Jeff_Patton_at_YOW2017.mp3" length="33162064" type="audio/mp3"/>
       <guid isPermaLink="false">0416b4914c3f4f5eb0096a29b5bbee79</guid>
       <pubDate>Tue, 12 Dec 2017 09:10:29 -0200</pubDate>
       <itunes:duration>00:23:02</itunes:duration>
@@ -72,7 +98,7 @@
       <author>Joshua Kerievsky</author>
 
       <itunes:image href="http://www.modernagile.org/podcast/cover_1400.jpg" />
-      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow_14_Interview_with_David_J_Bland_Founder_CEO_Precoil.mp3" length="24257492" type="audio/mp3"/>
+      <enclosure url="http://www.modernagile.org/podcast/ModernAgileShow_14_Interview_with_David_J_Bland_Founder_CEO_Precoil.mp3" length="30028624" type="audio/mp3"/>
       <guid isPermaLink="false">25c81f06ec8e4a39a925c1a883cec8b3</guid>
       <pubDate>Fri, 27 Oct 2017 09:10:29 -0200</pubDate>
       <itunes:duration>00:20:51</itunes:duration>
