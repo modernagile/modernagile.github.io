@@ -46,7 +46,12 @@ thanksTo = [
   "Evelyn Tian",
   "Steve Shen",
   "Jason Qian",
-  "Yeming Yang"
+  "Yeming Yang",
+  "Carl Sidler",
+  "Melissa Pienaar",
+  "Johan Swart",
+  "Karin-Lerich Deyzel",
+  "Helmut Pienaar"
 ];
 
 var thanksToUnique = thanksTo.filter(function(item, pos) {
