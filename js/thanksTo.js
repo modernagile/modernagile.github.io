@@ -51,7 +51,11 @@ thanksTo = [
   "Melissa Pienaar",
   "Johan Swart",
   "Karin-Lerich Deyzel",
-  "Helmut Pienaar"
+  "Helmut Pienaar",
+  "Kaj Mustikkamäki",
+  "Miili Halkka",
+  "Jukka Purma",
+  "Karoliina Luoto"
 ];
 
 var thanksToUnique = thanksTo.filter(function(item, pos) {
