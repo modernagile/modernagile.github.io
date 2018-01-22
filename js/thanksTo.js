@@ -55,7 +55,8 @@ thanksTo = [
   "Kaj Mustikkamäki",
   "Miili Halkka",
   "Jukka Purma",
-  "Karoliina Luoto"
+  "Karoliina Luoto",
+  "Darko Rajin"
 ];
 
 var thanksToUnique = thanksTo.filter(function(item, pos) {
