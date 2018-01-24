@@ -1,7 +1,7 @@
 var fs = require('fs');
 
 //Including activity list
-eval(fs.readFileSync('../data/activitiesListEntries.js')+'');
+eval(fs.readFileSync('activitiesListEntries.js')+'');
 
 for(var i=0; i<activitiesListEntries.length; i++) {
   var activity = activitiesListEntries[i];
