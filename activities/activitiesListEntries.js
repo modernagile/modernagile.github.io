@@ -50,5 +50,18 @@ activitiesListEntries = [
       experimentAndLearnRapidly: true,
       deliverValueContinuously: false
     }
+  },
+  {
+    id: 'safety-constellation',
+    title: 'Safety Constellation',
+    author: 'Steven Limmer',
+    duration: '30 - 90 minutes',
+    objective: 'To help establish safety in your team/organisation.',
+    categories: {
+      makePeopleAwesome: false,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: false,
+      deliverValueContinuously: false
+    }
   }
-]
+];
