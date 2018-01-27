@@ -151,28 +151,33 @@
     <!-- Modern Agile JavaScript -->
     <script src="../js/analytics.js"></script>
     <script src="../js/FancyList.js"></script>
-    <script src="activitiesListEntries.js"></script>
+    <script src="http://www.industriallogic.com/maAPI/activitycatalog?key=0avitm6pOH253DN4ZV6zlY8Pc1pB9kX0"></script>
     <script src="../js/ActivitiesList.js"></script>
 
     <script>
 
     $.ajaxSetup({ cache: false });
 
+    var getParameters = getQueryParams();
+    var activityId = getParameters['activityId'] || 'default';
+    var activity = activitiesListEntries.find(function(act) {
+      return act.id === activityId;
+    });
+
     function fillHeaderInfo(id) {
-      var activity = activitiesListEntries.find(function(act) {
-        return act.id === id;
-      });
       if(!activity) return;
 
+      activity = activity;
+
       $('#activityTitle').text(activity.title);
-      $('#activity-header .shortDescription p').text(activity.objective);
-      $('#activity-header .who-wrote-it p').html(activity.author);
-      $('#activity-header .duration p').text(activity.duration);
+      $('#activity-header .shortDescription p').text(activity.metadata.objective);
+      $('#activity-header .who-wrote-it p').html(activity.metadata.author);
+      $('#activity-header .duration p').text(activity.metadata.duration);
       $('#activity-header .rating p').text(activity.score);
 
       var relatedData = activitiesListEntries.slice();
       var activiesList = new ActivitiesList('#activitiesList', relatedData, 3);
-      activiesList.filterRelatedActivities(activity.categories, 3, activity.id);
+      activiesList.filterRelatedActivities(activity.metadata, 3, activity.id);
       activiesList.render();
       $('#activitiesList .eventTitle').each(function() {
         var link = $(this);
@@ -182,7 +187,7 @@
         link.attr('href', '?'+modifiedUrl);
       });
 
-      $('#activity-header .tags p').html(activiesList.renderCategories(activity.categories))
+      $('#activity-header .tags p').html(activiesList.renderCategories(activity.metadata))
     }
 
     function getQueryParams() {
@@ -199,16 +204,13 @@
         return params;
     }
 
-      var getParameters = getQueryParams();
-      var activityId = getParameters['activityId'] || 'default';
-
-      $('#activity-description').load('./' + activityId + '/index.html', function() {
+      $('#activity-description').load('https://www.industriallogic.com/maAPI/activitycatalog/?key=0avitm6pOH253DN4ZV6zlY8Pc1pB9kX0&url=' + activity.url, function() {
         $(this).find('img').each(function() {
           var img = $(this);
           img.attr('src', './' + activityId + '/' + img.attr('src'))
         });
-        fillHeaderInfo(activityId);
         $(this).show();
+        fillHeaderInfo(activityId);
       });
 
       $('.rw-ui-container').attr('data-title', activityId);

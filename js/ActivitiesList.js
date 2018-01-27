@@ -15,7 +15,7 @@ function ActivitiesList(container, data, columns, entriesPerPage, paginationAnch
       var found = false;
       for (var tag in tags) {
         if (tags.hasOwnProperty(tag) && !found) {
-          if(this.data[i].categories[tag] === true) {
+          if(this.data[i].metadata[tag] === "yes") {
             if(excludeId && excludeId === this.data[i].id) {}
             else {
               related.push(this.data[i]);
@@ -55,6 +55,9 @@ function ActivitiesList(container, data, columns, entriesPerPage, paginationAnch
     }
     return authorsHtml.join(', ');
   }
+  this.categoryCSSClass = function(hasCategory) {
+    return (hasCategory == "yes") ? '' : ' hidden';
+  }
   this.renderEntry = function(entryData) {
     var cssClass = entryData.cssClass || '';
     var html = ' \
@@ -64,10 +67,10 @@ function ActivitiesList(container, data, columns, entriesPerPage, paginationAnch
           <div class="activityContent"> \
             <div class="caption"> \
               <a href=".//activities/?activityId='+ entryData.id +'" target="_blank" class="eventTitle" data-analytics-event="Activity Catalog,'+ entryData.title +',1">'+ entryData.title +'</a>'
-              + '<span class="eventAuthor">'+ entryData.author +'</span>'
-              + '<div class="objective"><span class="title">Objective:</span> <p>' + entryData.objective + '</p></div>'
-              + '<div class="duration"><span class="title">Approximate Time:</span> '+ entryData.duration +'</div>'
-              + this.renderCategories(entryData.categories)
+              + '<span class="eventAuthor">'+ entryData.metadata.author +'</span>'
+              + '<div class="objective"><span class="title">Objective:</span> <p>' + entryData.metadata.objective + '</p></div>'
+              + '<div class="duration"><span class="title">Approximate Time:</span> '+ entryData.metadata.duration +'</div>'
+              + this.renderCategories(entryData.metadata)
               + '<div class="rw-ui-container" data-title="' + entryData.id + '"></div>'
             '</div> \
           </div> \
