@@ -66,7 +66,7 @@ function ActivitiesList(container, data, columns, entriesPerPage, paginationAnch
         <div class="col-xs-12"> \
           <div class="activityContent"> \
             <div class="caption"> \
-              <a href="./activities/?activityId='+ entryData.id +'" target="_blank" class="eventTitle" data-analytics-event="Activity Catalog,'+ entryData.title +',1">'+ entryData.title +'</a>'
+              <a href="./activities?activityId='+ entryData.id +'" target="_blank" class="eventTitle" data-analytics-event="Activity Catalog,'+ entryData.title +',1">'+ entryData.title +'</a>'
               + '<span class="eventAuthor">'+ entryData.metadata.author +'</span>'
               + '<div class="objective"><span class="title">Objective:</span> <p>' + entryData.metadata.objective + '</p></div>'
               + '<div class="duration"><span class="title">Approximate Time:</span> '+ entryData.metadata.duration +'</div>'
