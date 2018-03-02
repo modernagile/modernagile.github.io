@@ -1,4 +1,4 @@
-//out: ./main.css, compress: true
+// "out": "main.css", "compress": true
 
 @images: '../img';
 @screen-sm-min: 768px;
@@ -843,19 +843,27 @@ span.errorIcon:before {
   color: rgba(0,0,0,0.7);
   text-shadow: none;
   font-size: 1em;
-  //@media (max-width: @screen-sm-min) {
-  bottom: 20px;
+  bottom: 42px;
+  @media (min-width: @screen-md-min) {
+    bottom: 20px;
+  }
   top: initial;
   //}
 }
-.carousel-indicators li {
-  border-color: #333;
-  border-color: rgba(0,0,0,0.7);
-  box-shadow: none;
-  &.active {
-    background-color: #333;
-    background-color: rgba(0,0,0,0.7);
-    border: 0;
+.carousel-indicators {
+  display: none;
+  @media (min-width: @screen-md-min) {
+    display: block;
+  }
+  li {
+    border-color: #333;
+    border-color: rgba(0,0,0,0.7);
+    box-shadow: none;
+    &.active {
+      background-color: #333;
+      background-color: rgba(0,0,0,0.7);
+      border: 0;
+    }
   }
 }
 
