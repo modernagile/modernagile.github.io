@@ -1,1 +1,324 @@
-{"afrikaans":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Afrikaans.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Afrikaans.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Afrikaans.zip"}],"croatian":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Croatian.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Croatian.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Croatian.zip"}],"czech":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Czech.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Czech.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Czech.zip"}],"french":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_French.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_French.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_French.zip"}],"german":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_German.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_German.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_German.zip"}],"indonesian":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Indonesian.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Indonesian.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Indonesian.zip"}],"italian":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Italian.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Italian.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Italian.zip"}],"russian":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Russian.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Russian.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Russian.zip"}],"serbian":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Serbian.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Serbian.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Serbian.zip"}],"swedish":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Swedish.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Swedish.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Swedish.zip"}],"thai":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Thai.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Thai.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Thai.zip"}],"ukrainian":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Ukrainian.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Ukrainian.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Ukrainian.zip"}],"arabic":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Arabic.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Arabic.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Arabic.zip"}],"chinese":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Chinese.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Chinese.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Chinese.zip"}],"dutch":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Dutch.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Dutch.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Dutch.zip"}],"english":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_English.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_English.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_English.zip"}],"finnish":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Finnish.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Finnish.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Finnish.zip"}],"japanese":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Japanese.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Japanese.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Japanese.zip"}],"polish":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Polish.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Polish.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Polish.zip"}],"portuguese":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Portuguese.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Portuguese.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Portuguese.zip"}],"spanish":[{"label":"Media Kit in PDF","file":"MediaKit_PDF_Spanish.zip"},{"label":"Media Kit in SVG","file":"MediaKit_SVG_Spanish.zip"},{"label":"Media Kit in PNG","file":"MediaKit_PNG_Spanish.zip"}]}
+{
+	"afrikaans": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Afrikaans.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Afrikaans.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Afrikaans.zip"
+		}
+	],
+	"croatian": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Croatian.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Croatian.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Croatian.zip"
+		}
+	],
+	"czech": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Czech.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Czech.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Czech.zip"
+		}
+	],
+	"french": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_French.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_French.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_French.zip"
+		}
+	],
+	"german": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_German.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_German.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_German.zip"
+		}
+	],
+	"indonesian": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Indonesian.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Indonesian.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Indonesian.zip"
+		}
+	],
+	"italian": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Italian.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Italian.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Italian.zip"
+		}
+	],
+	"russian": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Russian.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Russian.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Russian.zip"
+		}
+	],
+	"serbian": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Serbian.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Serbian.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Serbian.zip"
+		}
+	],
+	"swedish": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Swedish.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Swedish.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Swedish.zip"
+		}
+	],
+	"thai": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Thai.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Thai.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Thai.zip"
+		}
+	],
+	"ukrainian": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Ukrainian.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Ukrainian.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Ukrainian.zip"
+		}
+	],
+	"arabic": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Arabic.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Arabic.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Arabic.zip"
+		}
+	],
+	"chinese": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Chinese.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Chinese.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Chinese.zip"
+		}
+	],
+	"dutch": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Dutch.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Dutch.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Dutch.zip"
+		}
+	],
+	"english": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_English.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_English.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_English.zip"
+		}
+	],
+	"finnish": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Finnish.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Finnish.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Finnish.zip"
+		}
+	],
+	"japanese": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Japanese.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Japanese.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Japanese.zip"
+		}
+	],
+  "norwegian-nynorsk": [
+		{
+			"label": "Media Kit in pdf",
+			"file": "MediaKit_PDF_Norwegian-Nynorsk.zip"
+		},
+		{
+			"label": "Media Kit in svg",
+			"file": "MediaKit_SVG_Norwegian-Nynorsk.zip"
+		},
+		{
+			"label": "Media Kit in png",
+			"file": "MediaKit_PNG_Norwegian-Nynorsk.zip"
+		}
+	],
+	"norwegian": [
+		{
+			"label": "Media Kit in pdf",
+			"file": "MediaKit_PDF_Norwegian.zip"
+		},
+		{
+			"label": "Media Kit in svg",
+			"file": "MediaKit_SVG_Norwegian.zip"
+		},
+		{
+			"label": "Media Kit in png",
+			"file": "MediaKit_PNG_Norwegian.zip"
+		}
+	],
+	"polish": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Polish.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Polish.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Polish.zip"
+		}
+	],
+	"portuguese": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Portuguese.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Portuguese.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Portuguese.zip"
+		}
+	],
+	"spanish": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Spanish.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Spanish.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Spanish.zip"
+		}
+	]
+}
