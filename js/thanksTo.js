@@ -59,7 +59,8 @@ thanksTo = [
   "Darko Rajin",
   "Anders Breivik",
   "Mads Opheim",
-  "Anne Landro"
+  "Anne Landro",
+  "Cristiano Schwenig"
 ];
 
 var thanksToUnique = thanksTo.filter(function(item, pos) {
