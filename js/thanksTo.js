@@ -60,7 +60,13 @@ thanksTo = [
   "Anders Breivik",
   "Mads Opheim",
   "Anne Landro",
-  "Cristiano Schwenig"
+  "Cristiano Schwenig",
+  "Hossein Ansari",
+  "Shayan Salehian(@shayan72)",
+  "Mohsen Ghafoori(@EmJiHash)",
+  "Asad Safari",
+  "Mojde Sohrabi",
+  "Jahan Zinedine"
 ];
 
 var thanksToUnique = thanksTo.filter(function(item, pos) {
