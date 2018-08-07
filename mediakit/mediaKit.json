@@ -279,6 +279,11 @@
 			"file": "MediaKit_PNG_Norwegian.zip"
 		}
 	],
+	"persian":[
+		{"label":"Media Kit in pdf","file":"MediaKit_PDF_Persian.zip"},
+		{"label":"Media Kit in svg","file":"MediaKit_SVG_Persian.zip"},
+		{"label":"Media Kit in png","file":"MediaKit_PNG_Persian.zip"}
+	],
 	"polish": [
 		{
 			"label": "Media Kit in PDF",
