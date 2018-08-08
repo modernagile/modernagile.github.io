@@ -165,5 +165,20 @@ upcomingEventsEntries = [
       deliverValueContinuously: true
     },
     url: 'http://agileprague.com/'
+  },
+  {
+    thumbnail: 'img/upcomingEvents/agileBarcamp.jpg',
+    title: 'Agile Leipzig Barcamp',
+    author: 'Jurgen Appelo',
+    authorPage: 'https://www.youtube.com/watch?v=ZaBOV_C0ybM',
+    location: 'Leipzig, Germany',
+    date: '2018/11/24',
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'http://www.agile-barcamp.de'
   }
 ]
