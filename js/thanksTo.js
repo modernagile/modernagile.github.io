@@ -66,7 +66,8 @@ thanksTo = [
   "Mohsen Ghafoori(@EmJiHash)",
   "Asad Safari",
   "Mojde Sohrabi",
-  "Jahan Zinedine"
+  "Jahan Zinedine",
+  "Molood N. Alavijeh"
 ];
 
 var thanksToUnique = thanksTo.filter(function(item, pos) {
