@@ -12,6 +12,31 @@ learnMoreEntries = [
     url: 'https://www.infoq.com/articles/modern-agile-intro'
   },
   {
+    thumbnail: 'img/readingList/psychological_safety_cheat_sheet.jpg',
+    title: 'Psychological Safety Cheat Sheet',
+    resume: null,
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'https://docs.google.com/document/d/1BAmaH1_U4z5tc3QpV5pMDoPsGmVSVYdSzefIfwjeT7E/export?format=pdf'
+  },
+  /*
+  {
+    thumbnail: 'img/readingList/mob_programming_cheat_sheet.jpg',
+    title: 'Mob Programming Safety Cheat Sheet',
+    resume: null,
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'https://docs.google.com/document/d/1Ve5LVAJvGqJbUZR6C2o3ZNvFPKpuJ6sfIwxlpgKpKCk/export?format=pdf'
+  },*/
+  {
     thumbnail: 'img/readingList/joshagile2016.jpg',
     title: 'Agile 2016: Joshua Kerievsky\'s Keynote',
     resume: null,
