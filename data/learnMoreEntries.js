@@ -34,7 +34,7 @@ learnMoreEntries = [
       deliverValueContinuously: true
     },
     url: 'https://docs.google.com/document/d/1Ve5LVAJvGqJbUZR6C2o3ZNvFPKpuJ6sfIwxlpgKpKCk/export?format=pdf'
-  }
+  },
   {
     thumbnail: 'img/readingList/joshagile2016.jpg',
     title: 'Agile 2016: Joshua Kerievsky\'s Keynote',
