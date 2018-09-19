@@ -25,7 +25,7 @@ learnMoreEntries = [
   },
   {
     thumbnail: 'img/readingList/mob_programming_cheat_sheet.jpg',
-    title: 'Mob Programming Safety Cheat Sheet',
+    title: 'Mob Programming Cheat Sheet',
     resume: null,
     categories: {
       makePeopleAwesome: true,
