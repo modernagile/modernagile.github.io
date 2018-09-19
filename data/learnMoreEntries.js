@@ -23,7 +23,6 @@ learnMoreEntries = [
     },
     url: 'https://docs.google.com/document/d/1BAmaH1_U4z5tc3QpV5pMDoPsGmVSVYdSzefIfwjeT7E/export?format=pdf'
   },
-  /*
   {
     thumbnail: 'img/readingList/mob_programming_cheat_sheet.jpg',
     title: 'Mob Programming Safety Cheat Sheet',
@@ -35,7 +34,7 @@ learnMoreEntries = [
       deliverValueContinuously: true
     },
     url: 'https://docs.google.com/document/d/1Ve5LVAJvGqJbUZR6C2o3ZNvFPKpuJ6sfIwxlpgKpKCk/export?format=pdf'
-  },*/
+  }
   {
     thumbnail: 'img/readingList/joshagile2016.jpg',
     title: 'Agile 2016: Joshua Kerievsky\'s Keynote',
