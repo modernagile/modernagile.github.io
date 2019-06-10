@@ -24,6 +24,18 @@ learnMoreEntries = [
     url: 'https://docs.google.com/document/d/1BAmaH1_U4z5tc3QpV5pMDoPsGmVSVYdSzefIfwjeT7E/export?format=pdf'
   },
   {
+    thumbnail: 'img/merchandise/chartering_cheat_sheet.jpg',
+    title: 'Chartering Cheat Sheet',
+    resume: null,
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'https://docs.google.com/document/d/1s7iO71YYHJ5BPxwoB1W8ywr7KAlO0ozjXCPdXG4nOzg/export?format=pdf'
+  },
+  {
     thumbnail: 'img/readingList/mob_programming_cheat_sheet.jpg',
     title: 'Mob Programming Cheat Sheet',
     resume: null,
