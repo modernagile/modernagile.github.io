@@ -1,0 +1,182 @@
+@font-face {
+   font-family: 'Open Sans Light';
+   font-style: normal;
+   font-weight: 300;
+   src:url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRa1RVmPjeKy21_GQJaLlJI.woff) format('woff');
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+body {
+  font-family: 'Open Sans Light', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  width: 100%;
+}
+#contents {
+  /*background-color: #4b5666;*/
+  background: #dde1ee;
+  background: -webkit-linear-gradient(top, #dde1ee, #eef2f3);
+  background: -o-linear-gradient(top, #dde1ee, #eef2f3);
+  background: linear-gradient(to bottom, #dde1ee, #eef2f3);
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 50%;
+}
+#contents * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+#contents *::selection {
+  background-color: transparent;
+}
+#contents *::-moz-selection {
+  background-color: transparent;
+}
+#contents #wheel {
+  background-image: url('../img/wheel_portrait.svg');
+  background-size: cover;
+  transform-origin: 50% 50%;
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  border: 4px solid #4b5666;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+#contents .bubble {
+  position: absolute;
+  padding: 1em;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+  top: 110%;
+  left: 50%;
+  transition-duration: 500ms;
+  transition-property: left, top;
+  transition-timing-function: ease-out;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.65);
+  text-align: left;
+  line-height: 1.5em;
+}
+#contents .bubble h3 {
+  margin: 0 0 0.5em 0;
+  text-align: left;
+}
+#contents .bubble h1 {
+  text-align: center;
+  line-height: normal;
+  font-weight: lighter;
+  font-size: 24px;
+}
+#contents .bubble h1 a {
+  color: rgba(0, 0, 0, 0.65);
+}
+#contents .bubble:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 0 1em 1em;
+  border-color: #FFFFFF transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  top: -0.9em;
+  left: 50%;
+  margin-left: -1em;
+}
+#contents .bubble.out {
+  transition-delay: 0ms!important;
+  left: -100%;
+}
+#contents .bubble.principle-0 {
+  background-color: #fad25c;
+}
+#contents .bubble.principle-0:after {
+  border-color: #fad25c transparent;
+}
+#contents .bubble.principle-1 {
+  background-color: #a3d96f;
+}
+#contents .bubble.principle-1:after {
+  border-color: #a3d96f transparent;
+}
+#contents .bubble.principle-2 {
+  background-color: #a0bce2;
+}
+#contents .bubble.principle-2:after {
+  border-color: #a0bce2 transparent;
+}
+#contents .bubble.principle-3 {
+  background-color: #f97977;
+}
+#contents .bubble.principle-3:after {
+  border-color: #f97977 transparent;
+}
+#contents.portrait #wheel {
+  margin-top: 0!important;
+}
+#contents.landscape #wheel {
+  background-image: url('../img/wheel_landscape.svg');
+  left: 30px;
+  top: 50%;
+  margin-left: 0!important;
+}
+#contents.landscape .bubble:after {
+  border-width: 1em 1em 1em 0;
+  border-color: transparent #FFFFFF;
+  left: -0.9em;
+  top: 50%;
+  margin-top: -1em;
+  margin-left: 0;
+}
+#contents.landscape .bubble.out {
+  transition-delay: 0ms!important;
+  top: 200%!important;
+}
+#contents.landscape .bubble.principle-0:after {
+  border-color: transparent #fad25c;
+}
+#contents.landscape .bubble.principle-1:after {
+  border-color: transparent #a3d96f;
+}
+#contents.landscape .bubble.principle-2:after {
+  border-color: transparent #a0bce2;
+}
+#contents.landscape .bubble.principle-3:after {
+  border-color: transparent #f97977;
+}
+.ath-container {
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+.ath-application-icon {
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  border-radius: 0.3em;
+  overflow: hidden;
+}
+#auto-download {
+  position: fixed;
+  top: -10000px;
+  left: -10000px;
+  visibility: hidden;
+}
