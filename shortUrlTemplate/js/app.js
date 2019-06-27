@@ -6,7 +6,6 @@ var wheelMargin = 30;
 var dontRepeat = false;
 var mode = null;
 var prevMode = null;
-var directLink = "https://docs.google.com/document/d/1BAmaH1_U4z5tc3QpV5pMDoPsGmVSVYdSzefIfwjeT7E/export?format=pdf";
 var htmlLink = '<a href="'+ directLink +'" title="Direct Link">direct link</a>';
 var downloadLink = 'Please wait, your download should start shortly... If you have any problems, use this ' + htmlLink + '.';
 var downloadedFile = false;
@@ -176,7 +175,7 @@ function playSoundFX() {
 function setup() {
 	window.AudioContext = window.AudioContext || window.webkitAudioContext;
 	context = new AudioContext();
-	loadAudioBuffer('tick.mp3');
+	loadAudioBuffer('../shortUrlTemplate/audio/tick.mp3');
 
 	contents = document.getElementById("contents");
 
