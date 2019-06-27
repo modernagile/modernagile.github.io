@@ -24,6 +24,18 @@ learnMoreEntries = [
     url: 'https://docs.google.com/document/d/1BAmaH1_U4z5tc3QpV5pMDoPsGmVSVYdSzefIfwjeT7E/export?format=pdf'
   },
   {
+    thumbnail: 'img/merchandise/accelerating_flow_cheat_sheet.jpg',
+    title: 'Accelerating Flow Cheat Sheet',
+    resume: null,
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'https://docs.google.com/document/d/1a0ortR3E6-DQurlY1s28LwbJBthjAYVtkQQozPxGGVA/export?format=pdf'
+  },
+  {
     thumbnail: 'img/merchandise/chartering_cheat_sheet.jpg',
     title: 'Chartering Cheat Sheet',
     resume: null,
