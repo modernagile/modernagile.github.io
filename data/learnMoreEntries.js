@@ -12,6 +12,18 @@ learnMoreEntries = [
     url: 'https://www.infoq.com/articles/modern-agile-intro'
   },
   {
+    thumbnail: 'img/merchandise/evolutionary_design_cheat_sheet.jpg',
+    title: 'Evolutionary Design Cheat Sheet',
+    resume: null,
+    categories: {
+      makePeopleAwesome: true,
+      makeSafetyAPrerequisite: true,
+      experimentAndLearnRapidly: true,
+      deliverValueContinuously: true
+    },
+    url: 'https://docs.google.com/document/d/1A1sLe2R-9XhRpOiAZfKii2944PM5tUKS17EgaiGCnLE/export?format=pdf'
+  },
+  {
     thumbnail: 'img/readingList/psychological_safety_cheat_sheet.jpg',
     title: 'Psychological Safety Cheat Sheet',
     resume: null,
