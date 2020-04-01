@@ -294,7 +294,7 @@ section.intro-section {
   }
 }
 
-section.activities-section, section.community-section  {
+section.community-section  {
   padding-top: 50px;
   background-size: cover;
   position: relative;
@@ -879,71 +879,8 @@ span.errorIcon:before {
 }
 
 
-section.activity {
-  text-align: left;
-  #activityTitle {
-    text-align: center;
-  }
-  #activity-header {
-    text-align: left;
-    h2 {
-      margin-top: 0;
-    }
-  }
-  #activity-description {
-    display: none;
-  }
-  .fb-comments {
-    margin-top: 30px;
-  }
-}
-
-section.activities-section .fancyList .fancyListEntry .content {
-    background: #f1f1f1;
-}
 section.community-section .fancyList .fancyListEntry .content {
     background: #dedcd8;
-}
-
-section.activities-section {
-  .activitiesIntro {
-      max-width: 860px;
-      margin: 0 auto;
-      p {
-        text-align: center;
-      }
-  }
-  #activitiesList {
-    & > div.row {
-      @media (min-width: @screen-sm-min) {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display:         flex;
-        &:not(:first-child) {
-          margin-top: 30px;
-        }
-        .fancyListEntry > .content {
-          min-height: 100%;
-        }
-      }
-    }
-    & > .row > div:not(:first-child) {
-      @media (max-width: @screen-sm-min) {
-        margin-top: 0.8em;
-      }
-    }
-  }
-  .activityContent {
-    padding:10px;
-    .objective {
-      margin-top: 1em;
-    }
-    .categories {
-      margin-top: 1em!important;
-      margin-bottom: 1em!important;
-    }
-  }
 }
 
 .noRating {
