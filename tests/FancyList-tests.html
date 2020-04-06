@@ -20,7 +20,9 @@
   <script>
   module('Module', {
       setup: function(){
-        fancyList = new FancyList('#fancylist-container', testData, 2, 6);
+        const columns = 2;
+        const entriesPerPage = 6; 
+        fancyList = new FancyList('#fancylist-container', testData, columns, entriesPerPage);
       },
       getFancyListContainer: function() {
         return $('#fancylist-container');
@@ -46,11 +48,15 @@
 
   QUnit.test( "Paginations: Next button shows next page", function( assert ) {
     fancyList.render();
+    
     assert.equal($('.fancyListEntry:contains("title: Pre-Accident Investigations: An Introduction to Organizational Safety")').length, 0);
 
-    var nextBtn = this.getFancyListContainer().find('.pagination-button.next');
-    nextBtn.click();
+    // var nextBtn = this.getFancyListContainer().find('.pagination-button.next');
+    // nextBtn.click();
+    $('.pagination-button.next').click()
+   
     assert.equal($('.fancyListEntry:contains("title: Pre-Accident Investigations: An Introduction to Organizational Safety")').length, 1);
+    assert.ok(true, "Yay we can pass")
   });
 
   QUnit.test( "Paginations: Clicking a page number takes to the respective page", function( assert ) {
