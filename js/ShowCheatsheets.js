@@ -1,8 +1,7 @@
 function displayCheatSheets() {
 
-    for (entry of cheatsheets) {
-        console.log(entry.sources[0].url);
-        var content = `
+    for(let entry of cheatsheets) {
+        content = `
             <div class="col-sm-4">
             <div class="merchandise">
                 <img src="${entry.thumbnail}" alt="${entry.title}">
