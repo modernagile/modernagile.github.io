@@ -3,6 +3,12 @@ body {
   position: relative;
   font-family: 'Open Sans', sans-serif;
 }
+
+@media (min-width: 768px) {
+  .col-sm-4 {
+    float: right;
+  }
+}
 @media (min-width: 768px) {
   body {
     font-size: 18px;
