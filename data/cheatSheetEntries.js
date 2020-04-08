@@ -37,7 +37,6 @@ cheatsheets=[
     },
     url: 'https://docs.google.com/document/d/1a0ortR3E6-DQurlY1s28LwbJBthjAYVtkQQozPxGGVA/export?format=pdf'
   },
-
   {
     thumbnail: 'img/merchandise/evolutionary_design_cheat_sheet.jpg',
     title: 'Evolutionary Design Cheat Sheet',
@@ -50,9 +49,7 @@ cheatsheets=[
     },
     url: 'https://docs.google.com/document/d/1A1sLe2R-9XhRpOiAZfKii2944PM5tUKS17EgaiGCnLE/export?format=pdf'
   },
-
-  ,
-    {
+  {
     thumbnail: 'img/readingList/mob_programming_cheat_sheet.jpg',
     title: 'Mob Programming Cheat Sheet',
     resume: null,
@@ -63,5 +60,5 @@ cheatsheets=[
       deliverValueContinuously: true
     },
     url: 'https://docs.google.com/document/d/1Ve5LVAJvGqJbUZR6C2o3ZNvFPKpuJ6sfIwxlpgKpKCk/export?format=pdf'
-  },
-]
+  }
+];
