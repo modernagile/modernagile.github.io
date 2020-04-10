@@ -1,6 +1,6 @@
 function displayCheatSheets() {
 
-    for(let entry of cheatsheets) {
+    for(const entry of cheatsheets) {
         content = `
             <div class="col-sm-4">
             <div class="merchandise">
@@ -8,7 +8,7 @@ function displayCheatSheets() {
                 <div class="meta">
                 <p class="title">${entry.title}</p>
                 </div><h5>`;
-        for (source of entry.sources) {
+        for (const source of entry.sources) {
             content = content.concat( `
             <a style="display: inline-block; margin-top: 5px;" href="${source.url}" alt="download and print yourself" target="_blank">
             Download in ${source.language}
