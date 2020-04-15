@@ -5,7 +5,7 @@ cheatsheets=[
     sources: [
       {
         language: 'English',
-        url: '/goodies/psychological_safety_cheat_sheet_20180301A.pdf'
+        url: '/safety'
       },
       {
         language: 'Deutsch',
