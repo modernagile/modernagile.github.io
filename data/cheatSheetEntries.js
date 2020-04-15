@@ -5,11 +5,11 @@ cheatsheets=[
     sources: [
       {
         language: 'English',
-        url: 'data/goodies/psychological_safety_cheat_sheet_20180301A.pdf'
+        url: '/goodies/psychological_safety_cheat_sheet_20180301A.pdf'
       },
       {
         language: 'Deutsch',
-        url: 'goodies/20180803_Psychologische_Emotionale_Sicherheit_Spickzettel_v05.pdf'
+        url: '/goodies/20180803_Psychologische_Emotionale_Sicherheit_Spickzettel_v05.pdf'
       }
     ],
   },
