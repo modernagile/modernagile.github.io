@@ -84,9 +84,6 @@ duplicateParagraphs();
 var learnMore = new LearnMore('#readingList', learnMoreEntries, 2, 6, '#learnMore');
 learnMore.render();
 
-var upcomingEvents = new UpcomingEvents('#upcomingEvents', upcomingEventsEntries);
-upcomingEvents.render();
-
 function cleanSuggestion() {
   jQuery('.suggestEntry input[data-slack]').val('');
   jQuery('.suggestEntry .suggestionPrinciples input:checked').prop('checked', false);

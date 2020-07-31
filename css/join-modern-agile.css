@@ -1,0 +1,76 @@
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+a.socialMedia {
+    border-radius: 10px;
+    border-width: 0;
+    padding: 0px 15px;
+    font-size: 16px;
+    height: 36px;
+    line-height: 36px;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    color: #FFFFFF;
+    display: block;
+    margin-top: 0.8em;
+    box-sizing: border-box;
+}
+a.socialMedia:hover {
+    text-decoration: none;
+}
+a.socialMedia.slack {
+    background: #E14562;
+}
+a.socialMedia.twitter {
+    background: #0693e3;
+}
+a.socialMedia.facebook {
+    background: #3a53a3;
+}
+a.socialMedia.github {
+    background: #F97977;
+}
+a.socialMedia.slack:hover {
+    background: #e51770;
+}
+a.socialMedia.twitter:hover {
+    background: #32b3ff;
+}
+a.socialMedia.facebook:hover {
+    background: #4a67bc;
+}
+a.socialMedia.github:hover {
+    background: #FF9795;
+}
+a.socialMedia.slack:after {
+    background: url('../img/slack.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: -8px;
+}
+a.socialMedia.twitter:after {
+    background: url('../img/twitter_logo.svg');
+    background-size: contain;
+    margin-top: -8px;
+    background-repeat: no-repeat;
+}
+a.socialMedia.facebook:after {
+    background: url('../img/facebook_logo.svg');
+    background-size: contain;
+    margin-top: -8px;
+    background-repeat: no-repeat;
+}
+a.socialMedia.github:after {
+    background: url('../img/github_logo.svg');
+    background-size: contain;
+    margin-top: -8px;
+    background-repeat: no-repeat;
+}
+
+.social-media-icon {
+    padding-right: 10px;
+    padding-bottom: 4px;
+    width: 40px;
+}
