@@ -499,6 +499,42 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="merchandise">
+                    <div id="xp-playing-cards"></div>
+                    <div style="margin-top: 10px; margin-left: 90px;"><a href="https://industriallogic.com/blog/xp-playing-cards/" target="_blank">Learn More</a></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="merchandise">
+                    <div id="modern-agile-masks"></div>
+                    <div style="margin-top: 10px; width: 300px;">Our masks are not medical grade. They are not intended as substitutes for N95, surgical, or procedural masks and are not considered PPE.<a id="viewMoreLess" style="margin-left: 5px; margin-bottom: 20px;" onclick="toggleViewMoreLess()" href="#mask-info" data-toggle="collapse">View Details</a></div>
+                    <div id="mask-info" class="collapse">
+                        <br>
+                        <p>Make Safety a Prerequisite with these high-quality masks from Proper Cloth.</p>
+                        <ul>
+                            <li>Hand sewn from 100% cotton charcoal melange plain weave.</li>
+                            <li>Air filter for virus protection, lab test certified BFE ≥95%.</li>
+                            <li>Antimicrobial treatment to kill or inhibit the growth of bacteria and virus microorganisms.</li>
+                            <li>Available in two sizes. <a href="https://propercloth.com/reference/face-mask-sizing/" title="Face Mask Sizing" target="_blank">What size is best for you?</a></li>
+                            <li>Adjustable around-the-ear elastic bands.</li>
+                        </ul>
+                        <h4>Premium Quality Construction</h4>
+                        <p>Made from a soft and smooth premium plain weave shirting fabric, and featuring excellent hand-sewn craftsmanship throughout. Long-lasting, washable, and reusable.</p>
+                        <h4>All-Day Comfort</h4>
+                        <p>Side pleats, a tailored design that wraps under the chin, and perfectly positioned elastic bands allow you to breathe and speak comfortably without the mask shifting down your face. A moldable nose bridge creates a protective seal and prevents steamed-up glasses.</p>
+                        <h4>Air Filter for Advanced Protection</h4>
+                        <p>A unique five-layer design featuring a three-layer filter made from non-woven polypropylene with a meltblown core. Lab-tested BFE ≥95% and PFE ≥85%. Filter is washable, replaceable, and incredibly breathable.</p>
+                        <h3><strong>Mask Questions?</strong></h3>
+                        <br>
+                        <p><a href="https://propercloth.com/reference/how-to-wash-a-cloth-face-mask/" title="How Can I Wash My Mask?" target="_blank">How can I wash my mask?</a></p>
+                        <p><strong>Can I return my mask?</strong> <meta charset="utf-8"><span data-mce-fragment="1">Due to the personal nature of these products we cannot accept returns.</span></p>
+                        <p><strong>Are these masks medical grade?&nbsp;</strong><meta charset="utf-8"><span data-mce-fragment="1">Our masks are not medical grade. They are not intended as substitutes for N95, surgical, or procedural masks and are not considered PPE.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -609,11 +645,34 @@
                     node: document.getElementById('stop-work-authority-card'),
                     moneyFormat: '%24%7B%7Bamount%7D%7D',
                 });
+                ui.createComponent('product', {
+                    id: [9733264328],
+                    node: document.getElementById('xp-playing-cards'),
+                    moneyFormat: '%24%7B%7Bamount%7D%7D',
+                });
+                ui.createComponent('product', {
+                    id: [5990083461273],
+                    node: document.getElementById('modern-agile-masks'),
+                    moneyFormat: '%24%7B%7Bamount%7D%7D',
+                });
             });
         }
     })();
 </script>
 
+<script>
+    function toggleViewMoreLess() {
+        const button = document.getElementById("viewMoreLess");
+        const text = button.textContent || button.innerText;
+        if (text === "View Details"){
+            button.innerText = "Hide Details";
+            button.textContent = "Hide Details";
+        } else if (text === "Hide Details"){
+            button.innerText = "View Details";
+            button.textContent = "View Details";
+        }
+    }
+</script>
 
 <script type="text/javascript">(function (d, t, e, m) {
 
