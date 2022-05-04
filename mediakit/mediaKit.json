@@ -339,5 +339,19 @@
 			"label": "Media Kit in PNG",
 			"file": "MediaKit_PNG_Spanish.zip"
 		}
+	],
+	"korean": [
+		{
+			"label": "Media Kit in PDF",
+			"file": "MediaKit_PDF_Korean.zip"
+		},
+		{
+			"label": "Media Kit in SVG",
+			"file": "MediaKit_SVG_Korean.zip"
+		},
+		{
+			"label": "Media Kit in PNG",
+			"file": "MediaKit_PNG_Korean.zip"
+		}
 	]
 }
