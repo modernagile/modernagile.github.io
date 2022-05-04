@@ -70,7 +70,7 @@ thanksTo = [
   "Molood N. Alavijeh",
   "Rajesh Mathur",
   "Francis Youngmin Kim",
-  "Park Sungryeol
+  "Park Sungryeol"
 ];
 
 var thanksToUnique = thanksTo.filter(function(item, pos) {
