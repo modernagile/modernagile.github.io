@@ -11,9 +11,13 @@ This environment has not been test-driven. Some tests exist, but most of them ca
 
 Don't bother running an autotester, expecting to see green, until after this is resolved.
 
+## MA Wheel Translations
+See the [Template Engine](git@github.com:modernagile/template-engine.git) project to create a new media kit for each translation.  Instructions are in its README.md file.
+
+
 ## CD pipeline
 
-We don't know how this works currently. Someone set it up, so when you push main code line here it will go live in some few minutes. 
+We don't know how this works currently. Someone set it up, so when you push main code line here it will go live in some few minutes.
 
 ## Maintenance
 
