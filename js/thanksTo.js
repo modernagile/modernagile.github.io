@@ -70,7 +70,10 @@ thanksTo = [
   "Molood N. Alavijeh",
   "Rajesh Mathur",
   "Francis Youngmin Kim",
-  "Park Sungryeol"
+  "Park Sungryeol",
+  "Dominykas Punis",
+  "Ornela Vasiliauskaitė",
+  "Paulius Tuzikas"
 ];
 
 var thanksToUnique = thanksTo.filter(function(item, pos) {
