@@ -15,6 +15,17 @@ cheatsheets=[
   },
 
   {
+    thumbnail: 'img/merchandise/human_communication_cheat.png',
+    title: 'Human Communication Cheat Sheet',
+    sources: [
+      {
+        language: 'English',
+        url: 'https://docs.google.com/document/d/14ZgehM4eTSzToO7IBpKGkwMufVdGXP4tfI2GO5lcYp0/export?format=pdf'
+      }
+    ],
+  },
+
+  {
     thumbnail: 'img/merchandise/chartering_cheat_sheet.jpg',
     title: 'Chartering Cheat Sheet',
     sources: [
@@ -23,7 +34,6 @@ cheatsheets=[
         url: 'https://docs.google.com/document/d/1s7iO71YYHJ5BPxwoB1W8ywr7KAlO0ozjXCPdXG4nOzg/export?format=pdf'
       }
     ],
-
   },
 
   {
@@ -35,7 +45,6 @@ cheatsheets=[
         url: 'https://docs.google.com/document/d/1a0ortR3E6-DQurlY1s28LwbJBthjAYVtkQQozPxGGVA/export?format=pdf'
       }
     ],
-
   },
 
   {
@@ -47,9 +56,8 @@ cheatsheets=[
         url: 'https://docs.google.com/document/d/1A1sLe2R-9XhRpOiAZfKii2944PM5tUKS17EgaiGCnLE/export?format=pdf'
       }
     ],
-
   },
-  
+
   {
     thumbnail: 'img/readingList/mob_programming_cheat_sheet.jpg',
     title: 'Mob Programming Cheat Sheet',
@@ -59,6 +67,5 @@ cheatsheets=[
         url: 'https://docs.google.com/document/d/1Ve5LVAJvGqJbUZR6C2o3ZNvFPKpuJ6sfIwxlpgKpKCk/export?format=pdf'
       }
     ],
-
   }
 ];
