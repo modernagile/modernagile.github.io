@@ -24,7 +24,7 @@ function title(entry) {
 
 function links(entry) {
     const html = [];
-    html.push(`<h5 style="border: 0px solid black">`);
+    html.push(`<h5>`);
     html.push(languageLinks(entry.sources));
     html.push(creativeCommonsLink());
     html.push(`</h5>`);
@@ -33,7 +33,7 @@ function links(entry) {
 
 function languageLinks(sources) {
     const links = sources.map(source => {
-        return languageLink(source) + ` `
+        return languageLink(source);
     });
     return `Download in ` + links.join(', ') + `<br>`;
 }
