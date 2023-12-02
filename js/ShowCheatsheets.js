@@ -1,18 +1,16 @@
 function displayCheatSheets() {
     cheatsheets.forEach(entry => {
-        const cheatsheetEntry = cheatsheet(entry);
-        $('#cheatsheet_entries').append(cheatsheetEntry);
+        $('#cheatsheet_entries').append(cheatsheet(entry));
     });
 }
 
 function cheatsheet(entry) {
     const html = [];
-    html.push(`<div class="col-sm-4">`);
-    html.push(`<div class="merchandise">`);
+    html.push(openingTags());
     html.push(thumb(entry));
     html.push(title(entry));
     html.push(links(entry));
-    html.push(`</div></div>`);
+    html.push(closingTags());
     return html.join('');
 }
 
@@ -55,4 +53,12 @@ function creativeCommonsLink() {
                 style="border-width:0"
                 src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
         </a>`;
+}
+
+function openingTags() {
+    return `<div class="col-sm-4"><div class="merchandise">`;
+}
+
+function closingTags() {
+    return `</div></div>`;
 }
