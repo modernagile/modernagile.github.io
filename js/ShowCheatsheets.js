@@ -7,15 +7,15 @@ function displayCheatSheets() {
 function cheatsheet(entry) {
     const html = [];
     html.push(openingTags());
-    html.push(thumb(entry));
+    html.push(thumbnail(entry));
     html.push(title(entry));
     html.push(links(entry));
     html.push(closingTags());
     return html.join('');
 }
 
-function thumb(entry) {
-    return `<img src="${entry.thumbnail}" alt="${entry.title}">`;
+function thumbnail(entry) {
+    return `<img style="border: 1px solid lavender;" src="${entry.thumbnail}" alt="${entry.title}">`;
 }
 
 function title(entry) {
@@ -40,7 +40,10 @@ function languageLinks(sources) {
 
 function languageLink(source) {
     return `` +
-        `<a style="display: inline-block; margin-top: 5px;" href="${source.url}" alt="download and print yourself" target="_blank">
+        `<a style="display: inline-block; 
+            margin-top: 5px;" 
+            href="${source.url}" alt="download and print yourself" 
+            target="_blank">
             ${source.language}
         </a>`;
 }

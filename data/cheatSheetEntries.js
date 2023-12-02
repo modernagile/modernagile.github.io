@@ -1,7 +1,7 @@
 cheatsheets=[
   {
     thumbnail: 'img/readingList/psychological_safety_cheat_sheet.jpg',
-    title: 'Psychological Safety Cheat Sheet',
+    title: 'Psychological Safety',
     sources: [
       {
         language: 'English',
@@ -15,8 +15,8 @@ cheatsheets=[
   },
 
   {
-    thumbnail: 'img/merchandise/human_communication_cheat.png',
-    title: 'Human Communication Cheat Sheet',
+    thumbnail: 'img/merchandise/human_communication_cheat_sheet.png',
+    title: 'Human Communication',
     sources: [
       {
         language: 'English',
@@ -27,7 +27,7 @@ cheatsheets=[
 
   {
     thumbnail: 'img/merchandise/chartering_cheat_sheet.jpg',
-    title: 'Chartering Cheat Sheet',
+    title: 'Chartering',
     sources: [
       {
         language: 'English',
@@ -38,7 +38,7 @@ cheatsheets=[
 
   {
     thumbnail: 'img/merchandise/accelerating_flow_cheat_sheet.jpg',
-    title: 'Accelerating Flow Cheat Sheet',
+    title: 'Accelerating Flow',
     sources: [
       {
         language: 'English',
@@ -49,7 +49,7 @@ cheatsheets=[
 
   {
     thumbnail: 'img/merchandise/evolutionary_design_cheat_sheet.jpg',
-    title: 'Evolutionary Design Cheat Sheet',
+    title: 'Evolutionary Design',
     sources: [
       {
         language: 'English',
@@ -60,7 +60,7 @@ cheatsheets=[
 
   {
     thumbnail: 'img/readingList/mob_programming_cheat_sheet.jpg',
-    title: 'Mob Programming Cheat Sheet',
+    title: 'Mob Programming',
     sources: [
       {
         language: 'English',
