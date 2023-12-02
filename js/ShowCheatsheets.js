@@ -1,7 +1,8 @@
 function displayCheatSheets() {
-    for (const entry of cheatsheets) {
-        $('#cheatsheet_entries').append(cheatsheet(entry));
-    }
+    cheatsheets.forEach(entry => {
+        const cheatsheetEntry = cheatsheet(entry);
+        $('#cheatsheet_entries').append(cheatsheetEntry);
+    });
 }
 
 function cheatsheet(entry) {
@@ -25,25 +26,24 @@ function title(entry) {
 
 function links(entry) {
     const html = [];
-    html.push(`<h5 style="border: 1px solid red">`);
-    html.push(languageLinks(entry));
+    html.push(`<h5 style="border: 0px solid black">`);
+    html.push(languageLinks(entry.sources));
     html.push(creativeCommonsLink());
     html.push(`</h5>`);
     return html.join('');
 }
 
-function languageLinks(entry) {
-    const links = [];
-    for (const source of entry.sources) {
-        links.push(languageLink(source) + `<br/>`);
-    }
-    return links.join('');
+function languageLinks(sources) {
+    const links = sources.map(source => {
+        return languageLink(source) + ` `
+    });
+    return `Download in ` + links.join(', ') + `<br>`;
 }
 
 function languageLink(source) {
     return `` +
         `<a style="display: inline-block; margin-top: 5px;" href="${source.url}" alt="download and print yourself" target="_blank">
-            Download in ${source.language}
+            ${source.language}
         </a>`;
 }
 
