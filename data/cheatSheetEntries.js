@@ -1,4 +1,4 @@
-cheatsheets=[
+cheatsheets = [
   {
     thumbnail: 'img/readingList/psychological_safety_cheat_sheet.jpg',
     title: 'Psychological Safety',
@@ -10,17 +10,6 @@ cheatsheets=[
       {
         language: 'Deutsch',
         url: '/goodies/20180803_Psychologische_Emotionale_Sicherheit_Spickzettel_v05.pdf'
-      }
-    ],
-  },
-
-  {
-    thumbnail: 'img/merchandise/human_communication_cheat_sheet.png',
-    title: 'Human Communication',
-    sources: [
-      {
-        language: 'English',
-        url: 'https://docs.google.com/document/d/14ZgehM4eTSzToO7IBpKGkwMufVdGXP4tfI2GO5lcYp0/export?format=pdf'
       }
     ],
   },
@@ -43,6 +32,17 @@ cheatsheets=[
       {
         language: 'English',
         url: 'https://docs.google.com/document/d/1a0ortR3E6-DQurlY1s28LwbJBthjAYVtkQQozPxGGVA/export?format=pdf'
+      }
+    ],
+  },
+
+  {
+    thumbnail: 'img/merchandise/human_communication_cheat_sheet.png',
+    title: 'Human Communication',
+    sources: [
+      {
+        language: 'English',
+        url: 'https://docs.google.com/document/d/14ZgehM4eTSzToO7IBpKGkwMufVdGXP4tfI2GO5lcYp0/export?format=pdf'
       }
     ],
   },
