@@ -1,7 +1,7 @@
 # ModernAgile.org Website
 
 ## Static Website
-Launch your favorite web server pointed at this directory, and you have a local copy. 
+Launch your favorite web server, pointed at this directory, and you have a local copy. 
 
 Tim has been using python's httpwatcher, which reloads the web page whenever a file is modified in the file system under the root directory. It makes for a short test cycle.
 
