@@ -25,8 +25,18 @@ if [[ ! -f "$PROJECT_ROOT/index.html" ]] || [[ ! -d "$PROJECT_ROOT/tests" ]]; th
     exit 1
 fi
 
-# Step 1: Check for untracked files
-echo "Step 1/4: Checking for untracked files..."
+# Step 1: Pull latest changes with rebase (will fail if unstaged changes)
+echo "Step 1/4: Pulling latest changes..."
+echo "(This will fail if you have unstaged changes - commit or stash them first)"
+
+if ! git pull -r; then
+    echo "Error: Git pull failed. Please resolve conflicts manually and try again."
+    exit 1
+fi
+
+# Step 2: Interactive cleanup of untracked files
+echo
+echo "Step 2/4: Cleaning untracked files..."
 
 UNTRACKED_FILES=$(git status --porcelain | grep '^??' || true)
 
@@ -43,15 +53,6 @@ else
         echo "Clean operation cancelled by user. Exiting."
         exit 1
     fi
-fi
-
-# Step 2: Pull latest changes with rebase
-echo
-echo "Step 2/4: Pulling latest changes..."
-
-if ! git pull -r; then
-    echo "Error: Git pull failed. Please resolve conflicts manually and try again."
-    exit 1
 fi
 
 # Step 3: Update dependencies
