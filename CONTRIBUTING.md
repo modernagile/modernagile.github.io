@@ -7,6 +7,24 @@ Thank you for your interest in contributing to the ModernAgile.org website! This
 
 ## Quick Start
 
+### First-Time Contributors (Recommended)
+```bash
+# 1. Clone and enter the project
+git clone [repository-url]
+cd ModernAgile
+
+# 2. Run the interactive onboarding script
+./onboard
+```
+
+The `./onboard` script will:
+- ✅ Check your system prerequisites (Node.js, npm, Git)
+- ✅ Set up all project scripts with proper permissions  
+- ✅ Optionally pre-install test dependencies
+- ✅ Guide you through next steps
+- ✅ Optionally start the development server
+
+### Manual Setup (Alternative)
 ```bash
 # 1. Clone and enter the project
 git clone [repository-url]
@@ -18,8 +36,6 @@ cd ModernAgile
 # 3. Run tests (in another terminal)
 ./run_tests
 ```
-
-That's it! The server will start on `http://localhost:8080` and automatically open your browser.
 
 ## Project Overview
 
@@ -196,8 +212,9 @@ For MA Wheel translations, see the separate [Template Engine](git@github.com:mod
 
 ```
 ModernAgile/
+├── onboard                 # 🎯 Interactive onboarding script for new contributors
 ├── run                     # 🚀 Node.js development server script
-├── run_tests               # 🧪 Automated test runner script
+├── run_tests               # 🧪 Automated test runner script  
 ├── index.html              # Main website page
 ├── CONTRIBUTING.md         # This file - contribution guidelines
 ├── css/                    # Stylesheets

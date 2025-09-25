@@ -2,13 +2,19 @@
 
 ## Quick Start
 
-To run the website locally:
+### New Contributors (First Time)
 ```bash
-./run
+# One-command setup for new contributors
+./onboard
 ```
+This interactive script will check your system, set up everything needed, and optionally start the development server.
 
-To run all tests:
+### Returning Contributors
 ```bash
+# Start development server
+./run
+
+# Run tests
 ./run_tests
 ```
 

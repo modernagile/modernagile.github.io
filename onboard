@@ -1,0 +1,230 @@
+#!/bin/bash
+
+# ModernAgile.org Website - New Contributor Onboarding
+# This script sets up everything needed for first-time contributors
+
+set -e  # Exit on any error
+
+# Color codes for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m' # No Color
+
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$SCRIPT_DIR"
+
+# Welcome message
+clear
+echo -e "${CYAN}🚀 Welcome to ModernAgile.org Development!${NC}"
+echo -e "${CYAN}=========================================${NC}"
+echo
+echo -e "${BLUE}This script will set up everything you need to contribute to the project.${NC}"
+echo
+
+# Check if we're in the right directory
+if [[ ! -f "$PROJECT_ROOT/index.html" ]] || [[ ! -d "$PROJECT_ROOT/tests" ]]; then
+    echo -e "${RED}❌ Error: This script must be run from the ModernAgile project root directory${NC}"
+    echo "   Expected to find index.html and tests/ directory"
+    exit 1
+fi
+
+# Function to check if command exists
+command_exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+# Function to print step headers
+print_step() {
+    echo
+    echo -e "${PURPLE}━━━ $1 ━━━${NC}"
+}
+
+# Function to print success messages
+print_success() {
+    echo -e "${GREEN}✅ $1${NC}"
+}
+
+# Function to print info messages
+print_info() {
+    echo -e "${BLUE}ℹ️  $1${NC}"
+}
+
+# Function to print warning messages
+print_warning() {
+    echo -e "${YELLOW}⚠️  $1${NC}"
+}
+
+# Step 1: Check prerequisites
+print_step "Checking Prerequisites"
+
+# Check Node.js
+if command_exists node; then
+    NODE_VERSION=$(node --version)
+    print_success "Node.js found: $NODE_VERSION"
+    
+    # Check if version is acceptable (v12+)
+    NODE_MAJOR=$(echo "$NODE_VERSION" | sed 's/v//' | cut -d. -f1)
+    if [[ $NODE_MAJOR -lt 12 ]]; then
+        print_warning "Node.js version $NODE_VERSION is older than recommended (v12+)"
+        print_info "Project should still work, but consider upgrading"
+    fi
+else
+    echo -e "${RED}❌ Node.js is not installed${NC}"
+    echo
+    echo -e "${YELLOW}Please install Node.js first:${NC}"
+    echo "   1. Visit https://nodejs.org/"
+    echo "   2. Download and install the LTS version"
+    echo "   3. Run this script again"
+    exit 1
+fi
+
+# Check npm
+if command_exists npm; then
+    NPM_VERSION=$(npm --version)
+    print_success "npm found: v$NPM_VERSION"
+else
+    echo -e "${RED}❌ npm is not installed (usually comes with Node.js)${NC}"
+    exit 1
+fi
+
+# Check Git
+if command_exists git; then
+    GIT_VERSION=$(git --version | cut -d' ' -f3)
+    print_success "Git found: v$GIT_VERSION"
+else
+    print_warning "Git not found - you'll need it for version control"
+fi
+
+# Step 2: Make scripts executable
+print_step "Setting Up Project Scripts"
+
+chmod +x "$PROJECT_ROOT/run" 2>/dev/null || true
+chmod +x "$PROJECT_ROOT/run_tests" 2>/dev/null || true
+chmod +x "$PROJECT_ROOT/onboard" 2>/dev/null || true
+
+print_success "Made project scripts executable"
+
+# Step 3: Check script functionality
+print_step "Verifying Script Functionality"
+
+if [[ -x "$PROJECT_ROOT/run" ]]; then
+    print_success "./run script is ready"
+else
+    print_warning "./run script may have permission issues"
+fi
+
+if [[ -x "$PROJECT_ROOT/run_tests" ]]; then
+    print_success "./run_tests script is ready"
+else
+    print_warning "./run_tests script may have permission issues"
+fi
+
+# Step 4: Pre-install test dependencies (optional but helpful)
+print_step "Pre-installing Test Dependencies"
+
+print_info "This step is optional but will make your first test run faster..."
+
+# Ask user if they want to pre-install
+echo
+read -p "Would you like to pre-install test dependencies now? [Y/n]: " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Nn]$ ]]; then
+    print_info "Skipping test dependency installation"
+    print_info "Dependencies will be installed automatically when you run ./run_tests"
+else
+    print_info "Installing test dependencies..."
+    
+    # Check if grunt-cli is installed globally
+    if ! command_exists grunt; then
+        print_info "Installing grunt-cli globally..."
+        if npm install -g grunt-cli; then
+            print_success "grunt-cli installed globally"
+        else
+            print_warning "Failed to install grunt-cli globally"
+            print_info "You may need to run: sudo npm install -g grunt-cli"
+            print_info "Or ./run_tests will handle this automatically later"
+        fi
+    else
+        print_success "grunt-cli already installed globally"
+    fi
+    
+    # Install test dependencies
+    if [[ -d "$PROJECT_ROOT/tests" ]]; then
+        cd "$PROJECT_ROOT/tests"
+        
+        if [[ ! -f "package.json" ]]; then
+            print_warning "No package.json found in tests directory"
+        else
+            print_info "Installing npm dependencies in tests directory..."
+            if npm install; then
+                print_success "Test dependencies installed successfully"
+            else
+                print_warning "Failed to install some test dependencies"
+                print_info "./run_tests will attempt to fix this automatically"
+            fi
+        fi
+        
+        cd "$PROJECT_ROOT"
+    fi
+fi
+
+# Step 5: Final setup
+print_step "Final Setup"
+
+print_success "All prerequisites checked and scripts prepared!"
+
+# Step 6: Next steps guidance
+print_step "You're Ready to Go!"
+
+echo
+echo -e "${GREEN}🎉 Onboarding Complete!${NC}"
+echo
+echo -e "${CYAN}Next Steps:${NC}"
+echo -e "${BLUE}1. Start the development server:${NC}"
+echo "   ./run"
+echo
+echo -e "${BLUE}2. In another terminal, run tests:${NC}"
+echo "   ./run_tests"
+echo
+echo -e "${BLUE}3. Start coding!${NC}"
+echo "   - Edit files and refresh browser to see changes"
+echo "   - Main website: index.html"
+echo "   - JavaScript: js/ directory"
+echo "   - Styles: css/ directory"  
+echo "   - Content data: data/ directory"
+echo
+echo -e "${CYAN}Useful Information:${NC}"
+echo -e "${BLUE}📍 Development server:${NC} http://localhost:8080"
+echo -e "${BLUE}🧪 Browser tests:${NC} http://localhost:8080/tests/FancyList-tests.html"
+echo -e "${BLUE}📚 Documentation:${NC} README.md and CONTRIBUTING.md"
+echo -e "${BLUE}💡 Need help?${NC} Check existing issues or create a new one"
+echo
+
+# Step 7: Offer to start development server
+print_step "Start Development Server?"
+
+echo
+read -p "Would you like to start the development server now? [Y/n]: " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Nn]$ ]]; then
+    print_info "You can start the server later with: ./run"
+    echo
+    print_success "Happy coding! 🚀"
+else
+    print_info "Starting development server..."
+    echo
+    print_success "Server will start and open your browser automatically!"
+    print_info "Press Ctrl+C to stop the server when you're done"
+    echo
+    
+    # Give user a moment to read the message
+    sleep 2
+    
+    # Start the server
+    exec "$PROJECT_ROOT/run"
+fi
