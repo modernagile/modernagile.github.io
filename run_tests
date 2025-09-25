@@ -1,0 +1,106 @@
+#!/bin/bash
+
+# ModernAgile Test Runner
+# Runs all tests in the project using Grunt + QUnit + PhantomJS
+
+set -e  # Exit on any error
+
+# Color codes for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$SCRIPT_DIR"
+TESTS_DIR="$PROJECT_ROOT/tests"
+
+echo -e "${BLUE}ModernAgile Test Runner${NC}"
+echo "=================================="
+
+# Check if we're in the right directory
+if [[ ! -f "$PROJECT_ROOT/index.html" ]] || [[ ! -d "$TESTS_DIR" ]]; then
+    echo -e "${RED}Error: This script must be run from the ModernAgile project root directory${NC}"
+    echo "Expected to find index.html and tests/ directory"
+    exit 1
+fi
+
+# Check if Node.js is installed
+if ! command -v node &> /dev/null; then
+    echo -e "${RED}Error: Node.js is not installed${NC}"
+    echo "Please install Node.js from https://nodejs.org/"
+    exit 1
+fi
+
+# Check if npm is installed
+if ! command -v npm &> /dev/null; then
+    echo -e "${RED}Error: npm is not installed${NC}"
+    echo "Please install npm (usually comes with Node.js)"
+    exit 1
+fi
+
+echo -e "${YELLOW}Checking dependencies...${NC}"
+
+# Check if grunt-cli is installed globally
+if ! command -v grunt &> /dev/null; then
+    echo -e "${YELLOW}Installing grunt-cli globally...${NC}"
+    npm install -g grunt-cli
+    if [[ $? -ne 0 ]]; then
+        echo -e "${RED}Failed to install grunt-cli globally${NC}"
+        echo "You may need to run with sudo: sudo npm install -g grunt-cli"
+        exit 1
+    fi
+fi
+
+# Navigate to tests directory
+cd "$TESTS_DIR"
+
+# Check if node_modules exists and install if needed
+if [[ ! -d "node_modules" ]]; then
+    echo -e "${YELLOW}Installing test dependencies...${NC}"
+    npm install
+fi
+
+# Check if phantomjs-prebuilt is installed
+if [[ ! -d "node_modules/phantomjs-prebuilt" ]]; then
+    echo -e "${YELLOW}Installing PhantomJS for headless testing...${NC}"
+    npm install phantomjs-prebuilt --save-dev
+fi
+
+# Navigate back to project root for running tests
+cd "$PROJECT_ROOT"
+
+echo -e "${YELLOW}Running tests...${NC}"
+echo
+
+# Run the tests using Grunt
+if grunt --base tests --gruntfile tests/Gruntfile.js; then
+    echo
+    echo -e "${GREEN}✓ Test run completed successfully${NC}"
+    
+    # Check if there were any test failures in the output
+    # Note: Grunt returns 0 even with test failures sometimes, so we rely on the output
+    echo -e "${BLUE}Check the output above for detailed test results${NC}"
+else
+    EXIT_CODE=$?
+    echo
+    echo -e "${RED}✗ Test run failed${NC}"
+    
+    if [[ $EXIT_CODE -eq 6 ]]; then
+        echo -e "${YELLOW}Some tests failed but the test runner completed successfully${NC}"
+        echo -e "${YELLOW}This is expected - see the output above for details on which tests failed${NC}"
+    else
+        echo -e "${RED}Test runner encountered an error (exit code: $EXIT_CODE)${NC}"
+    fi
+    
+    exit $EXIT_CODE
+fi
+
+echo
+echo -e "${BLUE}Test Summary:${NC}"
+echo "- Tests are located in: $TESTS_DIR"
+echo "- Main test file: tests/FancyList-tests.html"
+echo "- Test runner: Grunt + QUnit + PhantomJS"
+echo "- Note: Some tests may be failing and need maintenance (see README.md)"

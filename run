@@ -1,0 +1,147 @@
+#!/usr/bin/env node
+
+// Simple Node.js server for ModernAgile static website
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+
+const PORT = process.env.PORT || 8080;
+const HOST = process.env.HOST || 'localhost';
+
+// MIME types for common file extensions
+const mimeTypes = {
+  '.html': 'text/html',
+  '.js': 'text/javascript',
+  '.css': 'text/css',
+  '.json': 'application/json',
+  '.png': 'image/png',
+  '.jpg': 'image/jpg',
+  '.jpeg': 'image/jpeg',
+  '.gif': 'image/gif',
+  '.svg': 'image/svg+xml',
+  '.ico': 'image/x-icon',
+  '.mp3': 'audio/mpeg',
+  '.wav': 'audio/wav',
+  '.woff': 'font/woff',
+  '.woff2': 'font/woff2',
+  '.ttf': 'font/ttf',
+  '.eot': 'application/vnd.ms-fontobject'
+};
+
+function getMimeType(filePath) {
+  const ext = path.extname(filePath).toLowerCase();
+  return mimeTypes[ext] || 'application/octet-stream';
+}
+
+function serveFile(res, filePath) {
+  fs.readFile(filePath, (err, content) => {
+    if (err) {
+      if (err.code === 'ENOENT') {
+        // File not found
+        res.writeHead(404, { 'Content-Type': 'text/html' });
+        res.end('<h1>404 Not Found</h1><p>The requested file was not found.</p>');
+      } else {
+        // Server error
+        res.writeHead(500, { 'Content-Type': 'text/html' });
+        res.end('<h1>500 Server Error</h1><p>An error occurred while reading the file.</p>');
+      }
+    } else {
+      const mimeType = getMimeType(filePath);
+      res.writeHead(200, { 
+        'Content-Type': mimeType,
+        'Access-Control-Allow-Origin': '*', // Enable CORS
+        'Cache-Control': 'no-cache' // Disable cache for development
+      });
+      res.end(content);
+    }
+  });
+}
+
+const server = http.createServer((req, res) => {
+  let urlPath = req.url;
+  
+  // Remove query parameters
+  const queryIndex = urlPath.indexOf('?');
+  if (queryIndex !== -1) {
+    urlPath = urlPath.substring(0, queryIndex);
+  }
+  
+  // Default to index.html for root requests
+  if (urlPath === '/') {
+    urlPath = '/index.html';
+  }
+  
+  // Handle directory requests by serving index.html if it exists
+  if (urlPath.endsWith('/')) {
+    urlPath += 'index.html';
+  }
+  
+  const filePath = path.join(__dirname, urlPath);
+  
+  // Security check - prevent directory traversal
+  if (!filePath.startsWith(__dirname)) {
+    res.writeHead(403, { 'Content-Type': 'text/html' });
+    res.end('<h1>403 Forbidden</h1><p>Access denied.</p>');
+    return;
+  }
+  
+  // Check if file exists
+  fs.stat(filePath, (err, stats) => {
+    if (err) {
+      // File doesn't exist, serve 404
+      res.writeHead(404, { 'Content-Type': 'text/html' });
+      res.end('<h1>404 Not Found</h1><p>The requested file was not found.</p>');
+    } else if (stats.isDirectory()) {
+      // Directory request, try to serve index.html
+      const indexPath = path.join(filePath, 'index.html');
+      serveFile(res, indexPath);
+    } else {
+      // Serve the file
+      serveFile(res, filePath);
+    }
+  });
+});
+
+server.listen(PORT, HOST, () => {
+  console.log('\n🚀 ModernAgile Development Server');
+  console.log('================================');
+  console.log(`📍 Server running at: http://${HOST}:${PORT}`);
+  console.log(`📁 Serving files from: ${__dirname}`);
+  console.log('\n💡 Tips:');
+  console.log('   - Press Ctrl+C to stop the server');
+  console.log('   - Edit files and refresh browser to see changes');
+  console.log('   - Tests available at: http://localhost:8080/tests/FancyList-tests.html');
+  console.log('\n📊 Server logs:');
+  console.log('===============');
+});
+
+// Log requests
+server.on('request', (req, res) => {
+  const timestamp = new Date().toISOString();
+  console.log(`[${timestamp}] ${req.method} ${req.url}`);
+});
+
+// Graceful shutdown
+process.on('SIGINT', () => {
+  console.log('\n\n👋 Shutting down server gracefully...');
+  server.close(() => {
+    console.log('✅ Server stopped.');
+    process.exit(0);
+  });
+});
+
+// Handle uncaught exceptions
+process.on('uncaughtException', (err) => {
+  console.error('❌ Uncaught Exception:', err);
+  process.exit(1);
+});
+
+// Try to open browser automatically (macOS)
+setTimeout(() => {
+  try {
+    execSync(`open http://${HOST}:${PORT}`, { stdio: 'ignore' });
+  } catch (err) {
+    // Ignore errors - browser opening is optional
+  }
+}, 1000);
