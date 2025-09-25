@@ -1,15 +1,45 @@
 # ModernAgile.org Website
 
-## Static Website
-Launch your favorite web server, pointed at this directory, and you have a local copy. 
+## Quick Start
 
-Tim has been using python's httpwatcher, which reloads the web page whenever a file is modified in the file system under the root directory. It makes for a short test cycle.
+To run the website locally:
+```bash
+./run
+```
 
-## Autotest
+To run all tests:
+```bash
+./run_tests
+```
 
-This environment has not been test-driven. Some tests exist, but most of them cannot work and need to be reworked to be valid tests of the FancyList. 
+## Development Server
 
-Don't bother running an autotester, expecting to see green, until after this is resolved.
+The project includes a custom Node.js development server that:
+- Serves all static files with proper MIME types
+- Automatically opens your browser
+- Provides real-time request logging  
+- Enables CORS for development
+- Handles all project file types (HTML, CSS, JS, images, fonts, etc.)
+
+### Alternative Server Options
+If you prefer other web servers:
+- **Node.js http-server**: `npx http-server . -p 8080 -o --cors`
+- **Python 3**: `python -m http.server 8000` (basic, no auto-reload)
+- **Other**: Any static web server of your choice
+
+## Testing
+
+The project uses QUnit + Grunt + PhantomJS for testing. The test suite includes:
+- **19 total test assertions** 
+- **Tests for FancyList component** (pagination, filtering, etc.)
+- **Current status**: Some tests need maintenance and may fail
+
+Run tests with detailed output:
+```bash
+./run_tests
+```
+
+View tests in browser: `http://localhost:8080/tests/FancyList-tests.html` (when server is running)
 
 ## MA Wheel Translations
 See the [Template Engine](git@github.com:modernagile/template-engine.git) project to create a new media kit for each translation.  Instructions are in its README.md file.

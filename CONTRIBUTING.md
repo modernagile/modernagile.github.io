@@ -5,6 +5,22 @@
 
 Thank you for your interest in contributing to the ModernAgile.org website! This document provides guidelines for contributing to this static website project.
 
+## Quick Start
+
+```bash
+# 1. Clone and enter the project
+git clone [repository-url]
+cd ModernAgile
+
+# 2. Start the development server
+./run
+
+# 3. Run tests (in another terminal)
+./run_tests
+```
+
+That's it! The server will start on `http://localhost:8080` and automatically open your browser.
+
 ## Project Overview
 
 The ModernAgile.org website is a static HTML/CSS/JavaScript website that promotes Modern Agile principles. The site includes:
@@ -19,9 +35,11 @@ The ModernAgile.org website is a static HTML/CSS/JavaScript website that promote
 
 ### Prerequisites
 
-- Node.js (version 6 or higher)
-- npm (comes with Node.js)
-- A local web server (Python's httpwatcher recommended for development)
+- **Node.js** (version 12 or higher) - [Download here](https://nodejs.org/)
+- **npm** (comes with Node.js)
+- **Git** for version control
+
+That's it! The `./run` and `./run_tests` scripts handle all other dependencies automatically.
 
 ### Local Development Setup
 
@@ -31,43 +49,28 @@ The ModernAgile.org website is a static HTML/CSS/JavaScript website that promote
    cd ModernAgile
    ```
 
-2. **Install test dependencies**
+2. **Start the development server** (recommended)
    ```bash
-   cd tests
-   npm install
+   ./run
    ```
+   
+   This will:
+   - Start a Node.js server on `http://localhost:8080`
+   - Automatically open your browser
+   - Serve all files with proper MIME types
+   - Enable CORS for development
+   - Show real-time request logs
 
-3. **Install Grunt globally** (if not already installed)
+3. **Alternative server options** (if you prefer):
    ```bash
-   npm install -g grunt
-   npm install -g grunt-contrib-qunit --save-dev
-   ```
-
-4. **Start a local web server**
+   # Node.js http-server
+   npx http-server . -p 8080 -o --cors
    
-   For Python users (recommended):
-   ```bash
-   # Install httpwatcher if you haven't already
-   pip install httpwatcher
-   
-   # Start the server (auto-reloads on file changes)
-   httpwatcher
-   ```
-   
-   Alternative options:
-   ```bash
-   # Python 3
+   # Python 3 (basic)
    python -m http.server 8000
    
-   # Python 2
-   python -m SimpleHTTPServer 8000
-   
-   # Node.js (if you have http-server installed)
-   npx http-server
+   # Any other static web server
    ```
-
-5. **Visit the site**
-   Open your browser to `http://localhost:8000` (or the port shown by your server)
 
 ## Development Workflow
 
@@ -94,12 +97,27 @@ For other modifications, you'll need to edit:
 Before submitting changes, ensure all tests pass:
 
 ```bash
-# From the project root
-cd tests
-grunt
+# Recommended: Use the automated test runner
+./run_tests
 
-# Or run with watch mode during development
-grunt watch
+# This script will:
+# - Check and install all required dependencies
+# - Set up the test environment automatically
+# - Run the full test suite with detailed output
+# - Handle any dependency issues
+```
+
+**Manual testing** (if needed):
+```bash
+# Install dependencies first
+cd tests && npm install
+npm install -g grunt-cli
+
+# Run tests manually
+cd .. && grunt --base tests --gruntfile tests/Gruntfile.js
+
+# Run with watch mode during development
+grunt watch --base tests --gruntfile tests/Gruntfile.js
 ```
 
 #### Test Structure
@@ -178,7 +196,10 @@ For MA Wheel translations, see the separate [Template Engine](git@github.com:mod
 
 ```
 ModernAgile/
+├── run                     # 🚀 Node.js development server script
+├── run_tests               # 🧪 Automated test runner script
 ├── index.html              # Main website page
+├── CONTRIBUTING.md         # This file - contribution guidelines
 ├── css/                    # Stylesheets
 │   ├── main.css           # Primary styles
 │   ├── bootstrap.css      # Bootstrap framework
