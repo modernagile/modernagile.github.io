@@ -16,7 +16,12 @@ This interactive script will check your system, set up everything needed, and op
 
 # Run tests
 ./run_tests
+
+# Reset to clean state (clean untracked files, pull latest, update deps, test)
+./clean_start
 ```
+
+**💡 Tip:** Run `./clean_start` before beginning each new feature to ensure you're working with the latest code and clean dependencies.
 
 ## Development Server
 

@@ -1,0 +1,93 @@
+#!/bin/bash
+
+# ModernAgile.org Website - Clean Start Script
+# Reset to pristine development state with latest changes
+
+set -e  # Exit on any error
+
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$SCRIPT_DIR"
+
+echo "Clean Start: Reset to pristine development state"
+echo
+
+# Check if we're in a git repository
+if ! git rev-parse --git-dir > /dev/null 2>&1; then
+    echo "Error: Not in a git repository"
+    exit 1
+fi
+
+# Check if we're in the right directory
+if [[ ! -f "$PROJECT_ROOT/index.html" ]] || [[ ! -d "$PROJECT_ROOT/tests" ]]; then
+    echo "Error: This script must be run from the ModernAgile project root directory"
+    echo "Expected to find index.html and tests/ directory"
+    exit 1
+fi
+
+# Step 1: Check for untracked files
+echo "Step 1/4: Checking for untracked files..."
+
+UNTRACKED_FILES=$(git status --porcelain | grep '^??' || true)
+
+if [[ -z "$UNTRACKED_FILES" ]]; then
+    echo "No untracked files found."
+else
+    echo "Found untracked files that can be cleaned:"
+    echo "$UNTRACKED_FILES"
+    echo
+    echo "Starting interactive cleanup (you can cancel safely)..."
+    
+    # Interactive git clean - user has full control
+    if ! git clean -i; then
+        echo "Clean operation cancelled by user. Exiting."
+        exit 1
+    fi
+fi
+
+# Step 2: Pull latest changes with rebase
+echo
+echo "Step 2/4: Pulling latest changes..."
+
+if ! git pull -r; then
+    echo "Error: Git pull failed. Please resolve conflicts manually and try again."
+    exit 1
+fi
+
+# Step 3: Update dependencies
+echo
+echo "Step 3/4: Installing/updating test dependencies..."
+
+cd "$PROJECT_ROOT/tests"
+
+if [[ ! -f "package.json" ]]; then
+    echo "Warning: No package.json found in tests directory"
+    cd "$PROJECT_ROOT"
+else
+    if ! npm install; then
+        echo "Error: Failed to install test dependencies"
+        exit 1
+    fi
+    cd "$PROJECT_ROOT"
+fi
+
+# Step 4: Run tests
+echo
+echo "Step 4/4: Running tests to verify clean state..."
+
+if [[ ! -x "$PROJECT_ROOT/run_tests" ]]; then
+    echo "Error: ./run_tests script not found or not executable"
+    exit 1
+fi
+
+if ! "$PROJECT_ROOT/run_tests"; then
+    echo
+    echo "Warning: Tests failed after clean start"
+    echo "This may indicate issues with the latest changes or environment"
+    exit 1
+fi
+
+# Success
+echo
+echo "Clean start completed successfully!"
+echo "Repository is now clean, updated, and tested."

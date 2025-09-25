@@ -35,6 +35,9 @@ cd ModernAgile
 
 # 3. Run tests (in another terminal)
 ./run_tests
+
+# 4. Reset to clean state when needed
+./clean_start
 ```
 
 ## Project Overview
@@ -87,6 +90,53 @@ That's it! The `./run` and `./run_tests` scripts handle all other dependencies a
    
    # Any other static web server
    ```
+
+## Clean Start Script
+
+When you need to reset your development environment to a pristine state:
+
+```bash
+./clean_start
+```
+
+**What it does:**
+1. **Interactive cleanup** - Shows untracked files and lets you choose what to delete
+2. **Pull latest changes** - `git pull -r` to get updates with rebase
+3. **Update dependencies** - Fresh `npm install` in tests directory  
+4. **Run tests** - Verify everything works after the reset
+
+**When to use:**
+- **Before starting each new feature** (recommended workflow)
+- After pulling changes that affect dependencies
+- When tests start behaving unexpectedly
+- After system updates or long breaks from the project
+- Before submitting pull requests (clean environment testing)
+- When dependency conflicts or cache issues arise
+
+**Safety:** The script uses `git clean -i` (interactive mode), so you maintain full control over what gets deleted.
+
+### Recommended Feature Development Workflow
+
+```bash
+# 1. Start each new feature with a clean slate
+./clean_start
+
+# 2. Create feature branch (after clean_start pulls latest)
+git checkout -b feature/my-new-feature
+
+# 3. Develop and test
+./run          # Start development server
+./run_tests    # Run tests frequently
+
+# 4. Before submitting PR, verify clean environment
+./clean_start && ./run_tests
+```
+
+This ensures you're always working with:
+- ✅ Latest codebase
+- ✅ Clean dependencies
+- ✅ No stale artifacts
+- ✅ Passing tests
 
 ## Development Workflow
 
@@ -213,8 +263,9 @@ For MA Wheel translations, see the separate [Template Engine](git@github.com:mod
 ```
 ModernAgile/
 ├── onboard                 # 🎯 Interactive onboarding script for new contributors
+├── clean_start             # 🧹 Clean environment reset script
 ├── run                     # 🚀 Node.js development server script
-├── run_tests               # 🧪 Automated test runner script  
+├── run_tests               # 🧪 Automated test runner script
 ├── index.html              # Main website page
 ├── CONTRIBUTING.md         # This file - contribution guidelines
 ├── css/                    # Stylesheets
