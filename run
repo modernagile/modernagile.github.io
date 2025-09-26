@@ -111,7 +111,7 @@ server.listen(PORT, HOST, () => {
   console.log('\n💡 Tips:');
   console.log('   - Press Ctrl+C to stop the server');
   console.log('   - Edit files and refresh browser to see changes');
-  console.log('   - Tests available at: http://localhost:8080/tests/FancyList-tests.html');
+  console.log('   - Integration tests: cd integration-tests && npm test');
   console.log('\n📊 Server logs:');
   console.log('===============');
 });

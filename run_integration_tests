@@ -1,0 +1,105 @@
+#!/bin/bash
+
+# ModernAgile Integration Test Runner
+# Runs comprehensive integration tests using Playwright
+
+set -e  # Exit on any error
+
+# Color codes for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$SCRIPT_DIR"
+INTEGRATION_TESTS_DIR="$PROJECT_ROOT/integration-tests"
+
+echo -e "${BLUE}ModernAgile Integration Test Runner${NC}"
+echo "===================================="
+
+# Check if we're in the right directory
+if [[ ! -f "$PROJECT_ROOT/index.html" ]]; then
+    echo -e "${RED}Error: This script must be run from the ModernAgile project root directory${NC}"
+    exit 1
+fi
+
+# Check if integration tests directory exists
+if [[ ! -d "$INTEGRATION_TESTS_DIR" ]]; then
+    echo -e "${RED}Error: Integration tests directory not found${NC}"
+    echo "Run this script from the project root where you see the integration-tests/ directory"
+    exit 1
+fi
+
+# Navigate to integration tests directory
+cd "$INTEGRATION_TESTS_DIR"
+
+echo -e "${YELLOW}Checking integration test environment...${NC}"
+
+# Check if Node.js is installed
+if ! command -v node &> /dev/null; then
+    echo -e "${RED}Error: Node.js is not installed${NC}"
+    echo "Please install Node.js from https://nodejs.org/"
+    exit 1
+fi
+
+# Check if dependencies are installed
+if [[ ! -d "node_modules" ]]; then
+    echo -e "${YELLOW}Installing integration test dependencies...${NC}"
+    ./setup.sh
+fi
+
+echo -e "${YELLOW}Running integration tests...${NC}"
+echo
+
+# Parse command line arguments
+case "${1:-}" in
+    "headed")
+        echo -e "${BLUE}Running tests with visible browser...${NC}"
+        npm run test:headed
+        ;;
+    "debug")
+        echo -e "${BLUE}Running tests in debug mode...${NC}"
+        npm run test:debug
+        ;;
+    "ui")
+        echo -e "${BLUE}Opening Playwright test UI...${NC}"
+        npm run test:ui
+        ;;
+    "report")
+        echo -e "${BLUE}Opening test report...${NC}"
+        npm run test:report
+        ;;
+    *)
+        echo -e "${BLUE}Running all integration tests...${NC}"
+        npm test
+        ;;
+esac
+
+EXIT_CODE=$?
+
+# Navigate back to project root
+cd "$PROJECT_ROOT"
+
+if [[ $EXIT_CODE -eq 0 ]]; then
+    echo
+    echo -e "${GREEN}✅ Integration tests completed successfully${NC}"
+    echo -e "${BLUE}Test results available at: integration-tests/playwright-report/index.html${NC}"
+else
+    echo
+    echo -e "${RED}❌ Integration tests failed${NC}"
+    echo -e "${YELLOW}Run with 'headed' argument to see tests in browser:${NC}"
+    echo -e "${YELLOW}  ./run_integration_tests headed${NC}"
+fi
+
+echo
+echo -e "${BLUE}Integration Test Summary:${NC}"
+echo "- Tests verify current jQuery-based component behavior"
+echo "- Cross-browser testing (Chrome, Firefox, Safari, Mobile)"
+echo "- Visual regression testing with screenshots"
+echo "- Real browser environment (not simulated DOM)"
+echo "- Analytics and Bootstrap CSS integration verified"
+
+exit $EXIT_CODE

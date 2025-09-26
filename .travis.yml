@@ -1,10 +1,9 @@
 language: node_js
 node_js:
-- '6'
+- '18'
 before_script:
-- npm install -g grunt
-- npm install -g grunt-contrib-qunit --save-dev
-script: grunt --base tests --gruntfile tests/Gruntfile.js
+- cd integration-tests && npm install
+script: cd integration-tests && npm test
 deploy:
   edge: true
   provider: cloudfoundry

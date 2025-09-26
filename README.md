@@ -40,30 +40,32 @@ If you prefer other web servers:
 
 ## Testing
 
-The project uses QUnit + Grunt + PhantomJS for testing. The test suite includes:
-- **18 total test assertions** (all passing ✅)
-- **Tests for FancyList component** (pagination, rendering, controls)
-- **Async pagination testing** with proper handling of UI animation delays
-- **Current status**: All tests passing and maintained
+The project uses **Playwright** for modern cross-browser integration testing. The test suite includes:
+- **56 total test assertions** across 4 browsers (all passing ✅)
+- **Cross-browser testing**: Chrome, Firefox, Safari, Mobile Chrome
+- **Integration tests for LearnMore component** (FancyList-based pagination)
+- **Visual regression testing** with automated screenshot comparison
+- **Content-resilient tests** that won't break when learning resources are updated
+- **Current status**: All tests passing and actively maintained
 
 ### Running Tests
 
-Run the full test suite:
+Run the full integration test suite:
 ```bash
 ./run_tests
 ```
 
-**Expected output:** All 18 assertions should pass. You may see a harmless warning about `http_parser` module - this doesn't affect test functionality.
-
-### Manual Testing
-View tests in browser: `http://localhost:8080/tests/FancyList-tests.html` (when development server is running)
+**Expected output:** All 56 tests should pass across all browsers. Tests run on a random port to avoid conflicts with your development server.
 
 ### Test Coverage
-- ✅ **FancyList rendering** - Component initialization and DOM structure
-- ✅ **Pagination controls** - Button creation and state management  
-- ✅ **Navigation functionality** - Next/previous buttons and page number clicks
-- ✅ **Async behavior** - Proper handling of 500ms animation delays
-- ✅ **Edge cases** - Disabled states on first/last pages
+- ✅ **Component rendering** - LearnMore component initialization and real data display
+- ✅ **Link functionality** - External links, analytics tracking, meaningful text
+- ✅ **Pagination system** - Controls, navigation, page transitions, disabled states
+- ✅ **Bootstrap integration** - CSS classes, responsive behavior, mobile layouts
+- ✅ **Cross-browser compatibility** - Consistent behavior across all modern browsers
+- ✅ **Visual regression** - Automated screenshot comparison for UI changes
+- ✅ **Error handling** - Graceful degradation with empty or invalid data
+- ✅ **Analytics integration** - Event tracking attributes and data consistency
 
 ## MA Wheel Translations
 See the [Template Engine](git@github.com:modernagile/template-engine.git) project to create a new media kit for each translation.  Instructions are in its README.md file.

@@ -102,7 +102,7 @@ When you need to reset your development environment to a pristine state:
 **What it does:**
 1. **Interactive cleanup** - Shows untracked files and lets you choose what to delete
 2. **Pull latest changes** - `git pull -r` to get updates with rebase
-3. **Update dependencies** - Fresh `npm install` in tests directory  
+3. **Update dependencies** - Fresh `npm install` in integration-tests directory
 4. **Run tests** - Verify everything works after the reset
 
 **When to use:**
@@ -167,32 +167,43 @@ Before submitting changes, ensure all tests pass:
 ./run_tests
 
 # This script will:
-# - Check and install all required dependencies
+# - Check and install all required dependencies (Playwright)
 # - Set up the test environment automatically
-# - Run the full test suite with detailed output
-# - Handle any dependency issues
+# - Run the full integration test suite across all browsers
+# - Handle any dependency issues and browser installations
 ```
 
 **Manual testing** (if needed):
 ```bash
 # Install dependencies first
-cd tests && npm install
-npm install -g grunt-cli
+cd integration-tests && npm install
 
 # Run tests manually
-cd .. && grunt --base tests --gruntfile tests/Gruntfile.js
+npm test
 
-# Run with watch mode during development
-grunt watch --base tests --gruntfile tests/Gruntfile.js
+# Run tests with UI mode for debugging
+npm run test:ui
+
+# Run only specific tests
+npx playwright test --grep "pagination"
 ```
 
 #### Test Structure
-- Tests are written using QUnit
-- Test files are located in the `tests/` directory
-- Main test file: `tests/FancyList-tests.html`
-- Tests focus on the `FancyList.js` component functionality
+- Tests are written using **Playwright** for modern cross-browser testing
+- Test files are located in the `integration-tests/` directory
+- Main test file: `integration-tests/tests/fancylist-integration.spec.js`
+- Tests cover the LearnMore component (FancyList-based) functionality
+- **56 test assertions** across **4 browsers** (Chrome, Firefox, Safari, Mobile Chrome)
+- **Content-resilient**: Tests won't break when learning resources are updated
+- **Visual regression testing**: Automated screenshot comparison for UI changes
 
-**Note**: The current test suite needs maintenance. Some tests may not work properly and require rework to be valid tests of the FancyList component.
+**Test Coverage:**
+- ✅ Component rendering and data display
+- ✅ Pagination functionality and navigation
+- ✅ Cross-browser compatibility 
+- ✅ Responsive design behavior
+- ✅ Analytics event tracking
+- ✅ Error handling and edge cases
 
 #### Continuous Integration
 - The project uses Travis CI for automated testing
@@ -279,10 +290,11 @@ ModernAgile/
 │   ├── cheatSheetEntries.js
 │   ├── learnMoreEntries.js
 │   └── upcomingEventsEntries.js
-├── tests/                  # Test suite
+├── integration-tests/      # Modern Playwright test suite
 │   ├── package.json       # Test dependencies
-│   ├── Gruntfile.js       # Test configuration
-│   └── FancyList-tests.html
+│   ├── playwright.config.js # Test configuration
+│   └── tests/
+│       └── fancylist-integration.spec.js
 ├── analytics/              # Analytics page
 ├── chartering/             # Chartering page
 ├── evolutionarydesign/     # Evolutionary design page

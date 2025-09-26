@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ModernAgile Test Runner
-# Runs all tests in the project using Grunt + QUnit + PhantomJS
+# Runs modern Playwright integration tests
 
 set -e  # Exit on any error
 
@@ -15,15 +15,15 @@ NC='\033[0m' # No Color
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$SCRIPT_DIR"
-TESTS_DIR="$PROJECT_ROOT/tests"
+INTEGRATION_TESTS_DIR="$PROJECT_ROOT/integration-tests"
 
 echo -e "${BLUE}ModernAgile Test Runner${NC}"
 echo "=================================="
 
 # Check if we're in the right directory
-if [[ ! -f "$PROJECT_ROOT/index.html" ]] || [[ ! -d "$TESTS_DIR" ]]; then
+if [[ ! -f "$PROJECT_ROOT/index.html" ]] || [[ ! -d "$INTEGRATION_TESTS_DIR" ]]; then
     echo -e "${RED}Error: This script must be run from the ModernAgile project root directory${NC}"
-    echo "Expected to find index.html and tests/ directory"
+    echo "Expected to find index.html and integration-tests/ directory"
     exit 1
 fi
 
@@ -43,64 +43,46 @@ fi
 
 echo -e "${YELLOW}Checking dependencies...${NC}"
 
-# Check if grunt-cli is installed globally
-if ! command -v grunt &> /dev/null; then
-    echo -e "${YELLOW}Installing grunt-cli globally...${NC}"
-    npm install -g grunt-cli
-    if [[ $? -ne 0 ]]; then
-        echo -e "${RED}Failed to install grunt-cli globally${NC}"
-        echo "You may need to run with sudo: sudo npm install -g grunt-cli"
-        exit 1
-    fi
-fi
+# Navigate to integration tests directory
+cd "$INTEGRATION_TESTS_DIR"
 
-# Navigate to tests directory
-cd "$TESTS_DIR"
+# Check if package.json exists
+if [[ ! -f "package.json" ]]; then
+    echo -e "${RED}Error: No package.json found in integration-tests directory${NC}"
+    echo "Run setup first to initialize the integration tests"
+    exit 1
+fi
 
 # Check if node_modules exists and install if needed
 if [[ ! -d "node_modules" ]]; then
-    echo -e "${YELLOW}Installing test dependencies...${NC}"
+    echo -e "${YELLOW}Installing integration test dependencies...${NC}"
     npm install
 fi
 
-# Check if phantomjs-prebuilt is installed
-if [[ ! -d "node_modules/phantomjs-prebuilt" ]]; then
-    echo -e "${YELLOW}Installing PhantomJS for headless testing...${NC}"
-    npm install phantomjs-prebuilt --save-dev
-fi
-
-# Navigate back to project root for running tests
-cd "$PROJECT_ROOT"
-
-echo -e "${YELLOW}Running tests...${NC}"
+echo -e "${YELLOW}Running modern integration tests...${NC}"
 echo
 
-# Run the tests using Grunt
-if grunt --base tests --gruntfile tests/Gruntfile.js; then
+# Run the Playwright tests
+if npm test; then
     echo
-    echo -e "${GREEN}✓ Test run completed successfully${NC}"
-    
-    # Check if there were any test failures in the output
-    # Note: Grunt returns 0 even with test failures sometimes, so we rely on the output
-    echo -e "${BLUE}Check the output above for detailed test results${NC}"
+    echo -e "${GREEN}✓ Integration tests completed successfully${NC}"
 else
     EXIT_CODE=$?
     echo
-    echo -e "${RED}✗ Test run failed${NC}"
+    echo -e "${RED}✗ Integration tests failed${NC}"
+    echo -e "${YELLOW}Check the output above for detailed test results${NC}"
     
-    if [[ $EXIT_CODE -eq 6 ]]; then
-        echo -e "${YELLOW}Some tests failed but the test runner completed successfully${NC}"
-        echo -e "${YELLOW}This is expected - see the output above for details on which tests failed${NC}"
-    else
-        echo -e "${RED}Test runner encountered an error (exit code: $EXIT_CODE)${NC}"
-    fi
-    
+    cd "$PROJECT_ROOT"
     exit $EXIT_CODE
 fi
 
+# Navigate back to project root
+cd "$PROJECT_ROOT"
+
 echo
 echo -e "${BLUE}Test Summary:${NC}"
-echo "- Tests are located in: $TESTS_DIR"
-echo "- Main test file: tests/FancyList-tests.html"
-echo "- Test runner: Grunt + QUnit + PhantomJS"
-echo "- All tests are currently passing and maintained"
+echo "- Tests are located in: $INTEGRATION_TESTS_DIR"
+echo "- Test runner: Playwright with Node.js"
+echo "- Cross-browser testing: Chrome, Firefox, Safari, Mobile Chrome"
+echo "- Tests cover: Component rendering, pagination, analytics, responsive design"
+echo "- All integration tests are passing and modernized"

@@ -57,36 +57,36 @@ fi
 
 # Step 3: Update dependencies
 echo
-echo "Step 3/4: Installing/updating test dependencies..."
+echo "Step 3/4: Installing/updating integration test dependencies..."
 
-cd "$PROJECT_ROOT/tests"
+cd "$PROJECT_ROOT/integration-tests"
 
 if [[ ! -f "package.json" ]]; then
-    echo "Warning: No package.json found in tests directory"
+    echo "Warning: No package.json found in integration-tests directory"
     cd "$PROJECT_ROOT"
 else
     if ! npm install; then
-        echo "Error: Failed to install test dependencies"
+        echo "Error: Failed to install integration test dependencies"
         exit 1
     fi
     cd "$PROJECT_ROOT"
 fi
 
-# Step 4: Run tests
+# Step 4: Run modern integration tests
 echo
-echo "Step 4/4: Running tests to verify clean state..."
+echo "Step 4/4: Running integration tests to verify clean state..."
 
-if [[ ! -x "$PROJECT_ROOT/run_tests" ]]; then
-    echo "Error: ./run_tests script not found or not executable"
-    exit 1
-fi
+cd "$PROJECT_ROOT/integration-tests"
 
-if ! "$PROJECT_ROOT/run_tests"; then
+if ! npm test; then
     echo
-    echo "Warning: Tests failed after clean start"
+    echo "Warning: Integration tests failed after clean start"
     echo "This may indicate issues with the latest changes or environment"
+    cd "$PROJECT_ROOT"
     exit 1
 fi
+
+cd "$PROJECT_ROOT"
 
 # Success
 echo
