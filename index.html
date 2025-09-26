@@ -377,8 +377,7 @@
 <section id="cheatsheets" class="shop-section">
     <div class="sectionTitle">Cheat Sheets</div>
     <div class="container">
-        <div id='cheatsheet_entries' class="row">
-        </div>
+        <cheatsheet-list class="row"></cheatsheet-list>
     </div>
 </section>
 
@@ -597,9 +596,7 @@
 <script src="js/ShowCheatsheets.js"></script>
 
 
-<script>
-    $(document).ready(displayCheatSheets());
-</script>
+<!-- Cheatsheets now use Web Component - no jQuery initialization needed -->
 
 <script type="text/javascript">
     (function () {
