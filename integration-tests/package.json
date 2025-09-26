@@ -1,0 +1,18 @@
+{
+  "name": "modernagile-integration-tests",
+  "version": "1.0.0",
+  "description": "Integration tests for ModernAgile components before Web Component conversion",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report",
+    "test:port": "node -e \"console.log('Tests will use port:', process.env.TEST_PORT || Math.floor(Math.random() * (8999 - 8081 + 1)) + 8081)\""
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "expect": "^29.7.0"
+  }
+}
