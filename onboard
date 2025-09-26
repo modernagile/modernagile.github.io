@@ -27,9 +27,9 @@ echo -e "${BLUE}This script will set up everything you need to contribute to the
 echo
 
 # Check if we're in the right directory
-if [[ ! -f "$PROJECT_ROOT/index.html" ]] || [[ ! -d "$PROJECT_ROOT/tests" ]]; then
+if [[ ! -f "$PROJECT_ROOT/index.html" ]] || [[ ! -d "$PROJECT_ROOT/integration-tests" ]]; then
     echo -e "${RED}❌ Error: This script must be run from the ModernAgile project root directory${NC}"
-    echo "   Expected to find index.html and tests/ directory"
+    echo "   Expected to find index.html and integration-tests/ directory"
     exit 1
 fi
 
@@ -67,11 +67,17 @@ if command_exists node; then
     NODE_VERSION=$(node --version)
     print_success "Node.js found: $NODE_VERSION"
     
-    # Check if version is acceptable (v12+)
+    # Check if version is acceptable (v18+ required for Playwright)
     NODE_MAJOR=$(echo "$NODE_VERSION" | sed 's/v//' | cut -d. -f1)
-    if [[ $NODE_MAJOR -lt 12 ]]; then
-        print_warning "Node.js version $NODE_VERSION is older than recommended (v12+)"
-        print_info "Project should still work, but consider upgrading"
+    if [[ $NODE_MAJOR -lt 18 ]]; then
+        echo -e "${RED}❌ Node.js version $NODE_VERSION is too old${NC}"
+        print_info "Playwright requires Node.js v18+ for modern testing features"
+        echo
+        echo -e "${YELLOW}Please update Node.js:${NC}"
+        echo "   1. Visit https://nodejs.org/"
+        echo "   2. Download and install the LTS version (v18+)"
+        echo "   3. Run this script again"
+        exit 1
     fi
 else
     echo -e "${RED}❌ Node.js is not installed${NC}"
@@ -105,6 +111,7 @@ print_step "Setting Up Project Scripts"
 
 chmod +x "$PROJECT_ROOT/run" 2>/dev/null || true
 chmod +x "$PROJECT_ROOT/run_tests" 2>/dev/null || true
+chmod +x "$PROJECT_ROOT/run_integration_tests" 2>/dev/null || true
 chmod +x "$PROJECT_ROOT/onboard" 2>/dev/null || true
 
 print_success "Made project scripts executable"
@@ -124,6 +131,12 @@ else
     print_warning "./run_tests script may have permission issues"
 fi
 
+if [[ -x "$PROJECT_ROOT/run_integration_tests" ]]; then
+    print_success "./run_integration_tests script is ready"
+else
+    print_warning "./run_integration_tests script may have permission issues"
+fi
+
 # Step 4: Pre-install test dependencies (optional but helpful)
 print_step "Pre-installing Test Dependencies"
 
@@ -137,32 +150,27 @@ if [[ $REPLY =~ ^[Nn]$ ]]; then
     print_info "Skipping test dependency installation"
     print_info "Dependencies will be installed automatically when you run ./run_tests"
 else
-    print_info "Installing test dependencies..."
+    print_info "Installing modern test dependencies..."
     
-    # Check if grunt-cli is installed globally
-    if ! command_exists grunt; then
-        print_info "Installing grunt-cli globally..."
-        if npm install -g grunt-cli; then
-            print_success "grunt-cli installed globally"
-        else
-            print_warning "Failed to install grunt-cli globally"
-            print_info "You may need to run: sudo npm install -g grunt-cli"
-            print_info "Or ./run_tests will handle this automatically later"
-        fi
-    else
-        print_success "grunt-cli already installed globally"
-    fi
-    
-    # Install test dependencies
-    if [[ -d "$PROJECT_ROOT/tests" ]]; then
-        cd "$PROJECT_ROOT/tests"
+    # Install integration test dependencies (Playwright)
+    if [[ -d "$PROJECT_ROOT/integration-tests" ]]; then
+        cd "$PROJECT_ROOT/integration-tests"
         
         if [[ ! -f "package.json" ]]; then
-            print_warning "No package.json found in tests directory"
+            print_warning "No package.json found in integration-tests directory"
         else
-            print_info "Installing npm dependencies in tests directory..."
+            print_info "Installing Playwright and test dependencies..."
             if npm install; then
-                print_success "Test dependencies installed successfully"
+                print_success "Integration test dependencies installed successfully"
+                
+                # Install Playwright browsers
+                print_info "Installing Playwright browsers (Chrome, Firefox, Safari)..."
+                if npx playwright install; then
+                    print_success "Playwright browsers installed successfully"
+                else
+                    print_warning "Failed to install Playwright browsers"
+                    print_info "./run_tests will attempt to install them automatically"
+                fi
             else
                 print_warning "Failed to install some test dependencies"
                 print_info "./run_tests will attempt to fix this automatically"
@@ -170,6 +178,9 @@ else
         fi
         
         cd "$PROJECT_ROOT"
+    else
+        print_warning "integration-tests directory not found"
+        print_info "Test infrastructure may not be properly set up"
     fi
 fi
 
@@ -189,7 +200,8 @@ echo -e "${BLUE}1. Start the development server:${NC}"
 echo "   ./run"
 echo
 echo -e "${BLUE}2. In another terminal, run tests:${NC}"
-echo "   ./run_tests"
+echo "   ./run_tests          (runs modern Playwright integration tests)"
+echo "   ./run_integration_tests (alternative script for integration tests)"
 echo
 echo -e "${BLUE}3. Start coding!${NC}"
 echo "   - Edit files and refresh browser to see changes"
@@ -200,7 +212,9 @@ echo "   - Content data: data/ directory"
 echo
 echo -e "${CYAN}Useful Information:${NC}"
 echo -e "${BLUE}📍 Development server:${NC} http://localhost:8080"
-echo -e "${BLUE}🧪 Browser tests:${NC} http://localhost:8080/tests/FancyList-tests.html"
+echo -e "${BLUE}🧪 Modern tests:${NC} Run ./run_tests for cross-browser integration tests"
+echo -e "${BLUE}🎭 Test browsers:${NC} Chrome, Firefox, Safari, Mobile Chrome"
+echo -e "${BLUE}📊 Test reports:${NC} HTML reports generated in integration-tests/playwright-report/"
 echo -e "${BLUE}📚 Documentation:${NC} README.md and CONTRIBUTING.md"
 echo -e "${BLUE}💡 Need help?${NC} Check existing issues or create a new one"
 echo
