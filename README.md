@@ -41,12 +41,11 @@ If you prefer other web servers:
 ## Testing
 
 The project uses **Playwright** for modern cross-browser integration testing. The test suite includes:
-- **56 total test assertions** across 4 browsers (all passing ✅)
 - **Cross-browser testing**: Chrome, Firefox, Safari, Mobile Chrome
-- **Integration tests for LearnMore component** (FancyList-based pagination)
+- **Integration tests** for interactive components and functionality
 - **Visual regression testing** with automated screenshot comparison
-- **Content-resilient tests** that won't break when learning resources are updated
-- **Current status**: All tests passing and actively maintained
+- **Content-resilient tests** that won't break when content is updated
+- **Current status**: Actively maintained with comprehensive coverage
 
 ### Running Tests
 
@@ -55,10 +54,10 @@ Run the full integration test suite:
 ./run_tests
 ```
 
-**Expected output:** All 56 tests should pass across all browsers. Tests run on a random port to avoid conflicts with your development server.
+**Expected output:** All functional tests should pass across all browsers. Tests run on a random port to avoid conflicts with your development server.
 
 ### Test Coverage
-- ✅ **Component rendering** - LearnMore component initialization and real data display
+- ✅ **Component rendering** - Interactive component initialization and data display
 - ✅ **Link functionality** - External links, analytics tracking, meaningful text
 - ✅ **Pagination system** - Controls, navigation, page transitions, disabled states
 - ✅ **Bootstrap integration** - CSS classes, responsive behavior, mobile layouts

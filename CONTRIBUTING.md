@@ -46,7 +46,7 @@ The ModernAgile.org website is a static HTML/CSS/JavaScript website that promote
 
 - Main website content (`index.html`)
 - Specialized pages (analytics, chartering, evolutionary design, flow)
-- Interactive JavaScript components (`FancyList.js`, `LearnMore.js`)
+- Interactive JavaScript components for dynamic functionality
 - Data-driven content sections (cheat sheets, learn more entries, upcoming events)
 - Modern cross-browser testing with Playwright
 
@@ -192,8 +192,8 @@ npx playwright test --grep "pagination"
 - Tests are written using **Playwright** for modern cross-browser testing
 - Test files are located in the `integration-tests/` directory
 - Main test file: `integration-tests/tests/fancylist-integration.spec.js`
-- Tests cover the LearnMore component (FancyList-based) functionality
-- **56 test assertions** across **4 browsers** (Chrome, Firefox, Safari, Mobile Chrome)
+- Tests cover interactive components and core functionality
+- **Comprehensive test assertions** across **4 browsers** (Chrome, Firefox, Safari, Mobile Chrome)
 - **Content-resilient**: Tests won't break when learning resources are updated
 - **Visual regression testing**: Automated screenshot comparison for UI changes
 
@@ -212,17 +212,17 @@ npx playwright test --grep "pagination"
 
 ### JavaScript Components
 
-#### FancyList Component
-The main interactive component (`js/FancyList.js`) provides:
-- Paginated list display
+#### Interactive Components
+The JavaScript components (`js/` directory) provide:
+- Paginated list displays
 - Category filtering
-- Responsive grid layout
+- Responsive grid layouts
 - Analytics event tracking
 
-When modifying this component:
+When modifying components:
 - Ensure backward compatibility
 - Update tests accordingly
-- Test pagination and filtering functionality
+- Test interactive functionality
 - Verify responsive behavior
 
 ## Contribution Guidelines
@@ -284,8 +284,7 @@ ModernAgile/
 │   ├── bootstrap.css      # Bootstrap framework
 │   └── ...
 ├── js/                     # JavaScript components
-│   ├── FancyList.js       # Main interactive component
-│   └── LearnMore.js       # Learn more functionality
+│   ├── *.js               # Interactive components
 ├── data/                   # Data files for content
 │   ├── cheatSheetEntries.js
 │   ├── learnMoreEntries.js
