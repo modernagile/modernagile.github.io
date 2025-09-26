@@ -47,38 +47,53 @@
   });
 
   QUnit.test( "Paginations: Next button shows next page", function( assert ) {
+    stop();
     fancyList.render();
     
     assert.equal($('.fancyListEntry:contains("title: Pre-Accident Investigations: An Introduction to Organizational Safety")').length, 0);
 
-    // var nextBtn = this.getFancyListContainer().find('.pagination-button.next');
-    // nextBtn.click();
-    $('.pagination-button.next').click()
+    $('.pagination-button.next').click();
    
-    assert.equal($('.fancyListEntry:contains("title: Pre-Accident Investigations: An Introduction to Organizational Safety")').length, 1);
-    assert.ok(true, "Yay we can pass")
+    setTimeout(function() {
+      assert.equal($('.fancyListEntry:contains("title: Pre-Accident Investigations: An Introduction to Organizational Safety")').length, 1);
+      start();
+    }, 600); // Wait slightly longer than the 500ms delay
   });
 
   QUnit.test( "Paginations: Clicking a page number takes to the respective page", function( assert ) {
+    stop();
     fancyList.render();
     assert.equal($('.fancyListEntry:contains("title: Pre-Accident Investigations: An Introduction to Organizational Safety")').length, 0);
 
     var pageTwoBtn = this.getFancyListContainer().find('.pagination-pageNumber:contains("2")');
     pageTwoBtn.click();
-    assert.equal($('.fancyListEntry:contains("title: Pre-Accident Investigations: An Introduction to Organizational Safety")').length, 1);
+    
+    setTimeout(function() {
+      assert.equal($('.fancyListEntry:contains("title: Pre-Accident Investigations: An Introduction to Organizational Safety")').length, 1);
+      start();
+    }, 600); // Wait slightly longer than the 500ms delay
   });
 
   QUnit.test( "Paginations: Previous button shows previous page", function( assert ) {
+    stop();
+    var that = this;
     fancyList.render();
     assert.equal($('.fancyListEntry:contains("title: Pre-Accident Investigations: An Introduction to Organizational Safety")').length, 0);
 
     var nextBtn = this.getFancyListContainer().find('.pagination-button.next');
     nextBtn.click();
-    assert.equal($('.fancyListEntry:contains("title: Pre-Accident Investigations: An Introduction to Organizational Safety")').length, 1);
+    
+    setTimeout(function() {
+      assert.equal($('.fancyListEntry:contains("title: Pre-Accident Investigations: An Introduction to Organizational Safety")').length, 1);
 
-    var prevBtn = this.getFancyListContainer().find('.pagination-button.previous');
-    prevBtn.click();
-    assert.equal($('.fancyListEntry:contains("title: Pre-Accident Investigations: An Introduction to Organizational Safety")').length, 0);
+      var prevBtn = that.getFancyListContainer().find('.pagination-button.previous');
+      prevBtn.click();
+      
+      setTimeout(function() {
+        assert.equal($('.fancyListEntry:contains("title: Pre-Accident Investigations: An Introduction to Organizational Safety")').length, 0);
+        start();
+      }, 600); // Wait for previous button action
+    }, 600); // Wait for next button action
   });
 
   QUnit.test( "Paginations: Previous button is disabled on first page", function( assert ) {
@@ -88,13 +103,18 @@
   });
 
   QUnit.test( "Paginations: Next button is disabled on last page", function( assert ) {
+    stop();
+    var that = this;
     fancyList.render();
 
     var pageThreeBtn = this.getFancyListContainer().find('.pagination-pageNumber:contains("3")');
     pageThreeBtn.click();
 
-    var nextBtn = this.getFancyListContainer().find('.pagination-button.next');
-    assert.ok(nextBtn.parent().hasClass('disabled'));
+    setTimeout(function() {
+      var nextBtn = that.getFancyListContainer().find('.pagination-button.next');
+      assert.ok(nextBtn.parent().hasClass('disabled'));
+      start();
+    }, 600); // Wait for page change
   });
   </script>
 
