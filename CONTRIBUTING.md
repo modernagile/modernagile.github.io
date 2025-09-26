@@ -48,13 +48,13 @@ The ModernAgile.org website is a static HTML/CSS/JavaScript website that promote
 - Specialized pages (analytics, chartering, evolutionary design, flow)
 - Interactive JavaScript components (`FancyList.js`, `LearnMore.js`)
 - Data-driven content sections (cheat sheets, learn more entries, upcoming events)
-- Automated testing with QUnit and Grunt
+- Modern cross-browser testing with Playwright
 
 ## Getting Started
 
 ### Prerequisites
 
-- **Node.js** (version 12 or higher) - [Download here](https://nodejs.org/)
+- **Node.js** (version 18 or higher) - [Download here](https://nodejs.org/)
 - **npm** (comes with Node.js)
 - **Git** for version control
 
@@ -100,10 +100,10 @@ When you need to reset your development environment to a pristine state:
 ```
 
 **What it does:**
-1. **Interactive cleanup** - Shows untracked files and lets you choose what to delete
-2. **Pull latest changes** - `git pull -r` to get updates with rebase
+1. **Pull latest changes** - `git pull -r` to get updates with rebase
+2. **Interactive cleanup** - Shows untracked files and lets you choose what to delete
 3. **Update dependencies** - Fresh `npm install` in integration-tests directory
-4. **Run tests** - Verify everything works after the reset
+4. **Run tests** - Verify everything works with modern Playwright integration tests
 
 **When to use:**
 - **Before starting each new feature** (recommended workflow)

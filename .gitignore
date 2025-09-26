@@ -169,16 +169,17 @@ temp/
 
 # Project Specific
 # ----------------
-# Keep test dependencies but ignore certain generated files
-tests/node_modules/.cache/
-tests/*.log
-tests/coverage/
-
-# Ignore PhantomJS binaries if downloaded locally
-phantomjs
+# Modern Playwright testing
+integration-tests/test-results/
+integration-tests/playwright-report/
+integration-tests/.cache/
+integration-tests/*.log
 
 # Keep important project files
 !run
 !run_tests
+!run_integration_tests
+!clean_start
+!onboard
 !CONTRIBUTING.md
 !README.md
