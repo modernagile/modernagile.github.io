@@ -19,9 +19,9 @@ if ! git rev-parse --git-dir > /dev/null 2>&1; then
 fi
 
 # Check if we're in the right directory
-if [[ ! -f "$PROJECT_ROOT/index.html" ]] || [[ ! -d "$PROJECT_ROOT/tests" ]]; then
+if [[ ! -f "$PROJECT_ROOT/index.html" ]] || [[ ! -d "$PROJECT_ROOT/integration-tests" ]]; then
     echo "Error: This script must be run from the ModernAgile project root directory"
-    echo "Expected to find index.html and tests/ directory"
+    echo "Expected to find index.html and integration-tests/ directory"
     exit 1
 fi
 
