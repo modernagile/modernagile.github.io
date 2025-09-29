@@ -10,6 +10,10 @@ cheatsheets = [
       {
         language: 'Deutsch',
         url: '/goodies/20180803_Psychologische_Emotionale_Sicherheit_Spickzettel_v05.pdf'
+      },
+      {
+        language: 'Farsi',
+        url: '/goodies/farsi/psych-safety-farsi.pdf'
       }
     ],
   },
