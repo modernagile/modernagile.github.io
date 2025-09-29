@@ -25,6 +25,10 @@ cheatsheets = [
       {
         language: 'English',
         url: 'https://docs.google.com/document/d/1s7iO71YYHJ5BPxwoB1W8ywr7KAlO0ozjXCPdXG4nOzg/export?format=pdf'
+      },
+      {
+        language: 'Farsi',
+        url: '/goodies/farsi/chartering-farsi.pdf'
       }
     ],
   },
@@ -36,6 +40,10 @@ cheatsheets = [
       {
         language: 'English',
         url: 'https://docs.google.com/document/d/1a0ortR3E6-DQurlY1s28LwbJBthjAYVtkQQozPxGGVA/export?format=pdf'
+      },
+      {
+        language: 'Farsi',
+        url: '/goodies/farsi/accelerating-flow-farsi.pdf'
       }
     ],
   },
@@ -47,6 +55,10 @@ cheatsheets = [
       {
         language: 'English',
         url: 'https://docs.google.com/document/d/14ZgehM4eTSzToO7IBpKGkwMufVdGXP4tfI2GO5lcYp0/export?format=pdf'
+      },
+      {
+        language: 'Farsi',
+        url: '/goodies/farsi/human-communication-farsi.pdf'
       }
     ],
   },
@@ -58,17 +70,25 @@ cheatsheets = [
       {
         language: 'English',
         url: 'https://docs.google.com/document/d/1A1sLe2R-9XhRpOiAZfKii2944PM5tUKS17EgaiGCnLE/export?format=pdf'
+      },
+      {
+        language: 'Farsi',
+        url: '/goodies/farsi/evolutionary-design-farsi.pdf'
       }
     ],
   },
 
   {
     thumbnail: 'img/readingList/mob_programming_cheat_sheet.jpg',
-    title: 'Mob Programming',
+    title: 'Ensemble Programming',
     sources: [
       {
         language: 'English',
         url: 'https://docs.google.com/document/d/1Ve5LVAJvGqJbUZR6C2o3ZNvFPKpuJ6sfIwxlpgKpKCk/export?format=pdf'
+      },
+      {
+        language: 'Farsi',
+        url: '/goodies/farsi/ensemble-programming-farsi.pdf'
       }
     ],
   }
